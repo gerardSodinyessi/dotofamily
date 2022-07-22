@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Orbiter is a bootstrap minimal & clean admin template"
+    />
+    <meta
+      name="keywords"
+      content="chat, chat platform, discussion, video call, voice call, communication, conversation, messange, messanger, talk"
+    />
+    <meta name="author" content="Themesbox" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+    />
+    <title>e-hospital registrer</title>
+    <!-- Fevicon -->
+    <link rel="shortcut icon" href="assets/images/logo de e-doto-retenue.png" />
+    <!-- Start css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <!-- End css -->
+  </head>
+  <body class="vertical-layout" id="vertical-layout">
+    <!-- Start Containerbar -->
+    <div id="containerbar" class="containerbar authenticate-bg">
+      <!-- Start Container -->
+      <div class="container">
+        <div class="auth-box register-box">
+          <!-- Start row -->
+          <div class="row no-gutters align-items-center justify-content-center">
+            <!-- Start col -->
+            <div class="col-md-6 col-lg-5">
+              <!-- Start Auth Box -->
+              <div class="auth-box-right">
+                <div class="card" id="doct">
+                  <div class="card-body">
+                    <form action="#">
+                      <div class="form-head">
+                        <a href="index.html" class="logo"
+                          ><img
+                            src="assets/images/logo-b-e-doto.png"
+                            class="img-fluid"
+                            alt="logo"
+                            style="width: 125px"
+                        /></a>
+                      </div>
+                      <h4 class="text-primary my-4">S'inscrire !</h4>
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          style="text-transform: uppercase"
+                          class="form-control"
+                          id="nom"
+                          placeholder="Entrer votre nom"
+                          required
+                        />
+                        <span id="msgnom"></span>
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="prenom"
+                          placeholder="Entrer votre prénom"
+                          required
+                        />
+                        <span id="msgprenom"></span>
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          placeholder="Entrer votre email"
+                          required
+                        />
+                        <span id="msgemail"></span>
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          placeholder="Entrer votre password"
+                          required
+                        />
+                        <span id="msgpassword"></span>
+                      </div>
+                      <div class="form-group">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password1"
+                          placeholder="retapper votre password"
+                          required
+                        />
+                        <span id="msgpassword1"></span>
+                      </div>
+                      <div class="form-row mb-3">
+                        <div class="col-sm-12">
+                          <div class="custom-control custom-checkbox text-left">
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="terms"
+                            />
+                            <label
+                              class="custom-control-label font-14"
+                              for="terms"
+                              >se souvenir de moi</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <button
+                        class="btn btn-danger btn-lg btn-block font-18"
+                        id="log"
+                        onclick="registre()"
+                      >
+                        <a style="cursor: pointer; color: #fff">Enregistrer</a>
+                      </button>
+                    </form>
+                    <p class="mb-0 mt-3">
+                      Vous avez déjà un compte ?
+                      <a href="login.html">Connecter</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End Auth Box -->
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <div style="display: inline-flex">
+                      <p
+                        class="modal-title"
+                        id="exampleModalLabel"
+                        style="margin-right: 55px; margin-top: 12px"
+                      >
+                        Votre Inscription est approuvé
+                      </p>
+                      <!--<img src="assets/images/iconmonstr-check-mark-circle-thin.svg" alt=""
+							style="width: 40px; height: 40px;"
+							>-->
+                    </div>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <span id="msgIsci"></span>
+                    <div class="col-lg-12 col-md-12">
+                      <img
+                        src="./assets/img/undraw_doctor_kw5la.svg"
+                        alt=""
+                        class="hero"
+                        style="width: 100%; height: 100%"
+                      />
+                    </div>
+                    <p><em>Veuillez patienter pour vous connecter...</em></p>
+                  </div>
+                </div>
+              </div>
+              <style>
+                .img-modal {
+                  width: 100%;
+                  height: 100%;
+                }
+              </style>
+            </div>
+            <!-- End col -->
+          </div>
+          <!-- End row -->
+        </div>
+      </div>
+      <!-- End Container -->
+    </div>
+    <!-- End Containerbar -->
+
+    <script>
+      function registre() {
+        event.preventDefault();
+        var nom = document.getElementById("nom").value;
+        var prenom = document.getElementById("prenom").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var password1 = document.getElementById("password1").value;
+        // afficher message nom
+        if (isNaN(nom)) {
+          msgnom = "";
+        } else {
+          msgnom =
+            '<p style="color: #D8000C; background-color: #FFBABA;">Veiller entrer un nom valide</p>';
+          document.getElementById("msgnom").innerHTML = msgnom;
+          setTimeout(() => {
+            document.getElementById("msgnom").style.display = "none";
+          }, 3000);
+        }
+        // afficher message prenom
+        if (isNaN(prenom)) {
+          msgprenom = "";
+        } else {
+          msgprenom =
+            '<p style="color: #D8000C; background-color: #FFBABA;">Veiller entrer un prenom valide</p>';
+          document.getElementById("msgprenom").innerHTML = msgprenom;
+          setTimeout(() => {
+            document.getElementById("msgprenom").style.display = "none";
+          }, 3000);
+        }
+        // afficher message email
+        if (isNaN(email)) {
+          msgemail = "";
+        } else {
+          msgemail =
+            '<p style="color: #D8000C; background-color: #FFBABA;">Veiller entrer un email valide</p>';
+          document.getElementById("msgemail").innerHTML = msgemail;
+          setTimeout(() => {
+            document.getElementById("msgemail").style.display = "none";
+          }, 3000);
+        }
+        // afficher message password
+        if (isNaN(password) && password.length >= 10) {
+          msgpassword = "";
+        } else {
+          msgpassword =
+            '<p style="color: #D8000C; background-color: #FFBABA;">Veiller entrer un mot de passe superieur de plus de 9 caractère</p>';
+          document.getElementById("msgpassword").innerHTML = msgpassword;
+          setTimeout(() => {
+            document.getElementById("msgpassword").style.display = "none";
+          }, 3000);
+        }
+
+        //disparaître les errors text
+        setTimeout(() => {
+          if (
+            isNaN(nom) &&
+            isNaN(prenom) &&
+            isNaN(email) &&
+            password.length >= 10 &&
+            password1.length >= 10 &&
+            password1 === password
+          ) {
+            document.getElementById("nom").value = "";
+            document.getElementById("prenom").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("password1").value = "";
+            document.getElementById("doct").style.display = "none";
+            var msgIsci = `<p style="font-size:17px; color:#f82249; text-align:center">${nom} ${prenom} <br> e-doto vous souhaite la bienvenue </p>`;
+            $("#exampleModal").modal({
+              show: true,
+              backdrop: "static",
+              keyboard: false,
+            });
+            document.getElementById("msgIsci").innerHTML = msgIsci;
+            setTimeout(() => {
+              window.location.href = "login.html";
+            }, 7000);
+          } else {
+            return false;
+          }
+        }, 3000);
+      }
+    </script>
+    <!-- Start js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <!-- End js -->
+  </body>
+</html>

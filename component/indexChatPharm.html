@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Gappa is a bootstrap minimal & clean admin template">
+	<meta name="keywords"
+		content="chat, chat platform, discussion, video call, voice call, communication, conversation, messange, messanger, talk">
+	<meta name="author" content="Themesbox">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	<title>e-doto planning</title>
+	<!-- Fevicon -->
+	<link rel="shortcut icon" href="assets/images/logo de e-doto-retenue.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<!-- Font Awesome -->
+	<!-- Start css -->
+	<!-- Slick css -->
+	<link href="assets/plugins/slick/slick.css" rel="stylesheet">
+	<link href="assets/plugins/slick/slick-theme.css" rel="stylesheet">
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#myModal").modal({
+				show: true,
+				backdrop: 'static',
+				keyboard: false
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="myModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<li class="media">
+						<img class="align-self-center mr-2" src="assets/images/men1.png" alt="Generic placeholder image"
+							style="width: 44px; height: 44px; border-radius: 100%;">
+						<div class="media-body">
+							<h5 class="mb-0 mt-2">Pharmacie La Reférence</h5>
+						</div>
+						<div onclick="dispaMdol()" style="cursor: pointer;">
+							<img src="assets/images/X.svg" alt="" id="Xsvg">
+						</div>
+						<style>
+							#Xsvg {
+								position: absolute;
+								right: 23px;
+								height: 30px;
+								width: 30px;
+							}
+						</style>
+						<script>
+							function dispaMdol() {
+								history.back()
+							}
+						</script>
+					</li>
+				</div>
+				<span id="receveValidate"></span>
+				<div class="modal-body" id="payermedicamentbody">
+					<!--	Start Chat Detail  -->
+					<div class="chat-detail" id="chat-detaila">
+						<div class="chat-body" style="height: 65vh;">
+							<div class="tab-content" id="chat-listContent">
+								<div class="tab-pane fade show active" id="chat-first" role="tabpanel"
+									aria-labelledby="chat-first-tab">
+									<div class="chat-day text-center mb-3">
+										<span class="badge badge-secondary-inverse" id="taday">Today</span>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Hello! please, let me know the status about project after
+												school.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:18 pm<i class="fa fa-check"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>I have completed 4 stages 5 stages remaining.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:20 pm<i class="fa fa-check"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Let me share video for detailed information</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:22 pm<i class="fa fa-check"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<div class="message-video">
+												<video width="210" controls>
+													<source src="assets/images/video.mp4" type="video/mp4">
+												</video>
+											</div>
+											<span>Demo.mp4</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:25 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Thanks for the video.</span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>I am sharing images of project work done so far. <br />Please, have a
+												look at images and let me know if changes required.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:30 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Could you share photos, please?</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:31 pm<i class="fa fa-check ml-2"></i></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<ul class="list-inline message-media">
+												<li class="list-inline-item">
+													<img src="assets/images/media_01.png" class="img-fluid" alt="media">
+												</li>
+												<li class="list-inline-item">
+													<img src="assets/images/media_02.png" class="img-fluid" alt="media">
+												</li>
+												<li class="list-inline-item">
+													<p class="media-more">+07</p>
+												</li>
+											</ul>
+											<span>Photos of product</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:32 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>I request you to schedule demo at 3 pm after 2 days for the better
+												progress. <br />After that we are discussion of final confirmation this
+												project.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<div class="message-audio">
+												<audio controls>
+													<source src="assets/images/audio.mp3" type="audio/mpeg">
+												</audio>
+											</div>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:38 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<ul class="list-unstyled message-document">
+												<li class="media">
+													<img class="align-self-center img-fluid mr-2"
+														src="assets/images/pdf.svg" alt="pdf">
+													<div class="media-body">
+														<h5><a href="#">Document.pdf</a></h5>
+														<p>50kb</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:40 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Please, refer this doc file for documentation.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:41 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Sure, I will prepare for the same.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:43 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Great. Thanks</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:45 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<span id="orderSendInPharmacy"></span>
+									<span id="messageAutomatiqueIcon"></span>
+									<span id="messageAutomatique"></span>
+								</div>
+								<div class="tab-pane fade" id="chat-second" role="tabpanel"
+									aria-labelledby="chat-second-tab">
+									<div class="empty-screen">
+										<div class="container">
+											<div class="feedback">
+												<div class="rating">
+													<input type="radio" name="rating" id="rating-5">
+													<label for="rating-5"></label>
+													<input type="radio" name="rating" id="rating-4">
+													<label for="rating-4"></label>
+													<input type="radio" name="rating" id="rating-3">
+													<label for="rating-3"></label>
+													<input type="radio" name="rating" id="rating-2">
+													<label for="rating-2"></label>
+													<input type="radio" name="rating" id="rating-1">
+													<label for="rating-1"></label>
+													<div class="emoji-wrapper">
+														<div class="emoji">
+															<svg class="rating-0" xmlns="http://www.w3.org/2000/svg"
+																viewBox="0 0 512 512">
+																<circle cx="256" cy="256" r="256" fill="#ffd93b" />
+																<path
+																	d="M512 256c0 141.44-114.64 256-256 256-80.48 0-152.32-37.12-199.28-95.28 43.92 35.52 99.84 56.72 160.72 56.72 141.36 0 256-114.56 256-256 0-60.88-21.2-116.8-56.72-160.72C474.8 103.68 512 175.52 512 256z"
+																	fill="#f4c534" />
+																<ellipse
+																	transform="scale(-1) rotate(31.21 715.433 -595.455)"
+																	cx="166.318" cy="199.829" rx="56.146" ry="56.13"
+																	fill="#fff" />
+																<ellipse transform="rotate(-148.804 180.87 175.82)"
+																	cx="180.871" cy="175.822" rx="28.048" ry="28.08"
+																	fill="#3e4347" />
+																<ellipse transform="rotate(-113.778 194.434 165.995)"
+																	cx="194.433" cy="165.993" rx="8.016" ry="5.296"
+																	fill="#5a5f63" />
+																<ellipse
+																	transform="scale(-1) rotate(31.21 715.397 -1237.664)"
+																	cx="345.695" cy="199.819" rx="56.146" ry="56.13"
+																	fill="#fff" />
+																<ellipse transform="rotate(-148.804 360.25 175.837)"
+																	cx="360.252" cy="175.84" rx="28.048" ry="28.08"
+																	fill="#3e4347" />
+																<ellipse
+																	transform="scale(-1) rotate(66.227 254.508 -573.138)"
+																	cx="373.794" cy="165.987" rx="8.016" ry="5.296"
+																	fill="#5a5f63" />
+																<path
+																	d="M370.56 344.4c0 7.696-6.224 13.92-13.92 13.92H155.36c-7.616 0-13.92-6.224-13.92-13.92s6.304-13.92 13.92-13.92h201.296c7.696.016 13.904 6.224 13.904 13.92z"
+																	fill="#3e4347" />
+															</svg>
+															<svg class="rating-1" xmlns="http://www.w3.org/2000/svg"
+																viewBox="0 0 512 512">
+																<circle cx="256" cy="256" r="256" fill="#ffd93b" />
+																<path
+																	d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z"
+																	fill="#f4c534" />
+																<path
+																	d="M328.4 428a92.8 92.8 0 0 0-145-.1 6.8 6.8 0 0 1-12-5.8 86.6 86.6 0 0 1 84.5-69 86.6 86.6 0 0 1 84.7 69.8c1.3 6.9-7.7 10.6-12.2 5.1z"
+																	fill="#3e4347" />
+																<path
+																	d="M269.2 222.3c5.3 62.8 52 113.9 104.8 113.9 52.3 0 90.8-51.1 85.6-113.9-2-25-10.8-47.9-23.7-66.7-4.1-6.1-12.2-8-18.5-4.2a111.8 111.8 0 0 1-60.1 16.2c-22.8 0-42.1-5.6-57.8-14.8-6.8-4-15.4-1.5-18.9 5.4-9 18.2-13.2 40.3-11.4 64.1z"
+																	fill="#f4c534" />
+																<path
+																	d="M357 189.5c25.8 0 47-7.1 63.7-18.7 10 14.6 17 32.1 18.7 51.6 4 49.6-26.1 89.7-67.5 89.7-41.6 0-78.4-40.1-82.5-89.7A95 95 0 0 1 298 174c16 9.7 35.6 15.5 59 15.5z"
+																	fill="#fff" />
+																<path
+																	d="M396.2 246.1a38.5 38.5 0 0 1-38.7 38.6 38.5 38.5 0 0 1-38.6-38.6 38.6 38.6 0 1 1 77.3 0z"
+																	fill="#3e4347" />
+																<path
+																	d="M380.4 241.1c-3.2 3.2-9.9 1.7-14.9-3.2-4.8-4.8-6.2-11.5-3-14.7 3.3-3.4 10-2 14.9 2.9 4.9 5 6.4 11.7 3 15z"
+																	fill="#fff" />
+																<path
+																	d="M242.8 222.3c-5.3 62.8-52 113.9-104.8 113.9-52.3 0-90.8-51.1-85.6-113.9 2-25 10.8-47.9 23.7-66.7 4.1-6.1 12.2-8 18.5-4.2 16.2 10.1 36.2 16.2 60.1 16.2 22.8 0 42.1-5.6 57.8-14.8 6.8-4 15.4-1.5 18.9 5.4 9 18.2 13.2 40.3 11.4 64.1z"
+																	fill="#f4c534" />
+																<path
+																	d="M155 189.5c-25.8 0-47-7.1-63.7-18.7-10 14.6-17 32.1-18.7 51.6-4 49.6 26.1 89.7 67.5 89.7 41.6 0 78.4-40.1 82.5-89.7A95 95 0 0 0 214 174c-16 9.7-35.6 15.5-59 15.5z"
+																	fill="#fff" />
+																<path
+																	d="M115.8 246.1a38.5 38.5 0 0 0 38.7 38.6 38.5 38.5 0 0 0 38.6-38.6 38.6 38.6 0 1 0-77.3 0z"
+																	fill="#3e4347" />
+																<path
+																	d="M131.6 241.1c3.2 3.2 9.9 1.7 14.9-3.2 4.8-4.8 6.2-11.5 3-14.7-3.3-3.4-10-2-14.9 2.9-4.9 5-6.4 11.7-3 15z"
+																	fill="#fff" />
+															</svg>
+															<svg class="rating-2" xmlns="http://www.w3.org/2000/svg"
+																viewBox="0 0 512 512">
+																<circle cx="256" cy="256" r="256" fill="#ffd93b" />
+																<path
+																	d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z"
+																	fill="#f4c534" />
+																<path
+																	d="M336.6 403.2c-6.5 8-16 10-25.5 5.2a117.6 117.6 0 0 0-110.2 0c-9.4 4.9-19 3.3-25.6-4.6-6.5-7.7-4.7-21.1 8.4-28 45.1-24 99.5-24 144.6 0 13 7 14.8 19.7 8.3 27.4z"
+																	fill="#3e4347" />
+																<path
+																	d="M276.6 244.3a79.3 79.3 0 1 1 158.8 0 79.5 79.5 0 1 1-158.8 0z"
+																	fill="#fff" />
+																<circle cx="340" cy="260.4" r="36.2" fill="#3e4347" />
+																<g fill="#fff">
+																	<ellipse transform="rotate(-135 326.4 246.6)"
+																		cx="326.4" cy="246.6" rx="6.5" ry="10" />
+																	<path
+																		d="M231.9 244.3a79.3 79.3 0 1 0-158.8 0 79.5 79.5 0 1 0 158.8 0z" />
+																</g>
+																<circle cx="168.5" cy="260.4" r="36.2" fill="#3e4347" />
+																<ellipse transform="rotate(-135 182.1 246.7)" cx="182.1"
+																	cy="246.7" rx="10" ry="6.5" fill="#fff" />
+															</svg>
+															<svg class="rating-3" xmlns="http://www.w3.org/2000/svg"
+																viewBox="0 0 512 512">
+																<circle cx="256" cy="256" r="256" fill="#ffd93b" />
+																<path
+																	d="M407.7 352.8a163.9 163.9 0 0 1-303.5 0c-2.3-5.5 1.5-12 7.5-13.2a780.8 780.8 0 0 1 288.4 0c6 1.2 9.9 7.7 7.6 13.2z"
+																	fill="#3e4347" />
+																<path
+																	d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z"
+																	fill="#f4c534" />
+																<g fill="#fff">
+																	<path
+																		d="M115.3 339c18.2 29.6 75.1 32.8 143.1 32.8 67.1 0 124.2-3.2 143.2-31.6l-1.5-.6a780.6 780.6 0 0 0-284.8-.6z" />
+																	<ellipse cx="356.4" cy="205.3" rx="81.1" ry="81" />
+																</g>
+																<ellipse cx="356.4" cy="205.3" rx="44.2" ry="44.2"
+																	fill="#3e4347" />
+																<g fill="#fff">
+																	<ellipse transform="scale(-1) rotate(45 454 -906)"
+																		cx="375.3" cy="188.1" rx="12" ry="8.1" />
+																	<ellipse cx="155.6" cy="205.3" rx="81.1" ry="81" />
+																</g>
+																<ellipse cx="155.6" cy="205.3" rx="44.2" ry="44.2"
+																	fill="#3e4347" />
+																<ellipse transform="scale(-1) rotate(45 454 -421.3)"
+																	cx="174.5" cy="188" rx="12" ry="8.1" fill="#fff" />
+															</svg>
+															<svg class="rating-4" xmlns="http://www.w3.org/2000/svg"
+																viewBox="0 0 512 512">
+																<circle cx="256" cy="256" r="256" fill="#ffd93b" />
+																<path
+																	d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z"
+																	fill="#f4c534" />
+																<path
+																	d="M232.3 201.3c0 49.2-74.3 94.2-74.3 94.2s-74.4-45-74.4-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z"
+																	fill="#e24b4b" />
+																<path
+																	d="M96.1 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2C80.2 229.8 95.6 175.2 96 173.3z"
+																	fill="#d03f3f" />
+																<path
+																	d="M215.2 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z"
+																	fill="#fff" />
+																<path
+																	d="M428.4 201.3c0 49.2-74.4 94.2-74.4 94.2s-74.3-45-74.3-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z"
+																	fill="#e24b4b" />
+																<path
+																	d="M292.2 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2-77.8-65.7-62.4-120.3-61.9-122.2z"
+																	fill="#d03f3f" />
+																<path
+																	d="M411.3 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z"
+																	fill="#fff" />
+																<path
+																	d="M381.7 374.1c-30.2 35.9-75.3 64.4-125.7 64.4s-95.4-28.5-125.8-64.2a17.6 17.6 0 0 1 16.5-28.7 627.7 627.7 0 0 0 218.7-.1c16.2-2.7 27 16.1 16.3 28.6z"
+																	fill="#3e4347" />
+																<path
+																	d="M256 438.5c25.7 0 50-7.5 71.7-19.5-9-33.7-40.7-43.3-62.6-31.7-29.7 15.8-62.8-4.7-75.6 34.3 20.3 10.4 42.8 17 66.5 17z"
+																	fill="#e24b4b" />
+															</svg>
+															<svg class="rating-5" xmlns="http://www.w3.org/2000/svg"
+																viewBox="0 0 512 512">
+																<g fill="#ffd93b">
+																	<circle cx="256" cy="256" r="256" />
+																	<path
+																		d="M512 256A256 256 0 0 1 56.8 416.7a256 256 0 0 0 360-360c58 47 95.2 118.8 95.2 199.3z" />
+																</g>
+																<path
+																	d="M512 99.4v165.1c0 11-8.9 19.9-19.7 19.9h-187c-13 0-23.5-10.5-23.5-23.5v-21.3c0-12.9-8.9-24.8-21.6-26.7-16.2-2.5-30 10-30 25.5V261c0 13-10.5 23.5-23.5 23.5h-187A19.7 19.7 0 0 1 0 264.7V99.4c0-10.9 8.8-19.7 19.7-19.7h472.6c10.8 0 19.7 8.7 19.7 19.7z"
+																	fill="#e9eff4" />
+																<path
+																	d="M204.6 138v88.2a23 23 0 0 1-23 23H58.2a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z"
+																	fill="#45cbea" />
+																<path
+																	d="M476.9 138v88.2a23 23 0 0 1-23 23H330.3a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z"
+																	fill="#e84d88" />
+																<g fill="#38c0dc">
+																	<path
+																		d="M95.2 114.9l-60 60v15.2l75.2-75.2zM123.3 114.9L35.1 203v23.2c0 1.8.3 3.7.7 5.4l116.8-116.7h-29.3z" />
+																</g>
+																<g fill="#d23f77">
+																	<path
+																		d="M373.3 114.9l-66 66V196l81.3-81.2zM401.5 114.9l-94.1 94v17.3c0 3.5.8 6.8 2.2 9.8l121.1-121.1h-29.2z" />
+																</g>
+																<path
+																	d="M329.5 395.2c0 44.7-33 81-73.4 81-40.7 0-73.5-36.3-73.5-81s32.8-81 73.5-81c40.5 0 73.4 36.3 73.4 81z"
+																	fill="#3e4347" />
+																<path
+																	d="M256 476.2a70 70 0 0 0 53.3-25.5 34.6 34.6 0 0 0-58-25 34.4 34.4 0 0 0-47.8 26 69.9 69.9 0 0 0 52.6 24.5z"
+																	fill="#e24b4b" />
+																<path
+																	d="M290.3 434.8c-1 3.4-5.8 5.2-11 3.9s-8.4-5.1-7.4-8.7c.8-3.3 5.7-5 10.7-3.8 5.1 1.4 8.5 5.3 7.7 8.6z"
+																	fill="#fff" opacity=".2" />
+															</svg>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<a class="nav-link" id="chat-first-tab" data-toggle="pill" href="#chat-first"
+											role="tab" aria-controls="chat-first" aria-selected="true">
+											<button class="btn btn-danger">commenter</button></a>
+										<style>
+											* {
+												box-sizing: border-box;
+											}
+
+											.container {
+												display: flex;
+												flex-wrap: wrap;
+												height: 45vh;
+												align-items: center;
+												justify-content: center;
+												padding: 0 20px;
+											}
+
+											.rating {
+												display: flex;
+												width: 100%;
+												justify-content: center;
+												overflow: hidden;
+												flex-direction: row-reverse;
+												height: 150px;
+												position: relative;
+											}
+
+											.rating-0 {
+												filter: grayscale(100%);
+											}
+
+											.rating>input {
+												display: none;
+											}
+
+											.rating>label {
+												cursor: pointer;
+												width: 40px;
+												height: 40px;
+												margin-top: auto;
+												background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23e3e3e3' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+												background-repeat: no-repeat;
+												background-position: center;
+												background-size: 76%;
+												transition: .3s;
+											}
+
+											.rating>input:checked~label,
+											.rating>input:checked~label~label {
+												background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23fcd93a' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+											}
+
+
+											.rating>input:not(:checked)~label:hover,
+											.rating>input:not(:checked)~label:hover~label {
+												background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='126.729' height='126.73'%3e%3cpath fill='%23d8b11e' d='M121.215 44.212l-34.899-3.3c-2.2-.2-4.101-1.6-5-3.7l-12.5-30.3c-2-5-9.101-5-11.101 0l-12.4 30.3c-.8 2.1-2.8 3.5-5 3.7l-34.9 3.3c-5.2.5-7.3 7-3.4 10.5l26.3 23.1c1.7 1.5 2.4 3.7 1.9 5.9l-7.9 32.399c-1.2 5.101 4.3 9.3 8.9 6.601l29.1-17.101c1.9-1.1 4.2-1.1 6.1 0l29.101 17.101c4.6 2.699 10.1-1.4 8.899-6.601l-7.8-32.399c-.5-2.2.2-4.4 1.9-5.9l26.3-23.1c3.8-3.5 1.6-10-3.6-10.5z'/%3e%3c/svg%3e");
+											}
+
+											.emoji-wrapper {
+												width: 100%;
+												text-align: center;
+												height: 100px;
+												overflow: hidden;
+												position: absolute;
+												top: 0;
+												left: 0;
+											}
+
+											.emoji-wrapper:before,
+											.emoji-wrapper:after {
+												content: "";
+												height: 15px;
+												width: 100%;
+												position: absolute;
+												left: 0;
+												z-index: 1;
+											}
+
+											.emoji-wrapper:before {
+												top: 0;
+												background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%);
+											}
+
+											.emoji-wrapper:after {
+												bottom: 0;
+												background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 100%);
+											}
+
+											.emoji {
+												display: flex;
+												flex-direction: column;
+												align-items: center;
+												transition: .3s;
+											}
+
+											.emoji>svg {
+												margin: 15px 0;
+												width: 70px;
+												height: 70px;
+												flex-shrink: 0;
+											}
+
+											#rating-1:checked~.emoji-wrapper>.emoji {
+												transform: translateY(-100px);
+											}
+
+											#rating-2:checked~.emoji-wrapper>.emoji {
+												transform: translateY(-200px);
+											}
+
+											#rating-3:checked~.emoji-wrapper>.emoji {
+												transform: translateY(-300px);
+											}
+
+											#rating-4:checked~.emoji-wrapper>.emoji {
+												transform: translateY(-400px);
+											}
+
+											#rating-5:checked~.emoji-wrapper>.emoji {
+												transform: translateY(-500px);
+											}
+
+											.feedback {
+												max-width: 360px;
+												background-color: #fff;
+												width: 100%;
+												padding: 30px;
+												border-radius: 8px;
+												display: flex;
+												flex-direction: column;
+												flex-wrap: wrap;
+												align-items: center;
+												box-shadow: 0 4px 30px rgba(0, 0, 0, .05);
+											}
+										</style>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-third" role="tabpanel"
+									aria-labelledby="chat-third-tab">
+									<div class="chat-day text-center mb-3">
+										<span class="badge badge-secondary-inverse">Today</span>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Hello! I got 95% in Semester 7</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:18 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Yay !!!</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:20 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Wow! That's great news. Where's the party?</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:22 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<ul class="list-unstyled message-document">
+												<li class="media">
+													<img class="align-self-center img-fluid mr-2"
+														src="assets/images/pdf.svg" alt="pdf">
+													<div class="media-body">
+														<h5><a href="#">Results.pdf</a></h5>
+														<p>50kb</p>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:40 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Thanks I will check and get back.</span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Wow!! great continuity.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:30 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Thank you for your nice words.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:31 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Continue process of improving everyday. <br />I will be there this
+												weekend for further guidance.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-fourth" role="tabpanel"
+									aria-labelledby="chat-fourth-tab">
+									<div class="empty-screen">
+										<img src="assets/images/empty-logo.png" class="img-fluid" alt="empty-logo">
+										<h4 class="my-3">No Conversation Yet.</h4>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-fifth" role="tabpanel"
+									aria-labelledby="chat-fifth-tab">
+									<div class="chat-day text-center mb-3">
+										<span class="badge badge-secondary-inverse">Today</span>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Hi</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:18 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Hello</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:20 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>How was your day going?</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:22 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<div class="message-video">
+												<video width="210" controls>
+													<source src="assets/images/video.mp4" type="video/mp4">
+												</video>
+											</div>
+											<span>partytime.mp4</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:25 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Seems you are enjoying too much in Las Vegas.</span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Be Responsible. <br />Don't drink and drive. Take the taxi for
+												home.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:30 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>I never drink and drive, ma!!!</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:31 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Send me photos of your hotelview as well.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:31 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<ul class="list-inline message-media">
+												<li class="list-inline-item">
+													<img src="assets/images/media_01.png" class="img-fluid" alt="media">
+												</li>
+												<li class="list-inline-item">
+													<img src="assets/images/media_02.png" class="img-fluid" alt="media">
+												</li>
+												<li class="list-inline-item">
+													<p class="media-more">+07</p>
+												</li>
+											</ul>
+											<span>Photos of Nevada Trip</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:32 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Wow. That seems so much fun.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Wish, could you be there also.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:41 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>gotta go. See you soon. Take Care</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:43 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>You too. Have Fun.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:45 pm<i class="feather icon-clock ml-2"></i></span>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-sixth" role="tabpanel"
+									aria-labelledby="chat-sixth-tab">
+									<div class="empty-screen">
+										<img src="assets/images/empty-logo.png" class="img-fluid" alt="empty-logo">
+										<h4 class="my-3">No Conversation Yet.</h4>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-seventh" role="tabpanel"
+									aria-labelledby="chat-seventh-tab">
+									<div class="chat-day text-center mb-3">
+										<span class="badge badge-secondary-inverse">Today</span>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>I love you</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:18 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Lol</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:20 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>I need you in my life</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:22 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>lol</span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>you are my everything. love you so much</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:30 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>LOL</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:31 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>iPhone X or iPhone XR</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>iPhone X</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Lol</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Are you going to buy me that phone?</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>lol</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Please, tell me yes</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>LOL</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Why are so many lol</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>It's thunder from zambia fire.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:33 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-eighth" role="tabpanel"
+									aria-labelledby="chat-eighth-tab">
+									<div class="empty-screen">
+										<img src="assets/images/empty-logo.png" class="img-fluid" alt="empty-logo">
+										<h4 class="my-3">No Conversation Yet.</h4>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-ninth" role="tabpanel"
+									aria-labelledby="chat-ninth-tab">
+									<div class="chat-day text-center mb-3">
+										<span class="badge badge-secondary-inverse">Today</span>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>How you doin???</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:18 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>I watched F.R.I.E.N.D.S. compeletely.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:20 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Let's go party then</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:22 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Duh !!! Next time</span>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-tenth" role="tabpanel"
+									aria-labelledby="chat-tenth-tab">
+									<div class="empty-screen">
+										<img src="assets/images/empty-logo.png" class="img-fluid" alt="empty-logo">
+										<h4 class="my-3">No Conversation Yet.</h4>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-eleventh" role="tabpanel"
+									aria-labelledby="chat-eleventh-tab">
+									<div class="chat-day text-center mb-3">
+										<span class="badge badge-secondary-inverse">Today</span>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Please, pay $100 to megan. I will give it to you when home.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:18 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Okay given. Now you owe me $110.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:20 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Why 10$ Extra?</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:22 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Convenience Charge it is.</span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>I am not gonna pay any damn charges.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:31 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-twelth" role="tabpanel"
+									aria-labelledby="chat-twelth-tab">
+									<div class="empty-screen">
+										<img src="assets/images/empty-logo.png" class="img-fluid" alt="empty-logo">
+										<h4 class="my-3">No Conversation Yet.</h4>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-thirteenth" role="tabpanel"
+									aria-labelledby="chat-thirteenth-tab">
+									<div class="chat-day text-center mb-3">
+										<span class="badge badge-secondary-inverse">Today</span>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Ding dong. who is it?</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:18 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Lorem Ipsum</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:20 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Need some serif.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:22 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>We only have slabs.</span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Do you have more height or width?</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:31 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>We are bold.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:41 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+									<div class="chat-message chat-message-right">
+										<div class="chat-message-text">
+											<span>Fine with it.</span>
+										</div>
+										<div class="chat-message-meta">
+											<span>4:43 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="chat-fourtinth" role="tabpanel"
+									aria-labelledby="chat-fourtinth-tab">
+									<div class="empty-screen">
+										<img src="assets/images/empty-logo.png" class="img-fluid" alt="empty-logo">
+										<h4 class="my-3">No Conversation Yet.</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="chat-messagebar" style="margin-top: 7px; margin-bottom: 10px;">
+						<form>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<a href="#" id="button-addonmic"><i class="material-icons"
+											style="font-size:24px;color:red">mic</i></a>
+								</div>
+								<input type="text" class="form-control" placeholder="Type a message..."
+									aria-label="Text" style="border-radius: 30px;">
+								<div class="input-group-append">
+									<ul class="list-inline float-right mb-0">
+										<li class="list-inline-item">
+											<div class="dropdown">
+												<a href="#" class="mr-3" id="button-addonlink" class=""
+													id="chatDropdown" data-toggle="dropdown" aria-haspopup="true"
+													aria-expanded="false"><img src="assets/images/paperclique.svg"
+														alt="Generic placeholder image" style="padding-top: 12px;"></a>
+												<div class="dropdown-menu dropdown-menu-right"
+													aria-labelledby="chatDropdown">
+													<a class="dropdown-item font-14" href="#"
+														onclick="sendOrderbyPatient()">Envoyer l'rdonnance</a>
+													<a class="dropdown-item font-14" href="#">Upload a file</a>
+													<a class="dropdown-item font-14" href="#"
+														onclick="payervotremedic()">
+														<div style="display: inline-flex;">
+															<div style="margin-right: 15px;">
+																<i class="fa fa-credit-card"
+																	style="font-size:24px;color:red"></i>
+															</div>
+															<div>Payer</div>
+														</div>
+													</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<a href="#" id="button-addonsend"><img src="assets/images/send.svg"
+											alt="Generic placeholder image" style="margin-right: 10px;"></a>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div id="payermedicament" style="display: none;">
+					<div class="">
+						<div class="" style="margin-bottom: 34px;">
+							<div class="" style="display: inline-flex;">
+								<div>
+									<p style=" margin-right: 5px;">uba</p>
+								</div>
+								<div class="custom-control custom-switch">
+									<input type="checkbox" class="custom-control-input" id="acceptAchatUBA" value="On"
+										onclick="ahoooUBA()">
+									<label class="custom-control-label" for="acceptAchatUBA"></label>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="" style="display: inline-flex; margin-bottom: 34px;">
+							<div class="">
+								<p style="margin-right: 5px;">mtn</p>
+							</div>
+							<div class="custom-control custom-switch">
+								<input type="checkbox" class="custom-control-input" id="acceptAchatMTN"
+									onclick="ahoooMTN()">
+								<label class="custom-control-label" for="acceptAchatMTN"></label>
+							</div>
+						</div>
+						<hr>
+						<div class="" style="display: inline-flex; margin-bottom: 34px;">
+							<div class="">
+								<p style="margin-right: 5px;">moow</p>
+							</div>
+							<div class="custom-control custom-switch">
+								<input type="checkbox" class="custom-control-input" id="acceptAchatMOOW"
+									onclick="ahoooMOOW()">
+								<label class="custom-control-label" for="acceptAchatMOOW"></label>
+							</div>
+						</div>
+						<hr>
+						<div class="" style="margin-bottom: 27px;">
+							<div class="">
+								<div>
+									<p>commenter</p>
+								</div>
+								<div class="custom-control custom-switch">
+									<a class="" id="chat-second-tab" data-toggle="pill" href="#chat-second" role="tab"
+										aria-controls="chat-second" aria-selected="false">
+										<p style="color: red;"></p>
+										<img src="assets/images/pcommantq.svg" alt="" title="Noter cette Pharmacie">
+									</a>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<p style="cursor: pointer;" onclick="Quitterpharmacie()" id="Quitterpharmacie">Quitter</p>
+						<h1></h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<style>
+		#payermedicament {
+			position: absolute;
+			top: 90px;
+			right: 0;
+			height: 75.4vh;
+			width: 14vh;
+			background-color: rgb(194, 197, 197);
+		}
+
+		.chatpharma {
+			margin-right: 75px;
+		}
+	</style>
+	<script>
+		//sendOrder
+		function sendOrderbyPatient() {
+			msgO = `<div class="spana">
+										<div class="chat-message-text">
+											<div class="resume-item"
+											style="background-color: rgba(0, 0, 0, 0.1); border-radius: 5px; padding-left: 17px; padding-right: 17px;">
+											<img src="assets/images/logo-b-e-doto.png"
+												class="img-fluid" alt=""
+												style="width: 50px; height: 50px; margin-top: 5px; margin-bottom: 5px;">
+											<h4 style="display: inline-block;">L'ordonnance Médicale</h4>
+											<h5>Le 27 Avril/04/1995</h5>
+											<div><strong>Les causes</strong></div>
+											<p> Vous avez une mauvaise qualité de sommeil qui retentit
+															 le lendemain sur vos activités  psychiques et une remontée de liquide 
+															 acide dans l'œsophage.</p>
+														<strong>Les Médicaments et ses Prescriptions</strong>
+														<ul>
+															<li><strong style="color: blue; cursor: pointer;">
+																	Amoxiciline:
+																</strong> 250 mg à 500 mg trois fois par jour ou 750 mg à 1 g<h5>Matin - Soir</h5>
+															</li>
+															<li><strong style="color: blue; cursor: pointer;">
+																l'oxazépam:
+																</strong> Prenez ce médicament par voie orale Votre dose devra 
+																peut-être être progressivement diminuée<h5>Matin -Midi- Soir</h5>
+															</li>
+															<li><strong style="color: blue; cursor: pointer;"> Maloxine :
+																</strong> Préner les trois comprimés les mêmes jours<h5>Matin - Soir</h5>
+															</li>
+															<li><strong style="color: blue; cursor: pointer;"> Malox:
+																</strong> Prénez un sachet<h5>Matin-Midi- Soir</h5>
+															</li>
+														</ul>
+											<div>
+												<p><mark><strong>Docteur:</strong> Abdoul Sanni</mark></p>
+												<p style="padding-bottom: 15px; ">
+													<em>jfkfjflnkofkdfvvfv</em>
+												</p>
+											</div>
+										</div>
+										</div>
+									</div>`
+			document.getElementById('orderSendInPharmacy').innerHTML = msgO
+			setTimeout(() => {
+				msgOretourIcon = `
+										<div class="chat-message-meta chat-message chat-message-right">
+											<span>4:45 pm<i class="fa fa-check ml-2"></i></span>
+										</div>
+										`
+				document.getElementById('messageAutomatiqueIcon').innerHTML = msgOretourIcon
+			}, 5000)
+			setTimeout(() => {
+				msgOretour = `<div class="chat-message chat-message-left">
+										<div class="chat-message-text">
+											<span>Salut, merci de nous avoir contacter, nous avons bien reçu votre ordonnance, 
+												veillez patientez on vous prend dans quelques instant!</span>
+										</div>
+									</div>`
+				document.getElementById('messageAutomatique').innerHTML = msgOretour
+			}, 8000)
+		}
+		//UBA function
+		function ahoooUBA() {
+			currentvalue = document.getElementById('acceptAchatUBA').value;
+			if (currentvalue == "Off") {
+				document.getElementById("acceptAchatUBA").value = "On";
+				var on = document.getElementById("acceptAchatUBA").value;
+				console.log(on)
+				$('#modaleAceptFacturactionUBA').modal({
+					show: false
+				})
+			} else {
+				document.getElementById("acceptAchatUBA").value = "Off";
+				var off = document.getElementById("acceptAchatUBA").value;
+				console.log(off)
+				document.getElementById('myModal').style.display = 'none'
+				$('#modaleAceptFacturactionUBA').modal({
+					show: true,
+					backdrop: 'static',
+					keyboard: false
+				})
+			}
+		}
+
+		function refuseFactureUBA() {
+			document.getElementById('myModal').style.display = 'block'
+		}
+		//MTN function
+		function ahoooMTN() {
+			currentvalue = document.getElementById('acceptAchatMTN').value;
+			if (currentvalue == "Off") {
+				document.getElementById("acceptAchatMTN").value = "On";
+				var on = document.getElementById("acceptAchatMTN").value;
+				console.log(on)
+				$('#modaleAceptFacturactionMTN').modal({
+					show: false
+				})
+			} else {
+				document.getElementById("acceptAchatMTN").value = "Off";
+				var off = document.getElementById("acceptAchatMTN").value;
+				console.log(off)
+				document.getElementById('myModal').style.display = 'none'
+				$('#modaleAceptFacturactionMTN').modal({
+					show: true,
+					backdrop: 'static',
+					keyboard: false
+				})
+			}
+		}
+
+		function refuseFactureMTN() {
+			document.getElementById('myModal').style.display = 'block'
+		}
+		//MOOW function
+		function ahoooMOOW() {
+			currentvalue = document.getElementById('acceptAchatMOOW').value;
+			if (currentvalue == "Off") {
+				document.getElementById("acceptAchatMOOW").value = "On";
+				var on = document.getElementById("acceptAchatUBA").value;
+				console.log(on)
+				$('#modaleAceptFacturactionMOOW').modal({
+					show: false
+				})
+			} else {
+				document.getElementById("acceptAchatMOOW").value = "Off";
+				var off = document.getElementById("acceptAchatMOOW").value;
+				console.log(off)
+				document.getElementById('myModal').style.display = 'none'
+				$('#modaleAceptFacturactionMOOW').modal({
+					show: true,
+					backdrop: 'static',
+					keyboard: false
+				})
+			}
+		}
+
+		function refuseFactureMOOW() {
+			document.getElementById('myModal').style.display = 'block'
+		}
+		//function payer votre medicament
+		function payervotremedic() {
+			$('#payermedicamentbody').addClass('chatpharma');
+			document.getElementById('payermedicament').style.display = "block"
+		}
+		// function quitter pharmacie
+		function Quitterpharmacie() {
+			$('#payermedicamentbody').removeClass('chatpharma');
+			document.getElementById('payermedicament').style.display = "none"
+		}
+	</script>
+	<!-------start modaleAceptFacturactionUBA---------->
+	<!-- Modal -->
+	<div class="modal fade" id="modaleAceptFacturactionUBA" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modaleAceptFacturactionUBALabel"><em>Vous accetez faire un transfert à
+							la pharmacie?</em> <img src="assets/images/uba.jpg" alt=""
+							style="width: 50px; height: 5Opx;"></h5>
+				</div>
+				<div class="modal-body">
+					<img src="assets/images/undraw_Payments_re_77x0.svg" alt="" style="width: 100%; height: 100%;">
+					<div>
+						<input type="tel" pattern="\d*" maxlength="19" class="inpUBA"
+							placeholder="Numéro de votre carte">
+						<input type="tel" pattern="\d*" maxlength="7" class="inpUBA" placeholder="MM/YY">
+						<input type="tel" pattern="\d*" maxlength="4" placeholder="CVC" class="inpUBA">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal"
+						onclick="refuseFactureUBA()">Refuser</button>
+					<button type="button" class="btn btn-danger payerVotreOrdonnanceC" data-toggle="modal" data-target="#basicModal">Payer</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<style>
+		.inpUBA {
+			background: #fff;
+			border: none;
+			border-radius: 3px;
+			box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.1);
+			margin: 0 0 4px;
+			padding: 6px 10px 4px;
+			width: 100%;
+		}
+
+		.inpMTN {
+			background: #fff;
+			border: none;
+			border-radius: 3px;
+			box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.1);
+			margin: 0 0 4px;
+			padding: 6px 10px 4px;
+			width: 100%;
+		}
+
+		.inpMOOW {
+			background: #fff;
+			border: none;
+			border-radius: 3px;
+			box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.1);
+			margin: 0 0 4px;
+			padding: 6px 10px 4px;
+			width: 100%;
+		}
+	</style>
+	<!-------end modaleAceptFacturactionUBA---------->
+
+	<!-------start modaleAceptFacturactionMTN---------->
+	<!-- Modal -->
+	<div class="modal fade" id="modaleAceptFacturactionMTN" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modaleAceptFacturactionMTNLabel">Vous accetez faire un transfert à la
+						pharmacie? <img src="assets/images/1.jpg" alt="" style="width: 50px; height: 50px;"></h5>
+				</div>
+				<div class="modal-body">
+					<img src="assets/images/undraw_Payments_re_77x0.svg" alt="" style="width: 100%; height: 100%;">
+					<div>
+						<label>Votre Numéro</label>
+						<input type="tel" pattern="\d*" maxlength="19" class="inpMTN" value="51455930">
+						<label>Numéro de la pharmacie</label>
+						<input type="tel" pattern="\d*" maxlength="7" class="inpMTN" value="96529627">
+						<label>votre code</label>
+						<input type="tel" pattern="\d*" maxlength="4" placeholder="Votre code" class="inpMTN">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal"
+						onclick="refuseFactureMTN()">Refuser</button>
+					<button type="button" class="btn btn-danger payerVotreOrdonnanceC" data-toggle="modal" data-target="#basicModal">Payer</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-------end modaleAceptFacturactionMTN---------->
+
+	<!-------start modaleAceptFacturactionMOOW---------->
+	<!-- Modal -->
+	<div class="modal fade" id="modaleAceptFacturactionMOOW" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modaleAceptFacturactionMOOWLabel">Vous accetez faire un transfert à la
+						pharmacie? <img src="assets/images/2.png" alt="" style="width: 50px; height: 50px;"></h5>
+				</div>
+				<div class="modal-body">
+					<img src="assets/images/undraw_Payments_re_77x0.svg" alt="" style="width: 100%; height: 100%;">
+					<div>
+						<label>Votre Numéro</label>
+						<input type="tel" pattern="\d*" maxlength="19" class="inpMOOW" value="51455930">
+						<label>Numéro de la pharmacie</label>
+						<input type="tel" pattern="\d*" maxlength="7" class="inpMOOW" value="96529627">
+						<label>votre code</label>
+						<input type="tel" pattern="\d*" maxlength="4" placeholder="Votre code" class="inpMOOW">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-info" data-dismiss="modal"
+						onclick="refuseFactureMOOW()">Refuser</button>
+					<button type="button" class="btn btn-danger payerVotreOrdonnanceC" data-toggle="modal" data-target="#basicModal">Payer</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+  <!-- basic modal -->
+  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" style="padding-top: 150px;">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h4 class="modal-title" id="myModalLabel">Confirmation de votre achat</h4>
+		</div>
+		<div class="modal-body">
+			
+		  <p>Votre achat est approuvé. Voulez vous avec livraison?</p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal" onclick="refuseFactureMOOW()">Non</button>
+		  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="messageDeLivraison()">Oui</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+  <div id="id01" class="w3-modal" style="padding-top: 150px;">
+	<div class="w3-modal-content" style="padding-bottom:47px;">
+	<div class="w3-container" >
+		<span onclick="quitMessageDeLivraison()"
+		 class="w3-button w3-display-topright">&times;</span>
+		 <img src="assets/images/undraw_deliveries_2r4y.svg" alt="">
+		
+		</div>
+     </div>
+   </div>
+
+   <div class="modal fade" id="modaleAceptFacturactionDelivry" tabindex="-1" role="dialog"
+   aria-labelledby="exampleModalLabel" aria-hidden="true" style="padding-top: 50px;">
+   <div class="modal-dialog" role="document">
+	   <div class="modal-content">
+		   <div class="modal-body">
+			   <img src="assets/images/undraw_deliveries_2r4y.svg" alt="" style="width: 100%; height: 100%;">
+			   <div>
+				<strong><p style="color: black">Nous vous remercions énormément d'avoir effectué votre achat. Votre colis de médicaments vous sera livré dans quelques minutes. </p></strong>
+			   </div>
+		   </div>
+		   <div class="modal-footer">
+			   <button type="button" class="btn btn-info" data-dismiss="modal"
+				   onclick="refuseFactureMOOW()">D'accord</button>
+		   </div>
+	   </div>
+   </div>
+</div>
+
+  <script>
+
+	var ouvrirchatP = document.querySelectorAll('.payerVotreOrdonnanceC');
+		ouvrirchatP.forEach((p)=>{
+			p.addEventListener('click', function(){
+				console.log('opopopoppopopop')
+				$('#modaleAceptFacturactionMOOW').modal('hide')
+				$('#modaleAceptFacturactionMTN').modal('hide')
+				$('#modaleAceptFacturactionUBA').modal('hide')
+			})
+		})
+
+		function messageDeLivraison () {
+			
+		setTimeout(()=>{
+			$('#modaleAceptFacturactionDelivry').modal({
+				show: true,
+				backdrop: 'static',
+				keyboard: true
+			})
+			
+				},500)
+	}
+	function quitMessageDeLivraison (){
+		document.getElementById('id01').style.display='none'
+		$('#modaleAceptFacturactionMOOW').modal('hide')
+				$('#modaleAceptFacturactionMTN').modal('hide')
+				$('#modaleAceptFacturactionUBA').modal('hide')
+	}
+</script>
+	<!-------end modaleAceptFacturactionMOOW---------->
+
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/modernizr.min.js"></script>
+	<script src="assets/js/detect.js"></script>
+	<script src="assets/js/jquery.slimscroll.js"></script>
+	<script src="assets/js/vertical-menu.js"></script>
+	<!-- Slick js -->
+	<script src="assets/plugins/slick/slick.min.js"></script>
+	<!-- Core js -->
+	<script src="assets/js/core.js"></script>
+	<script src="todo.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="testa.js"></script>
+	<!-- MDB -->
+	<script>
+		AOS.init();
+	</script>
+</body>
+
+</html>
+</body>
+
+</html>
