@@ -303,6 +303,7 @@ function showPage() {
 }
 
 var VideoPlanning = document.querySelectorAll(".openVideoPlanningDemo");
+var VideoPlanningBlackVid = document.querySelectorAll(".displayBlackVid");
 VideoPlanning.forEach((Q) => {
   Q.addEventListener("click", function () {
     $("#incomingVideoPlanning").modal({
