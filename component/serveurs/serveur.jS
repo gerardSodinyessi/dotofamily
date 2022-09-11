@@ -1,0 +1,1027 @@
+////// fonction Mooow
+//MOOW function
+var allPharmacyIdVar = document.querySelectorAll(".allPharmacyId");
+allPharmacyIdVar.forEach((x) => {
+  x.addEventListener("click", function () {
+    console.log("ok mon boss");
+    $("#modaleAceptFacturactionMOOW").modal({
+      show: true,
+      backdrop: "static",
+      keyboard: false,
+    });
+  });
+});
+
+function refuseFactureMOOW() {
+  document.getElementById("myModal").style.display = "block";
+}
+//function payer votre medicament
+function payervotremedic() {
+  $("#payermedicamentbody").addClass("chatpharma");
+  document.getElementById("payermedicament").style.display = "block";
+}
+function initMap() {
+  //get position user
+  if ("geolocation" in navigator) {
+    // vérifiez si l'utilisateur à activer sa géolocalisation
+    var positionWatcher = navigator.geolocation.watchPosition(
+      // la position va s'actualiser selon maximumAge
+      (position) => {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        var options = {
+          zoom: 13,
+          center: new google.maps.LatLng(latitude, longitude),
+        };
+        // New map
+        var map = new google.maps.Map(document.getElementById("map"), options);
+
+        for (var i = 0; i < allhospitalAuBenin.length; i++) {
+          // Add marker
+          console.log(allhospitalAuBenin[i].coords);
+        }
+
+        // Array of markers
+        var markers = [
+          {
+            coords: {
+              lat: 6.367031194359564,
+              lng: 2.4542892891581345,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+          <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Data structureand algorithm</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.370207035827131,
+              lng: 2.4303069518319145,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie des 4 thérapies</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.385300849708517,
+              lng: 2.424747752587807,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie Aidjèdo cotonou</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.377866949458491,
+              lng: 2.4417823741900397,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie Midombo</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              at: 6.369042525685197,
+              lng: 2.420160926394599,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie Adechinan</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.367983775329272,
+              lng: 2.4019941865190404,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie Ste. PHILOMENE, Cotonou</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.364095047330313,
+              lng: 2.4178826136906473,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">UBPHAR S.A, 01BP 3629, Cotonou</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.359799805914865,
+              lng: 2.4314081404255683,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie JONQUET, Cotonou </h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.364223159561423,
+              lng: 2.4137092943779623,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie du rond point, Cotonou </h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.38193067237133,
+              lng: 2.3897280042345757,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie Akossombo, Cotonou </h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.360068830947836,
+              lng: 2.3642926510203766,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie Océane, Rue 2356, Cotonou</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.367347602730905,
+              lng: 2.476744887562856,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmaquick by ABT, 46 Rue 1153, Cotonou</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.370776955121309,
+              lng: 2.403694793400974,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">PHARMACIE SAINTE FOI, Cotonou Lot carré N0 1081 Vodjè, Cotonou</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.357584706422746,
+              lng: 2.4524318451923603,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">CAME, Cotonou </h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.374359569984654,
+              lng: 2.391679552121058,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Club billard, 06 BP1736 Abomey Calavi ZOPAH</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.362576677393703,
+              lng: 2.4363455994245196,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Pharmacie Avleketa, Cotonou</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+          {
+            coords: {
+              lat: 6.390186706250266,
+              lng: 2.4151903313176217,
+            },
+            title: "bonjours",
+            content: `
+    <div class="card" style="font-family: sans-serif;
+      background: #b3ffe3;
+      min-height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; background: #fff;
+      width: 15rem;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      overflow: hidden;
+      transition: all 0.2s ease-in-out;">
+  <div class="image-box" style="height: 30vh;
+          border-radius: inherit;
+          border: none;
+          background: #70bee6; ">
+      <img src="assets/images/LLogoP.png" alt=""
+      style="width: 100%;
+          height: 100%;"
+      >
+  </div>
+  <div class="card-content" style="padding: 1.3rem;">
+      <h2 class="card-title" style="margin-top: 1rem;
+          font-size: 1.1rem;">Bs-Immo, Rue 670A, Cotonou</h2>
+      <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+      <div class="rating" style="margin-top: 0.5rem;">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star checked" style="color: gold;"></span>
+          <span class="fa fa-star" style="color: gold;"></span>
+          <span class="fa fa-star"></span>
+      </div>
+      <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+          padding: 0.7rem 1rem;
+          width: 100%;
+          border-radius: 5px;
+          text-transform: capitalize;
+          background: none;
+          border: 2px solid #70bee6;
+          transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+  </div>
+  </div>
+    
+    `,
+          },
+        ];
+
+        // Loop through markers
+        for (var i = 0; i < markers.length; i++) {
+          // Add marker
+          addMarker(markers[i]);
+        }
+
+        // Add Marker Function
+        function addMarker(props) {
+          var marker = new google.maps.Marker({
+            position: props.coords,
+            map: map,
+            //icon:props.iconImage
+          });
+
+          // Check for customicon
+          if (props.iconImage) {
+            // Set icon image
+            marker.setIcon(props.iconImage);
+          }
+
+          // Check content
+          if (props.content) {
+            var infoWindow = new google.maps.InfoWindow({
+              content: props.content,
+            });
+
+            marker.addListener("click", function () {
+              infoWindow.open(map, marker);
+            });
+          }
+        }
+      },
+      (error) => {
+        alert(
+          "On n'a pas reussi à récupérer votre localisation ! Réactualiser la page puis autoriser votre position. Merci."
+        );
+      },
+      {
+        enableHighAccuracy: true, // demande de précision ( consomme la battérie sur mobile )
+        maximumAge: 0, // durée d'expiration d'une requête de position
+        timeout: 10000, // durée d'attente d'une requête de position
+      }
+    );
+
+    positionWatcher.geolocation.clearWatch(); // pour stopper le watcher
+  }
+  // Map options
+
+  // Listen for click on map
+  //google.maps.event.addListener(map, 'click', function(event){
+  // Add marker
+  //  addMarker({coords:event.latLng});
+  // });
+
+  /*
+      // Add marker
+      var marker = new google.maps.Marker({
+        position:{lat:42.4668,lng:-70.9495},
+        map:map,
+        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+      });
+
+      var infoWindow = new google.maps.InfoWindow({
+        content:'<h1>Lynn MA</h1>'
+      });
+
+      marker.addListener('click', function(){
+        infoWindow.open(map, marker);
+      });
+      */
+}
+
+// function for
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlmyEJiu5U7g2kQ0pHvTouPVr-EMurtKU&callback=initMap&libraries=&v=weekly"
+  async
+></script>;

@@ -1,0 +1,161 @@
+.img-modal {
+  width: 100%;
+  height: 100%;
+}
+input.controle:valid {
+  border: 3px solid #0a0;
+}
+/*input.controle:invalid {
+  border: 3px solid rgb(231, 81, 81);
+}*/
+input.controle:valid + span:before {
+  content: "\f00c";
+  font-family: "FontAwesome";
+  color: #0a0;
+  font-size: 1.5em;
+}
+/*input.controle:invalid + span:before {
+  content: "\f00d";
+  font-family: "FontAwesome";
+  color: #a00;
+  font-size: 1.5em;
+}*/
+.resultat {
+  position: absolute;
+  right: 10px;
+  top: 262px;
+}
+.resultat1 {
+  position: absolute;
+  right: 10px;
+  top: 315px;
+}
+.resultat2 {
+  position: absolute;
+  right: 10px;
+  top: 365px;
+}
+
+.resultatA {
+  position: absolute;
+  right: 10px;
+  top: 230px;
+}
+.resultatB {
+  position: absolute;
+  right: 10px;
+  top: 280px;
+}
+
+#exampleAnimated {
+  position: absolute;
+  right: 58px;
+  top: 10px;
+  padding: 9px;
+  animation-name: example;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+@keyframes example {
+  50% {
+    position: absolute;
+    right: 158px;
+    top: 10px;
+    padding: 9px;
+  }
+}
+
+#exampleAnimatedlogin {
+  position: absolute;
+  right: 58px;
+  top: 10px;
+  padding: 9px;
+  animation-name: exampleA;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+@keyframes exampleA {
+  50% {
+    position: absolute;
+    right: 158px;
+    top: 10px;
+    padding: 9px;
+  }
+}
+#exampleAnimatedsuccess {
+  position: absolute;
+  right: 58px;
+  top: 10px;
+  padding: 9px;
+  animation-name: examplesuccess;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+@keyframes examplesuccess {
+  50% {
+    position: absolute;
+    right: 158px;
+    top: 10px;
+    padding: 9px;
+  }
+}
+
+#exampleAnimatedsuccessHospital {
+  position: absolute;
+  right: 58px;
+  top: 10px;
+  padding: 9px;
+  animation-name: examplesuccessHospital;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+@keyframes examplesuccessHospital {
+  50% {
+    position: absolute;
+    right: 158px;
+    top: 10px;
+    padding: 9px;
+  }
+}
+
+#exampleAnimatedloginH {
+  position: absolute;
+  right: 58px;
+  top: 10px;
+  padding: 9px;
+  animation-name: exampleAnimatedloginH;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+@keyframes exampleAnimatedloginH {
+  50% {
+    position: absolute;
+    right: 158px;
+    top: 10px;
+    padding: 9px;
+  }
+}
+
+#exampleAnimatedsuccessH {
+  position: absolute;
+  right: 58px;
+  top: 10px;
+  padding: 9px;
+  animation-name: exampleAnimatedsuccessH;
+  animation-duration: 6s;
+  animation-delay: 2s;
+}
+
+@keyframes exampleAnimatedsuccessH {
+  50% {
+    position: absolute;
+    right: 158px;
+    top: 10px;
+    padding: 9px;
+  }
+}

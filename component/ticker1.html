@@ -1,75 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Orbiter is a bootstrap minimal & clean admin template"
+    />
+    <meta
+      name="keywords"
+      content="chat, chat platform, discussion, video call, voice call, communication, conversation, messange, messanger, talk"
+    />
+    <meta name="author" content="Themesbox" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"
+    />
+    <!-- Fevicon -->
+    <link rel="shortcut icon" href="assets/images/logo de e-doto-retenue.png" />
+    <!-- Start css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <!-- Font Awesome -->
+    <!-- Start css -->
+    <!-- Slick css -->
+    <link href="assets/plugins/slick/slick.css" rel="stylesheet" />
+    <link href="assets/plugins/slick/slick-theme.css" rel="stylesheet" />
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/css/flag-icon.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- End css -->
+    <style>
+      #map {
+        height: 660px;
+        width: 100%;
+      }
+      .qquitter {
+        position: absolute;
+        right: 58px;
+        top: 10px;
+        padding: 9px;
+      }
+    </style>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="Orbiter is a bootstrap minimal & clean admin template">
-	<meta name="keywords"
-		content="chat, chat platform, discussion, video call, voice call, communication, conversation, messange, messanger, talk">
-	<meta name="author" content="Themesbox">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	<!-- Fevicon -->
-	<link rel="shortcut icon" href="assets/images/logo de e-doto-retenue.png">
-	<!-- Start css -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/icons.css" rel="stylesheet" type="text/css">
-	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
-	<!-- End css -->
-	<style>
-		#map {
-			height: 625px;
-			width: 100%;
-		}
-		.qquitter{
-			position: absolute;
-			right: 58px;
-			top: 10px;
-			padding: 9px;
-		}
-	</style>
-</head>
+  <body>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <button
+      class="btn btn-danger qquitter"
+      id="montrerqquitter"
+      onclick="quittermaps()"
+      style="display: none"
+    >
+      <img src="assets/images/Xmap.svg" alt="" id="Xsvg" />
+    </button>
 
-<body>
-	<!--The div element for the map -->
-	<div id="map"></div>
-	<button class="btn btn-danger qquitter" id="montrerqquitter" onclick="quittermaps()" style="display: none;">
-		<img src="assets/images/Xmap.svg" alt="" id="Xsvg">
-		
-	</button>
-	<script>
-		function quittermaps(){
-			history.back()
-		}
-		function initMap() {
-			//get position user
-			if ('geolocation' in navigator) { // vérifiez si l'utilisateur à activer sa géolocalisation
-				var positionWatcher = navigator.geolocation.watchPosition( // la position va s'actualiser selon maximumAge
-					(position) => {
-						var latitude = position.coords.latitude;
-						var longitude = position.coords.longitude;
+    <div
+      class="modal fade"
+      id="modaleAceptFacturactionMOOW"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modaleAceptFacturactionMOOWLabel">
+              Vous accetez faire un transfert à la pharmacie?
+              <img
+                src="assets/images/2.png"
+                alt=""
+                style="width: 50px; height: 50px"
+              />
+            </h5>
+          </div>
+          <div class="modal-body">
+            <img
+              src="assets/images/undraw_Payments_re_77x0.svg"
+              alt=""
+              style="width: 100%; height: 100%"
+            />
+            <div>
+              <label>Votre Numéro</label>
+              <input
+                type="tel"
+                pattern="\d*"
+                maxlength="19"
+                class="inpMOOW"
+                value="51455930"
+              />
+              <label>Numéro de la pharmacie</label>
+              <input
+                type="tel"
+                pattern="\d*"
+                maxlength="7"
+                class="inpMOOW"
+                value="96529627"
+              />
+              <label>votre code</label>
+              <input
+                type="tel"
+                pattern="\d*"
+                maxlength="4"
+                placeholder="Votre code"
+                class="inpMOOW"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-info"
+              data-dismiss="modal"
+              onclick="refuseFactureMOOW()"
+            >
+              Refuser
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger payerVotreOrdonnanceC"
+              data-toggle="modal"
+              data-target="#basicModal"
+            >
+              Payer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-						var options = {
-							zoom: 13,
-							center: new google.maps.LatLng(latitude, longitude),
+    <!-- basic modal -->
+    <div
+      class="modal fade"
+      id="basicModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="basicModal"
+      aria-hidden="true"
+      style="padding-top: 150px"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">
+              Confirmation de votre achat
+            </h4>
+          </div>
+          <div class="modal-body">
+            <p>Votre achat est approuvé. Voulez vous avec livraison?</p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-default"
+              data-dismiss="modal"
+              onclick="refuseFactureMOOW()"
+            >
+              Non
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-dismiss="modal"
+              onclick="messageDeLivraison()"
+            >
+              Oui
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-						}
-						document.getElementById('montrerqquitter').style.display="block"
-						// New map
-						var map = new google.maps.Map(document.getElementById('map'), options);
+    <div id="id01" class="w3-modal" style="padding-top: 150px">
+      <div class="w3-modal-content" style="padding-bottom: 47px">
+        <div class="w3-container">
+          <span
+            onclick="quitMessageDeLivraison()"
+            class="w3-button w3-display-topright"
+            >&times;</span
+          >
+          <img src="assets/images/undraw_deliveries_2r4y.svg" alt="" />
+        </div>
+      </div>
+    </div>
 
-						// Array of markers
-						var markers = [{
-								coords: {
-									lat: 6.367031194359564,
-									lng: 2.4542892891581345
-								},
-								title: "bonjours",
-								content: `
+    <div
+      class="modal fade"
+      id="modaleAceptFacturactionDelivry"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+      style="padding-top: 50px"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img
+              src="assets/images/undraw_deliveries_2r4y.svg"
+              alt=""
+              style="width: 100%; height: 100%"
+            />
+            <div>
+              <strong
+                ><p style="color: black">
+                  Nous vous remercions énormément d'avoir effectué votre achat.
+                  Votre colis de médicaments vous sera livré dans quelques
+                  minutes.
+                </p></strong
+              >
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-info"
+              data-dismiss="modal"
+              onclick="refuseFactureMOOW()"
+            >
+              D'accord
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      ////// fonction Mooow
+      //MOOW function
+      var allPharmacyIdVar = document.querySelectorAll(".allPharmacyId");
+      allPharmacyIdVar.forEach((x) => {
+        x.addEventListener("click", function () {
+          console.log("ok mon boss");
+          $("#modaleAceptFacturactionMOOW").modal({
+            show: true,
+            backdrop: "static",
+            keyboard: false,
+          });
+        });
+      });
+
+      function refuseFactureMOOW() {
+        document.getElementById("myModal").style.display = "block";
+      }
+      //function payer votre medicament
+      function payervotremedic() {
+        $("#payermedicamentbody").addClass("chatpharma");
+        document.getElementById("payermedicament").style.display = "block";
+      }
+      function initMap() {
+        //get position user
+        if ("geolocation" in navigator) {
+          // vérifiez si l'utilisateur à activer sa géolocalisation
+          var positionWatcher = navigator.geolocation.watchPosition(
+            // la position va s'actualiser selon maximumAge
+            (position) => {
+              var latitude = position.coords.latitude;
+              var longitude = position.coords.longitude;
+
+              var options = {
+                zoom: 13,
+                center: new google.maps.LatLng(latitude, longitude),
+              };
+              // New map
+              var map = new google.maps.Map(
+                document.getElementById("map"),
+                options
+              );
+
+              for (var i = 0; i < allhospitalAuBenin.length; i++) {
+                // Add marker
+                console.log(allhospitalAuBenin[i].coords);
+              }
+
+              // Array of markers
+              var markers = [
+                {
+                  coords: {
+                    lat: 6.367031194359564,
+                    lng: 2.4542892891581345,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -86,7 +353,7 @@
 				border-radius: inherit;
 				border: none;
 				background: #70bee6; ">
-			<img src="assets/" alt=""
+				<img src="assets/images/LLogoP.png" alt=""
 			style="width: 100%;
 				height: 100%;"
 			>
@@ -103,7 +370,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -114,15 +381,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.370207035827131,
-									lng: 2.4303069518319145
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.370207035827131,
+                    lng: 2.4303069518319145,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -156,7 +423,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -167,15 +434,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.385300849708517,
-									lng: 2.424747752587807
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.385300849708517,
+                    lng: 2.424747752587807,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -209,7 +476,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -220,15 +487,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.377866949458491,
-									lng: 2.4417823741900397
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.377866949458491,
+                    lng: 2.4417823741900397,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -262,7 +529,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -273,15 +540,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									at: 6.369042525685197,
-									lng: 2.420160926394599
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    at: 6.369042525685197,
+                    lng: 2.420160926394599,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -315,7 +582,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -326,15 +593,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.367983775329272,
-									lng: 2.4019941865190404
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.367983775329272,
+                    lng: 2.4019941865190404,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -368,7 +635,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -379,15 +646,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.364095047330313,
-									lng: 2.4178826136906473
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.364095047330313,
+                    lng: 2.4178826136906473,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -421,7 +688,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -432,15 +699,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.359799805914865,
-									lng: 2.4314081404255683
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.359799805914865,
+                    lng: 2.4314081404255683,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -474,7 +741,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -485,15 +752,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.364223159561423,
-									lng: 2.4137092943779623
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.364223159561423,
+                    lng: 2.4137092943779623,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -527,7 +794,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -538,15 +805,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.38193067237133,
-									lng: 2.3897280042345757
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.38193067237133,
+                    lng: 2.3897280042345757,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -580,7 +847,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -591,15 +858,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.360068830947836,
-									lng: 2.3642926510203766
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.360068830947836,
+                    lng: 2.3642926510203766,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -633,7 +900,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -644,15 +911,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.367347602730905,
-									lng: 2.476744887562856
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.367347602730905,
+                    lng: 2.476744887562856,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -686,7 +953,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -697,15 +964,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.370776955121309,
-									lng: 2.403694793400974
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.370776955121309,
+                    lng: 2.403694793400974,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -739,7 +1006,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -750,15 +1017,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.357584706422746,
-									lng: 2.4524318451923603
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.357584706422746,
+                    lng: 2.4524318451923603,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -792,7 +1059,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -803,15 +1070,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.374359569984654,
-									lng: 2.391679552121058
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.374359569984654,
+                    lng: 2.391679552121058,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -845,7 +1112,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -856,15 +1123,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.362576677393703,
-									lng: 2.4363455994245196
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.362576677393703,
+                    lng: 2.4363455994245196,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -898,7 +1165,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -909,15 +1176,15 @@
 		</div>
 		</div>
 		  
-		  `
-							},
-							{
-								coords: {
-									lat: 6.390186706250266,
-									lng: 2.4151903313176217
-								},
-								title: "bonjours",
-								content: `
+		  `,
+                },
+                {
+                  coords: {
+                    lat: 6.390186706250266,
+                    lng: 2.4151903313176217,
+                  },
+                  title: "bonjours",
+                  content: `
 		  <div class="card" style="font-family: sans-serif;
 			background: #b3ffe3;
 			min-height: 50vh;
@@ -951,7 +1218,7 @@
 				<span class="fa fa-star" style="color: gold;"></span>
 				<span class="fa fa-star"></span>
 			</div>
-			<a href="indexChatPharm.html"><button class="btn" style="margin-top: 1rem;
+			<a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
 				padding: 0.7rem 1rem;
 				width: 100%;
 				border-radius: 5px;
@@ -962,65 +1229,65 @@
 		</div>
 		</div>
 		  
-		  `
-							}
-						];
+		  `,
+                },
+              ];
 
-						// Loop through markers
-						for (var i = 0; i < markers.length; i++) {
-							// Add marker
-							addMarker(markers[i]);
-						}
+              // Loop through markers
+              for (var i = 0; i < markers.length; i++) {
+                // Add marker
+                addMarker(markers[i]);
+              }
 
-						// Add Marker Function
-						function addMarker(props) {
-							var marker = new google.maps.Marker({
-								position: props.coords,
-								map: map,
-								//icon:props.iconImage
-							});
+              // Add Marker Function
+              function addMarker(props) {
+                var marker = new google.maps.Marker({
+                  position: props.coords,
+                  map: map,
+                  //icon:props.iconImage
+                });
 
-							// Check for customicon
-							if (props.iconImage) {
-								// Set icon image
-								marker.setIcon(props.iconImage);
-							}
+                // Check for customicon
+                if (props.iconImage) {
+                  // Set icon image
+                  marker.setIcon(props.iconImage);
+                }
 
-							// Check content
-							if (props.content) {
-								var infoWindow = new google.maps.InfoWindow({
-									content: props.content
-								});
+                // Check content
+                if (props.content) {
+                  var infoWindow = new google.maps.InfoWindow({
+                    content: props.content,
+                  });
 
-								marker.addListener('click', function () {
-									infoWindow.open(map, marker);
-								});
-							}
-						}
-					},
-					(error) => {
-						alert("On n'a pas reussi à récupérer votre localisation ! Réactualiser la page puis autoriser votre position. Merci.")
-						
-					}, {
-						enableHighAccuracy: true, // demande de précision ( consomme la battérie sur mobile )
-						maximumAge: 0, // durée d'expiration d'une requête de position
-						timeout: 10000 // durée d'attente d'une requête de position
-					}
-				)
+                  marker.addListener("click", function () {
+                    infoWindow.open(map, marker);
+                  });
+                }
+              }
+            },
+            (error) => {
+              alert(
+                "On n'a pas reussi à récupérer votre localisation ! Réactualiser la page puis autoriser votre position. Merci."
+              );
+            },
+            {
+              enableHighAccuracy: true, // demande de précision ( consomme la battérie sur mobile )
+              maximumAge: 0, // durée d'expiration d'une requête de position
+              timeout: 10000, // durée d'attente d'une requête de position
+            }
+          );
 
-				positionWatcher.geolocation.clearWatch(); // pour stopper le watcher 
+          positionWatcher.geolocation.clearWatch(); // pour stopper le watcher
+        }
+        // Map options
 
-			}
-			// Map options
+        // Listen for click on map
+        //google.maps.event.addListener(map, 'click', function(event){
+        // Add marker
+        //  addMarker({coords:event.latLng});
+        // });
 
-
-			// Listen for click on map
-			//google.maps.event.addListener(map, 'click', function(event){
-			// Add marker
-			//  addMarker({coords:event.latLng});
-			// });
-
-			/*
+        /*
 			// Add marker
 			var marker = new google.maps.Marker({
 			  position:{lat:42.4668,lng:-70.9495},
@@ -1036,20 +1303,18 @@
 			  infoWindow.open(map, marker);
 			});
 			*/
-
-
-		}
-	</script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlmyEJiu5U7g2kQ0pHvTouPVr-EMurtKU&callback=initMap&libraries=&v=weekly"
-		async></script>
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/modernizr.min.js"></script>
-	<script src="assets/js/detect.js"></script>
-	<script src="assets/js/jquery.slimscroll.js"></script>
-	<!-- End js -->
-</body>
-
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlmyEJiu5U7g2kQ0pHvTouPVr-EMurtKU&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.min.js"></script>
+    <script src="assets/js/detect.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
+    <!-- End js -->
+  </body>
 </html>

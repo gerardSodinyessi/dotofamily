@@ -27,11 +27,14 @@
     />
     <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="cssControlForm.css" />
     <!-- End css -->
   </head>
   <body class="vertical-layout" id="vertical-layout">
+    
     <!-- Start Containerbar -->
     <div id="containerbar" class="containerbar authenticate-bg">
+      <button id="exampleAnimated" class="btn btn-success" style="display: none;"> Votre compte est crée avec succès.</button>
       <!-- Start Container -->
       <div class="container">
         <div class="auth-box register-box">
@@ -42,8 +45,9 @@
               <!-- Start Auth Box -->
               <div class="auth-box-right">
                 <div class="card" id="doct">
+                  
                   <div class="card-body">
-                    <form action="#">
+                    <form id="form" action="javascript:postData()">
                       <div class="form-head">
                         <a href="index.html" class="logo"
                           ><img
@@ -57,82 +61,70 @@
                       <div class="form-group">
                         <input
                           type="text"
-                          style="text-transform: uppercase"
-                          class="form-control"
-                          id="nom"
-                          placeholder="Entrer votre nom"
+                          class="form-control controle"
+                          id="username"
+                          name="username"
                           required
+                          pattern="[0-9a-zA-Z-\.]{5,12}"
+                          placeholder="Username de 5 à 12 caractères"
                         />
-                        <span id="msgnom"></span>
-                      </div>
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="prenom"
-                          placeholder="Entrer votre prénom"
-                          required
-                        />
-                        <span id="msgprenom"></span>
+                        <span class="resultat"></span>
                       </div>
                       <div class="form-group">
                         <input
                           type="email"
-                          class="form-control"
+                          class="form-control controle"
                           id="email"
+                          name="email"
                           placeholder="Entrer votre email"
                           required
                         />
-                        <span id="msgemail"></span>
+                        <span class="resultat resultat1"></span>
                       </div>
                       <div class="form-group">
                         <input
                           type="password"
-                          class="form-control"
+                          class="form-control controle"
                           id="password"
-                          placeholder="Entrer votre password"
+                          name="password"
+                          placeholder="Mot de passe de 8 à 9 caractères"
                           required
+                          pattern="[0-9a-zA-Z-\.]{8,9}"
                         />
-                        <span id="msgpassword"></span>
-                      </div>
-                      <div class="form-group">
-                        <input
-                          type="password"
-                          class="form-control"
-                          id="password1"
-                          placeholder="retapper votre password"
-                          required
-                        />
-                        <span id="msgpassword1"></span>
+                        <span class="resultat resultat2"></span>
                       </div>
                       <div class="form-row mb-3">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
                           <div class="custom-control custom-checkbox text-left">
                             <input
                               type="checkbox"
                               class="custom-control-input"
-                              id="terms"
+                              id="rememberme"
                             />
                             <label
                               class="custom-control-label font-14"
-                              for="terms"
+                              for="rememberme"
                               >se souvenir de moi</label
                             >
                           </div>
                         </div>
+                        <div class="col-sm-6">
+                          <div class="forgot-psw" style="display: none;" id="ChargementId">
+                          <span>Chargement...</span>  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                          </div>
+                        </div>
                       </div>
-
-                      <button
-                        class="btn btn-danger btn-lg btn-block font-18"
-                        id="log"
-                        onclick="registre()"
-                      >
-                        <a style="cursor: pointer; color: #fff">Enregistrer</a>
-                      </button>
+                        <input
+                          type="submit"
+                          value="Enregistrer"
+                          class="btn btn-success btn-lg btn-block font-18"
+                          id="log"
+                        />
+                      </div>
                     </form>
                     <p class="mb-0 mt-3">
-                      Vous avez déjà un compte ?
-                      <a href="login.html">Connecter</a>
+                      Êtes vous un hôpital ?
+                      <a href="loginHospital.html">Connecter</a>
                     </p>
                   </div>
                 </div>
@@ -188,10 +180,6 @@
                 </div>
               </div>
               <style>
-                .img-modal {
-                  width: 100%;
-                  height: 100%;
-                }
               </style>
             </div>
             <!-- End col -->
@@ -202,93 +190,13 @@
       <!-- End Container -->
     </div>
     <!-- End Containerbar -->
-
-    <script>
-      function registre() {
-        event.preventDefault();
-        var nom = document.getElementById("nom").value;
-        var prenom = document.getElementById("prenom").value;
-        var email = document.getElementById("email").value;
-        var password = document.getElementById("password").value;
-        var password1 = document.getElementById("password1").value;
-        // afficher message nom
-        if (isNaN(nom)) {
-          msgnom = "";
-        } else {
-          msgnom =
-            '<p style="color: #D8000C; background-color: #FFBABA;">Veiller entrer un nom valide</p>';
-          document.getElementById("msgnom").innerHTML = msgnom;
-          setTimeout(() => {
-            document.getElementById("msgnom").style.display = "none";
-          }, 3000);
-        }
-        // afficher message prenom
-        if (isNaN(prenom)) {
-          msgprenom = "";
-        } else {
-          msgprenom =
-            '<p style="color: #D8000C; background-color: #FFBABA;">Veiller entrer un prenom valide</p>';
-          document.getElementById("msgprenom").innerHTML = msgprenom;
-          setTimeout(() => {
-            document.getElementById("msgprenom").style.display = "none";
-          }, 3000);
-        }
-        // afficher message email
-        if (isNaN(email)) {
-          msgemail = "";
-        } else {
-          msgemail =
-            '<p style="color: #D8000C; background-color: #FFBABA;">Veiller entrer un email valide</p>';
-          document.getElementById("msgemail").innerHTML = msgemail;
-          setTimeout(() => {
-            document.getElementById("msgemail").style.display = "none";
-          }, 3000);
-        }
-        // afficher message password
-        if (isNaN(password) && password.length >= 10) {
-          msgpassword = "";
-        } else {
-          msgpassword =
-            '<p style="color: #D8000C; background-color: #FFBABA;">Veiller entrer un mot de passe superieur de plus de 9 caractère</p>';
-          document.getElementById("msgpassword").innerHTML = msgpassword;
-          setTimeout(() => {
-            document.getElementById("msgpassword").style.display = "none";
-          }, 3000);
-        }
-
-        //disparaître les errors text
-        setTimeout(() => {
-          if (
-            isNaN(nom) &&
-            isNaN(prenom) &&
-            isNaN(email) &&
-            password.length >= 10 &&
-            password1.length >= 10 &&
-            password1 === password
-          ) {
-            document.getElementById("nom").value = "";
-            document.getElementById("prenom").value = "";
-            document.getElementById("email").value = "";
-            document.getElementById("password").value = "";
-            document.getElementById("password1").value = "";
-            document.getElementById("doct").style.display = "none";
-            var msgIsci = `<p style="font-size:17px; color:#f82249; text-align:center">${nom} ${prenom} <br> e-doto vous souhaite la bienvenue </p>`;
-            $("#exampleModal").modal({
-              show: true,
-              backdrop: "static",
-              keyboard: false,
-            });
-            document.getElementById("msgIsci").innerHTML = msgIsci;
-            setTimeout(() => {
-              window.location.href = "login.html";
-            }, 7000);
-          } else {
-            return false;
-          }
-        }, 3000);
-      }
-    </script>
+ 
     <!-- Start js -->
+    <script
+      src="https://kit.fontawesome.com/cf9af0f065.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="register.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

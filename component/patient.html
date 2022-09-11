@@ -22,16 +22,10 @@
 	<link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
 	<link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
+  referrerpolicy="no-referrer" />
 	<!-- Font Awesome -->
-
-    <script>
-        jQuery(document).ready(function($) {
-            $('.counter').counterUp({
-                delay: 10,
-                time: 1000
-            });
-        });
-    </script>
 
 	<!-- Start css -->
 	<!-- Slick css -->
@@ -43,10 +37,18 @@
 	<link href="assets/css/flag-icon.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="scanner.css">
+	<style>
+		#map {
+        height: 600px;
+        width: 100%;
+      }
+	</style>
 	<!-- End css -->
 </head>
 
 <body class="dark-layout">
+
+	<section id="IdAcueiApp2" >
 	<div id="toutChatdoctorhide">
 		<!-- Start Create Group Modal -->
 		<div class="modal create-group-modal fade" id="createGroup" tabindex="-1" role="dialog"
@@ -176,14 +178,14 @@
 									</div>
 								</div>
 							</div>
-							<div class="form-group">
+							<!--<div class="form-group">
 								<div class="form-check">
 									<input class="form-check-input" type="checkbox" id="gridCheck">
-									<label class="form-check-label" for="gridCheck">
+									<label class="form-check-label" for="gridCheck" >
 										Check me out
 									</label>
 								</div>
-							</div>
+							</div>-->
 
 							<div class="form-group">
 								<div class="form-group">
@@ -207,6 +209,9 @@
 									<option>AB</option>
 									<option>AB+</option>
 									<option>AB-</option>
+									<option>O</option>
+									<option>0-</option>
+									<option>O+</option>
 								</select>
 							</div>
 							<div class="form-group">
@@ -231,9 +236,53 @@
 									<option>AB</option>
 									<option>AB+</option>
 									<option>AB-</option>
+									<option>O</option>
+									<option>0-</option>
+									<option>O+</option>
 								</select>
 							</div>
-							<div class="add-users-search">
+							<div class="form-group col-md-4">
+								<label for="inputState">Votre groupe Sanguin</label>
+								<select id="inputState" class="form-control">
+									<option selected>A</option>
+									<option>A+</option>
+									<option>A-</option>
+									<option>B</option>
+									<option>B+</option>
+									<option>B-</option>
+									<option>AB</option>
+									<option>AB+</option>
+									<option>AB-</option>
+									<option>O</option>
+									<option>0-</option>
+									<option>O+</option>
+								</select>
+							</div>
+							<div class="container">
+								<label for="">Les maladies</label>
+								<select class="selectpicker form-control" multiple aria-label="size 3 select example">
+								  <option value="1">Covid-19</option>
+								  <option value="2">VIH</option>
+								  <option value="3">Paludisme</option>
+								  <option value="4">hémorroide</option>
+								  <option value="5">hépathite</option>
+								  <option value="6">cancer du sang</option>
+								  <option value="6">cancer des seins</option>
+								  <option value="6">cancer de la peau</option>
+								  <option value="6">cancer du gorge</option>
+								  <option value="7">fièvre</option>
+								  <option value="8">rougeole</option>
+								  <option value="10">Prostate</option>
+								  <option value="11">sinusite</option>
+								  <option value="12">ulcère</option>
+								  <option value="13">Drépanocytose</option>
+								  <input type="text" class="form-control" value=""
+									placeholder="Autres maladies..." aria-describedby="button-addon-group-username"
+									style="margin-top: 10px;">
+								</select>
+
+							  </div>
+							<div class="add-users-search" style="display: none;">
 								<div class="input-group">
 									<input type="search" class="form-control" placeholder="Search" aria-label="Search"
 										aria-describedby="add-users-search-btn">
@@ -243,11 +292,12 @@
 									</div>
 								</div>
 							</div>
-							<div class="add-users-list">
+							
+							<!--<div class="add-users-list" style="display: none;">
 								<ul class="list-unstyled">
 									<li class="media">
 										<div class="media-body">
-											<h5><span>Le Paludisme</span></h5>
+											<h5><span class="spanmedia-body">Le Paludisme</span></h5>
 										</div>
 										<div class="custom-control custom-checkbox">
 											<input type="checkbox" class="custom-control-input" id="userfirstAdd"
@@ -255,6 +305,7 @@
 											<label class="custom-control-label" for="userfirstAdd"></label>
 										</div>
 									</li>
+									
 									<li class="media">
 										<div class="media-body">
 											<h5>L'hépathite</h5>
@@ -276,12 +327,16 @@
 										</div>
 									</li>
 								</ul>
-							</div>
+							</div>-->
 						</form>
 					</div>
+
 					<div class="container mt-4">
 						<h4 style="text-align: center;">
-							<p>Ajouter un test</p>
+							
+							<a href="#" id="comeBackBookId"><img src="assets/images/back-button-svgrepo-com.svg" style="height: 15px; width: 20px; margin-right: 7px;"
+								alt="Generic placeholder image"></a><p style="display:inline-flex">Ajouter un test   <a href="#" id="bookId"><img src="assets/images/more-verticale.svg"
+								alt="Generic placeholder image" style="margin-left: 7px;"></a></p>
 						</h4>
 						<form id="book-form">
 							<div class="form-group">
@@ -312,7 +367,10 @@
 								<label for="isbn">Fichiers</label>
 								<input type="file" id="isbn" class="form-control">
 							</div>
+							<strong id="leNumber" style="padding-left: 6px; padding-right: 6px; border-radius: 80%; color: white; background-color: #f82249;">1</strong>
 						</form>
+						<span id="addYouTest"></span>
+
 					</div>
 					<div class="mt-3 text-center">
 						<button type="submit" class="btn btn-primary"
@@ -358,9 +416,40 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Incoming Video Call Modal -->
+		
+       <!-- End Incoming Valider planning Modal -->
+	   <div class="modal incoming-video-modal fade" id="incomingaliderplanning" tabindex="-1" role="dialog"
+	   aria-labelledby="incomingVideoCallTitle" aria-hidden="true">
+	   <div class="modal-dialog modal-dialog-centered" role="document">
+		   <div class="modal-content">
+			   <div class="modal-header" style="display: none;">
+				   <h5 class="modal-title" id="incomingVideoCallTitle">Validation du planning</h5>
+			   </div>
+			   <div class="modal-body">
+				   <p style="text-align: center;">Vous êtes sur le bon chémin ! Adopter une contraception vous permet de plannifier votre vie.
+					<strong style="padding-bottom: 10px;">Acceptez-vous être contacté par l'un de nos médecins ou centres ?</strong>
+				</p>
+				   
+				   <a href="#" id="view-user-infoa">
+				   <button type="button" class="btn btn-success mr-3" data-dismiss="modal"><i
+						   class="fa fa-check mr-2"></i>Accepter</button></a>
+				   <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+						   class="fa fa-close mr-2"></i>Rejecter</button>
+			   </div>
+		   </div>
+	   </div>
+   </div>
+   <script>
+	document.getElementById('view-user-infoa').addEventListener('click', function(){
+		document.getElementById('AllHospitalBen').style.display = 'block'
+		document.getElementById('AllHospitalBenInfo').style.display = 'none'
+	})
+   </script>
 		<!-- Start Incoming Voice Call Modal -->
-		<div class="modal incoming-voice-modal fade" id="incomingVoiceCall" tabindex="-1" role="dialog"
+
+		<!-- End Incoming Video Call Modal -->
+		<!-- Start Incoming Voice Call Modal 
+					<div class="modal incoming-voice-modal fade" id="incomingVoiceCall" tabindex="-1" role="dialog"
 			aria-labelledby="incomingVoiceCallTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
 				<div class="modal-content">
@@ -371,6 +460,23 @@
 						<img src="assets/images/men.svg" alt="avatar" class="rounded-circle">
 						<h5>Jessica Meir</h5>
 						<p>Texas, USA</p>
+						<button type="button" class="btn btn-success mr-3" onclick="voiceCalling()"><i
+								class="fa fa-check mr-2"></i>Accepter</button>
+						<button type="button" class="btn btn-danger" data-dismiss="modal"><i
+								class="fa fa-close mr-2"></i>Rejecter</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		-->
+		<div class="modal incoming-voice-modal fade" id="incomingVoiceCall" tabindex="-1" role="dialog"
+			aria-labelledby="incomingVoiceCallTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="incomingVoiceCallTitle">Ces contraceptifs sont sans avis médical</h5>
+					</div>
+					<div class="modal-body">
 						<button type="button" class="btn btn-success mr-3" onclick="voiceCalling()"><i
 								class="fa fa-check mr-2"></i>Accepter</button>
 						<button type="button" class="btn btn-danger" data-dismiss="modal"><i
@@ -396,6 +502,25 @@
 			</div>
 		</div>
 		<!-- Start Incoming Voice Planning Modal -->
+
+		<!-- Start SeeImagePlannig  Modal -->
+		<div class="modal incoming-voice-modal fade" id="OpenModalImagePlanningId" tabindex="-1" role="dialog"
+			aria-labelledby="incomingVoiceCallTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<img src="assets/images/men.svg" alt="avatar" class="rounded-circle">
+						<h5 style="margin-bottom: 25px;">Quel est le type de votre cycle ?</h5>
+					<a href="./cycleCalendar/indexCalendar.html"><button type="button" class="btn btn-danger mr-3"><i
+								class="fa fa-check mr-2"></i>régulier</button></a>
+					<a href="./cycleCalendar/indexa.html">	<button type="button" class="btn btn-danger"><i
+								class="fa fa-check mr-2"></i>irrégulier</button></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end SeeImagePlannig Modal -->
+
 		<div class="modal incoming-voice-modal fade" id="incomingVideoPlanning" tabindex="-1" role="dialog"
 			aria-labelledby="incomingVoiceCallTitle" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">
@@ -407,14 +532,9 @@
 						<div class="chat-message">
 							<div class="chat-message-text">
 								<div class="message-video">
-									<video width="210" style="display: none;" controls class="displayBlackVid">
-										<source src="assets/images/video.mp4" type="video/mp4">
-									</video>
-									<video width="210" controls class="displayBlackVid">
-										<source src="assets/images/vidG.mp4" type="video/mp4">
-									</video>
-									
+									<span id="displayBlackVid##"></span>
 								</div>
+								<button type="button" class="btn btn-danger" id="displayBlackVidClose">Fermer</button>
 							</div>
 						</div>
 						
@@ -422,7 +542,98 @@
 				</div>
 			</div>
 		</div>
-
+		<div
+		class="modal fade"
+		id="modaleAceptFacturactionMOOW"
+		tabindex="-1"
+		role="dialog"
+		aria-labelledby="exampleModalLabel"
+		aria-hidden="true"
+	  >
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="modaleAceptFacturactionMOOWLabel">
+				Vous accetez faire un transfert à la pharmacie?
+				<img
+				  src="assets/images/2.png"
+				  alt=""
+				  style="width: 50px; height: 50px"
+				/>
+			  </h5>
+			</div>
+			<div class="modal-body">
+			  <img
+				src="assets/images/undraw_Payments_re_77x0.svg"
+				alt=""
+				style="width: 100%; height: 50%"
+			  />
+			  <div>
+				<label>Votre Numéro</label>
+				<input
+				  type="tel"
+				  pattern="\d*"
+				  maxlength="19"
+				  class="inpMOOW"
+				  value="51455930"
+				/>
+				<label>Numéro de la pharmacie</label>
+				<input
+				  type="tel"
+				  pattern="\d*"
+				  maxlength="7"
+				  class="inpMOOW"
+				  value="96529627"
+				/>
+				<label>votre code</label>
+				<input
+				  type="tel"
+				  pattern="\d*"
+				  maxlength="4"
+				  placeholder="Votre code"
+				  class="inpMOOW"
+				/>
+			  </div>
+			</div>
+			<div class="modal-footer">
+			  <button
+				type="button"
+				class="btn btn-info"
+				data-dismiss="modal"
+				onclick="refuseFactureMOOW()"
+			  >
+				Refuser
+			  </button>
+			  <button
+				type="button"
+				class="btn btn-danger payerVotreOrdonnanceC"
+				data-toggle="modal"
+				data-target="#basicModal"
+			  >
+				Payer
+			  </button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <style>
+		.inpMOOW {
+			background: #fff;
+			border: none;
+			border-radius: 3px;
+			box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.1);
+			margin: 0 0 4px;
+			padding: 6px 10px 4px;
+			width: 100%;
+		}
+	  </style>
+	  <script>
+      //function payer votre medicament
+      function payervotremedic() {
+        $("#payermedicamentbody").addClass("chatpharma");
+        document.getElementById("payermedicament").style.display = "block";
+      }
+	  </script>
 		<!-- End Incoming Voice Call Modal -->
 		<!-- Start Error Screen Modal -->
 		<div class="modal error-screen-modal fade" id="errorScreen" tabindex="-1" role="dialog"
@@ -457,11 +668,15 @@
 									<div class="col-8">
 										<ul class="list-unstyled mb-0">
 											<li class="media">
-												<img class="align-self-center mr-2" src="assets/images/men1.png"
+												Accueil
+												<!---<img class="align-self-center mr-2" src="assets/images/men1.png"
 													alt="Generic placeholder image"
 													style="width: 44px; height: 44px; border-radius: 100%;">
+													<img class="align-self-center mr-2" src="assets/images/logo de e-doto-retenue - Copie.png"
+													alt="Generic placeholder image"
+													style="width: 44px; height: 44px; border-radius: 100%;">-->
 												<div class="media-body">
-													<h5 class="mb-0 mt-2" onclick="orderunc()">Mon tracking</h5>
+													<!---<h5 class="mb-0 mt-2" onclick="orderunc()">Mon tracking</h5>-->
 												</div>
 											</li>
 										</ul>
@@ -470,7 +685,7 @@
 										<a href="#" data-toggle="modal" data-target="#createGroup"><img
 												src="assets/images/folder-plus.svg" alt="Generic placeholder image"
 												style="margin-right: 12px;"></a>
-										<div class="dropdown">
+										<!---<div class="dropdown">
 											<a href="#" id="settingDropdown" data-toggle="dropdown" aria-haspopup="true"
 												aria-expanded="false"> <img src="assets/images/more-scanner-qr-code.svg"
 													alt="Generic placeholder image" style="margin-right: 20px;">
@@ -483,7 +698,7 @@
 														code
 														DIMU</a>
 												</div>
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>
@@ -491,7 +706,9 @@
 							<!---------<le scanner commence--------->
 							<div id="ilfautscroller">
 								<div class="container">
-									<header class="header">
+
+									 <!--------
+										<header class="header" style="display: none;">
 										<div class="">
 											<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 											<canvas id="myChart" style="width:100%;max-width:600px; background-color: #0f1235;"></canvas>
@@ -526,12 +743,13 @@
 										</div>
 										<h5 style="padding: 2px;" id="JourActive">Today, 02 Feb</h5>
 									</header>
+									 --------->
 									<section class="content">
 										<div class="content-main">
 											<div style=" width: 100px;height: 150px; display: none;" id="loader1">
 												<div id="loader" style="background-color: black;"></div>
 											</div>
-											<div class="progress blue" data-toggle="modal"
+											<div class="progress blue" data-toggle=""
 												data-target="#exampleModalstartexeme" style="cursor: pointer;"
 												id="perfori">
 												<span class="progress-left">
@@ -544,10 +762,10 @@
 													style="width: 150px; height: 150px; border: blanchedalmond 3px solid; background-color: rgb(42, 40, 40); border-radius: 100%;">
 													<div>
 														<p style="margin-top: 10px; margin-left: 6px; color: white">
-															<em>Cliquer ici</em></p>
+															<em>Améliorer</em></p>
 														<h6 style="margin-top: 13px; margin-left: 12px; color: white;">
-															Performance</h6>
-														<h1 style=" margin-left: 10px; color: white;">78%
+															votre Santé à</h6>
+														<h1 style=" margin-left: 10px; color: white;">95%
 														</h1>
 
 														</h6>
@@ -579,7 +797,7 @@
 												aria-hidden="true">
 												<div class="modal-dialog" role="document">
 													<div class="modal-content">
-														<div class="modal-header">
+														<div class="modal-header" style="display: none;">
 															<h5 class="modal-title" id="exampleModalstartexemeLabel"
 																style="color: #f82249;">Veiller
 																bien remplir ce formulaire</h5>
@@ -589,29 +807,92 @@
 															</button>
 														</div>
 														<div class="modal-body">
-															<form id="entrerTaille">
-																<div class="form-group">
-																	<label for="recipient-name" class="col-form-label"
-																		style="color: #f82249;">Entrer votre
-																		poids</label>
-																	<input type="text" class="form-control" value="107"
-																		id="recipient-name">
+															<div role="tabpanel"
+															aria-labelledby="chat-fourtinth-tab">
+															<div class="empty-screen">
+																<h5>Je veux améliorer ma santé sexuelle, c’est ma Priorité Santé !</h5>
+																<p>Pour améliorer votre santé sexuelle, e-doto family vous propose
+																	 la démarche suivante :</p>
+															<div>
+																<strong>1-Je veux comprendre avant d’agir</strong>
+																<p></p>
+																<div class="chat-message">
+																	<div class="chat-message-text">
+																		<p>
+																			En 2002, l’OMS définissait la santé sexuelle ainsi : « La santé 
+																			sexuelle est un état de bien-être physique, mental et social dans le domaine 
+																			de la sexualité. La santé sexuelle fait partie intégrante de la santé, du bien-être et de la qualité de vie dans leur ensemble. »
+																			Une bonne santé sexuelle contribue largement à la santé physique, psychique, et à la qualité de vie. 
+																			Elle a de nombreux effets bénéfiques tels qu’amélioration de l’humeur, diminution des symptômes 
+																			dépressifs, diminution du risque d’hypertension artérielle et de maladie cardiovasculaire.
+																		</p>
+																	</div>
 																</div>
-																<div class="form-group">
-																	<label for="recipient-name" class="col-form-label"
-																		style="color: #f82249;">Entrer votre
-																		taille</label>
-																	<input type="text" class="form-control" value="1m55"
-																		id="recipient-name">
-																</div>
-																<div class="form-group">
-																	<label for="recipient-name" class="col-form-label"
-																		style="color: #f82249;">Entrer votre votre
-																		âge</label>
-																	<input type="text" class="form-control" value="67"
-																		id="recipient-name">
-																</div>
-															</form>
+																
+																<h6>Comment ça marche ?</h6>
+																<p>
+																	La figure ci-dessous illustre les 3 axes principaux de la santé sexuelle :
+																</p>
+																<img src="assets/images/sante_sexuelle_01_schema_LOW.jpg" alt="">
+																<h6>Sécurité – safe sex</h6>
+																<p>Du point de vue de la sécurité, les 2 objectifs principaux sont :</p>
+																<p>-Eviter d’attraper ou transmettre une infection sexuellement transmissible (IST)</p>
+																<p>-Eviter une grossesse non désirée</p>
+																<p>Les moyens proposés par e-doto family Principale sont :</p>
+																<p>1-Utiliser un préservatif (de préférence lubrifié) est le meilleur moyen de réduire 
+																	les risques de IST et de grossesse. Utiliser un gel hydrosoluble pour prévenir une 
+																	déchirure du préservatif (risque accru si sécheresse vaginale). Les corps gras et la 
+																	vaseline sont à proscrire car ils peuvent altérer le préservatif ou le rendre poreux ce qui
+																	 augmente le risque de contamination ainsi que le risque de rupture.</p>
+																<p>2-Voir ci-dessous le tableau des méthodes contraceptives avec leur efficacité.</p>
+																<p>3-La sécurité c’est aussi de savoir fixer sa limite de risque acceptable… et 
+																	s’y tenir. Gérer aussi sa consommation d’alcool (ou de drogues) pour éviter des 
+																	décisions inadéquates. Enfin, la lecture d’un livre sur la sexualité permet de mieux 
+																	en comprendre le fonctionnement et de mieux la contrôler.</p>
+															</div>
+															<h6>Les différentes méthodes contraceptives</h6>
+															<img src="" alt="">
+															<h6>Plaisir – fun sex</h6>
+															<p>Pulsion de vie, modulateur de l’organisation et du fonctionnement des sociétés, motivateur de rencontres et de relations interpersonnelles proches, la fonction sexuelle est en plus une importante source de plaisir et de récompense.
+							
+																Si la sexualité est encore dans de nombreuses cultures un sujet tabou, la recherche du plaisir l’est encore bien plus. Pourtant, la recherche de plus de plaisir dans la sexualité a fait l’objet d’innombrables écrits à travers les siècles, et plus récemment, de nombreuses publications scientifiques.
+																
+																On assiste actuellement à une forme de démocratisation, de réappropriation, de déculpabilisation du plaisir aujourd’hui toujours plus accessible, à travers l’utilisation de produits et d’accessoires dont l’utilité et l’efficacité ont largement été démontrées.
+																
+																Les moyens proposés par la Pharmacie Principale sont :</p>
+															<p>1-Le plaisir est lié à la connaissance de son corps et de ses réactions. Les stimulateurs pour femmes et hommes ont pour but d’aider à explorer et découvrir les différentes zones du corps susceptibles de générer de nouvelles 
+															sensations de plaisir et produire des orgasmes différents (clitoridien, vaginal, anal) plus intenses.</p>
+															<p>2-Les lubrifiants et arômes renforcent l’aspect érotique et le plaisir. Le choix du lubrifiant est important selon que l’on utilise ou non, un préservatif ou un sextoy. Certains lubrifiants respectent mieux la flore vaginale et anale. Sans oublier les lubrifiants naturels 
+															comme l’huile d’amande douce et de coco.</p>
+															<p>3-Les huiles de massages sont ludiques et apportent un côté agréable. Elles contribuent à déclencher le désir, 
+															renforcent l’excitation et peuvent faciliter l’orgasme.</p>
+															<p>Certains parfums d’ambiance ont des propriétés érotiques, et les bougies parfumées créent 
+															en plus une ambiance intime favorisant la sexualité.</p>
+														</div>
+														<div>
+															<h6>Les difficultés</h6>
+														<p>La fonction sexuelle influence et est influencée par de nombreux facteurs 
+															comme l’illustre la figure ci-dessous. Cela explique qu’environ 40% des femmes et 30% des 
+															hommes connaissent des difficultés avec leur sexualité au cours de leur vie. Dans la plupart des cas, 
+															les solutions existent et sont très efficaces. Le principal problème est le fait que les personnes en difficulté 
+															attendent jusqu’à 7 ans avant d’en parler à leur médecin ou un sexologue.</p>
+														<img src="assets/images/schema_fonction_sexuelle.jpg" alt="">
+														<p>En cas de difficulté, le plus important est d’en parler. Avec votre partenaire, votre médecin, ou encore avec nos pharmaciens. En particulier si les symptômes durent depuis plus de 6 mois et que vous en souffrez.
+							
+															Nos équipes ont été formées par des sexologues expérimentés, et nous sommes à votre disposition
+															 6 jours sur 7, et même 7 jours sur 7 à notre officine de l’aéroport. Notre formation s’est focalisée 
+															 sur les principales difficultés (femme – homme) illustrées ci-dessous, 
+															et sur les solutions possibles dans le cadre de notre rôle de pharmacien.</p>
+															<img src="assets/images/solutions.png" alt="">
+														<p>Dans la mesure où la difficulté est récente, nous pouvons proposer un produit ou un 
+															accessoire pour apporter une amélioration. S’il s’agit d’un problème plus ancien, 
+															accompagné de souffrances, il est important de consulter votre médecin ou un sexologue. 
+															Une modification de votre sexualité est un signe important pour votre santé. Il faut donc en 
+															chercher la cause. Un simple traitement médicamenteux peut causer des difficultés sexuelles. 
+															Un changement de médicament ou de dosage peut suffire pour 
+															supprimer le problème. Une raison de plus pour venir nous en parler.</p>
+														</div>
+														   </div>
 															<div class="modal-body">
 
 																<body style="margin:0;">
@@ -622,8 +903,8 @@
 														<div class="modal-footer">
 															<button type="button" class="btn btn-info"
 																data-dismiss="modal">Fermer</button>
-															<button type="button" class="btn btn-danger"
-																onclick="commentLexamen()">Valider</button>
+														<!--	<button type="button" class="btn btn-danger"
+																onclick="commentLexamen()">Valider</button>-->
 														</div>
 													</div>
 												</div>
@@ -680,9 +961,9 @@
 										</ul>
 									</div>
 									<div class="col-7">
-										<a href="login.html" data-toggle="tooltip" data-placement="right"
+										<a href="loginPatient.html" data-toggle="tooltip" data-placement="right"
 											title="Logout"><i class="fa fa-sign-out" style="color: #f82249;"></i></a>
-										<div class="dropdown">
+									<!--	<div class="dropdown">
 											<a href="#" id="settingDropdown" data-toggle="dropdown" aria-haspopup="true"
 												aria-expanded="false"><img src="assets/images/more-scanner-qr-code.svg"
 													alt="Generic placeholder image"
@@ -704,7 +985,7 @@
 														code
 														DIMU</a>
 												</div>
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>
@@ -1180,28 +1461,48 @@
 									</div>
 								</div>
 								<!---à-ç)*$^p^$^r)oroiocookokbofolkfofclolldlfott-->
-								<div class="chat-left-search">
+								<div class="chat-left-search" >
 									<form>
 										<div class="input-group">
 											<input type="search"  class="form-control" placeholder="Search"
-												aria-label="Search" aria-describedby="chat-left-search-btn" id="inputSearchTypPlanning">
+												aria-label="Search" aria-describedby="chat-left-search-btn" id="inputSearchTypPlanning" onchange="myfuncionOnkep()">
 											<div class="input-group-append">
-												<button class="btn" type="submit" id="chat-left-search-btn"><img
+												<button class="btn" type="submit" id="chat-left-search-btn" ><img style="display: none;"
 														src="assets/images/search.svg"
-														alt="Generic placeholder image"></button>
+														alt="Generic placeholder image" ></button>
 											</div>
 										</div>
 									</form>
 								</div>
+								<script>
+									function myfuncionOnkep(){
+										var inputSearchTypPlanning = document.getElementById('inputSearchTypPlanning').value;
+										console.log(inputSearchTypPlanning)
+									};
+								</script>
 								<div class="chat-left-body" style="padding-bottom: 110px;">
 									<div class="nav flex-column nav-pills chat-userlist" id="chat-list-tab"
 										role="tablist" aria-orientation="vertical">
-										<a class=" active" id="chat-first-tab" data-toggle="pill"
+										<a class="active showAudioPlanning" id="chat-first-tab" data-toggle="pill"
 											href="#chat-first" role="tab" aria-controls="chat-first"
-											aria-selected="true" style="background-color: #f1f3f5;">
+											aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media active">
+										
+											<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
+											<div class="media-body nav-link">
+												<h5>Améliorer votre santé<span class="chat-timing">O</span></h5>
+												<p>Améliorer votre santé</p>
+											</div>
+										</div>
+									    </a>
+										<div><p></p></div>
+										<a  class=" showAudioPlanning"  id="chat-fourtinth-tab" data-toggle="pill"
+										href="#chat-fourtinth" role="tab" aria-controls="chat-fourtinth"
+										aria-selected="true" style="background-color: #f1f3f5;">
+										<div class="media">
 												<div class=""></div>
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												<img class="align-self-center rounded-circle openVideoPlanningDemo" id="userA"
 													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
 												<div class="media-body nav-link" id="lesTypesPf">
 													<h5>Contraceptions hormonales<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf1">1</span></span></h5>
@@ -1223,11 +1524,11 @@
 												</div>
 											</div>
 										</a>-->
-										<a class="" id="chat-third-tab" data-toggle="pill" href="#chat-third"
+										<a class="showAudioPlanning" id="chat-third-tab" data-toggle="pill" href="#chat-third"
 											role="tab" aria-controls="chat-third" aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media" >
 												
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												<img class="align-self-center rounded-circle openVideoPlanningDemo" id="userB"
 													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
 												<div class="media-body nav-link" id="lesTypesPfa">
 													<h5 id="notif">Les pilules contraceptives orales <span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf2">2</span></span></h5>
@@ -1236,10 +1537,10 @@
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-fourth-tab" data-toggle="pill" href="#chat-fourth"
+										<a class="showAudioPlanning" id="chat-fourth-tab" data-toggle="pill" href="#chat-fourth"
 											role="tab" aria-controls="chat-fourth" aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media">
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												<img class="align-self-center rounded-circle openVideoPlanningDemo" id="userC"
 													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
 												<div class="media-body nav-link" id="lesTypesPfb">
 													<h5>Les contraceptifs injectables<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf3">3</span></span></h5>
@@ -1248,11 +1549,11 @@
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-fifth-tab" data-toggle="pill" href="#chat-fifth"
+										<a class="showAudioPlanning" id="chat-fifth-tab" data-toggle="pill" href="#chat-fifth"
 											role="tab" aria-controls="chat-fifth" aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media">
 												<div class=""></div>
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												<img class="align-self-center rounded-circle openVideoPlanningDemo" id="userD"
 													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
 												<div class="media-body nav-link" id="lesTypesPfc">
 													<h5>Les implants contraceptifs<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf4">4</span></span></h5>
@@ -1261,7 +1562,7 @@
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-sixth-tab" data-toggle="pill" href="#chat-sixth"
+										<!--<a class="" id="chat-sixth-tab" data-toggle="pill" href="#chat-sixth"
 											role="tab" aria-controls="chat-sixth" aria-selected="false" style="background-color: #f1f3f5; display: none;">
 											<div class="media">
 												<img class="align-self-center rounded-circle openVideoPlanningDemo"
@@ -1272,70 +1573,70 @@
 													</div>
 											</div>
 										</a>
-										<div><p></p></div>
-										<a class="" id="chat-seventh-tab" data-toggle="pill"
+										<div><p></p></div>-->
+										<a class="showAudioPlanning" id="chat-seventh-tab" data-toggle="pill"
 											href="#chat-seventh" role="tab" aria-controls="chat-seventh"
 											aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media">
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												<img class="align-self-center rounded-circle openVideoPlanningDemo" id="userE"
 													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
 													<div class="media-body nav-link" id="lesTypesPfe">
-														<h5>DIU<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf6">6</span></span></h5>
+														<h5>DIU<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf6">5</span></span></h5>
 														<p id="chat-timing">Les dispositifs intra-utérins (DIU) sont...</p>
 													</div>
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-eighth-tab" data-toggle="pill" href="#chat-eighth"
+										<a class="showAudioPlanning" id="chat-eighth-tab" data-toggle="pill" href="#chat-eighth"
 											role="tab" aria-controls="chat-eighth" aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media">
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												<img class="align-self-center rounded-circle openVideoPlanningDemo" id="userF"
 													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
 													<div class="media-body nav-link" id="lesTypesPff">
-														<h5>Les méthodes de barrière<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf7">7</span></span></h5>
+														<h5>Les méthodes de barrière<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf7">6</span></span></h5>
 														<p>Les méthodes de barrière sont...</p>
 													</div>
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-ninth-tab" data-toggle="pill" href="#chat-ninth"
+										<a class="showAudioPlanning" id="chat-ninth-tab" data-toggle="pill" href="#chat-ninth"
 											role="tab" aria-controls="chat-ninth" aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media">
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												<img class="align-self-center rounded-circle openVideoPlanningDemo" id="userG"
 													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
 													<div class="media-body nav-link" id="lesTypesPfg">
-														<h5>Les méthodes de connaissance<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf8">8</span></span></h5>
+														<h5>Les méthodes de connaissance<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf8">7</span></span></h5>
 														<p>Les méthodes de connaissance de ...</p>
 													</div>
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-tenth-tab" data-toggle="pill" href="#chat-tenth"
+										<a class="showAudioPlanning" id="chat-tenth-tab" data-toggle="pill" href="#chat-tenth"
 											role="tab" aria-controls="chat-tenth" aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media">
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												<img class="align-self-center rounded-circle openVideoPlanningDemo" id="userH"
 													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
 													<div class="media-body nav-link" id="lesTypesPfh">
-														<h5>L’allaitement au sein<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf9">9</span></span></h5>
+														<h5>L’allaitement au sein<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf9">8</span></span></h5>
 														<p>L’allaitement au sein a un effet...</p>
 													</div>
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-eleventh-tab" data-toggle="pill"
+										<a class="showAudioPlanning" id="chat-eleventh-tab" data-toggle="pill"
 											href="#chat-eleventh" role="tab" aria-controls="chat-eleventh"
 											aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media">
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
+												<img class="align-self-center rounded-circle openVideoPlanningDemo" id="userI"
 													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
 													<div class="media-body nav-link" id="lesTypesPfi">
-														<h5>Le retrait <span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf10">10</span></span></h5>
+														<h5>Le retrait <span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf10">9</span></span></h5>
 														<p>Le retrait consiste pour l’homme ...</p>
 													</div>
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-twelth-tab" data-toggle="pill" href="#chat-twelth"
+										<a class="showAudioPlanning" id="chat-twelth-tab" data-toggle="pill" href="#chat-twelth"
 											role="tab" aria-controls="chat-twelth" aria-selected="false" style="background-color: #f1f3f5; display: none;">
 											<div class="media">
 												<img class="align-self-center rounded-circle openVideoPlanningDemo"
@@ -1347,31 +1648,19 @@
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-thirteenth-tab" data-toggle="pill"
+										<a class="showAudioPlanning" id="chat-thirteenth-tab" data-toggle="pill"
 											href="#chat-thirteenth" role="tab" aria-controls="chat-thirteenth"
-											aria-selected="false" style="background-color: #f1f3f5; display: none;">
+											aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media">
 												<img class="align-self-center rounded-circle openVideoPlanningDemo"
-													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
+													src="assets/images/pharmacie.svg" alt="User Image" style="margin-left: 5px;">
 												<div class="media-body nav-link" id="lesTypesPfk">
-													<h5>La stérilisation<span class="chat-timing"><span class="badge badge-primary ml-2" id="lesTypesPf12">12</span></span></h5>
-													<p>La stérilisation féminine ...</p>
+													<h5>La pharmacie<span class="chat-timing"></span></h5>
+													<p>Les contraceptifs sans avis médical</p>
 												</div>
 											</div>
 										</a>
 										<div><p></p></div>
-										<a class="" id="chat-fourtinth-tab" data-toggle="pill"
-											href="#chat-fourtinth" role="tab" aria-controls="chat-fourtinth"
-											aria-selected="false" style="background-color: #f1f3f5; display: none;">
-											<div class="media">
-												<img class="align-self-center rounded-circle openVideoPlanningDemo"
-													src="assets/images/vidféoP.jpg" alt="User Image" style="margin-left: 5px;">
-												<div class="media-body nav-link">
-													<h5>Jessica Meir<span class="chat-timing">Jul 21</span></h5>
-													<p>Hmmmm</p>
-												</div>
-											</div>
-										</a>
 									</div>
 								</div>
 						</div>
@@ -1387,17 +1676,20 @@
 									<div class="col-8">
 										<ul class="list-unstyled mb-0">
 											<li class="media">
-												<img class="align-self-center mr-2" src="assets/images/men1.png"
+												<!---<img class="align-self-center mr-2" src="assets/images/men1.png"
 													alt="Generic placeholder image"
-													style="width: 44px; height: 44px; border-radius: 100%;">
+													style="width: 44px; height: 44px; border-radius: 100%;">-->
 												<div class="media-body">
-													<h5 class="mb-0 mt-2">Profile</h5>
+													<h5 class="mb-0 mt-2">Mon profile</h5>
 												</div>
 											</li>
 										</ul>
 									</div>
 									<div class="col-4">
-										<div class="dropdown">
+										<a href="loginPatient.html" data-toggle="tooltip" data-placement="right"
+											title="Logout"><i class="fa fa-sign-out" style="color: #f82249;"></i></a>
+											
+										<!---<div class="dropdown">
 											<a href="#" data-toggle="modal" data-target="#createGrouppatiento"
 												title="créer un groupe"><img src="assets/images/more-verticale.svg"
 													alt="Generic placeholder image"></a>
@@ -1413,7 +1705,7 @@
 														code
 														DIMU</a>
 												</div>
-										</div>
+										</div>-->
 									</div>
 								</div>
 							</div>
@@ -1666,12 +1958,19 @@
 							</div>
 							<div class="chat-left-body">
 								<div class="profilebar">
-									<img class="profile-pic img-fluid" src="assets/images/men.svg" alt="profile-pic">
+									<img class="profile-pic img-fluid" src="assets/images/men.svg" alt="profile-pic" id="MyProFilSrcimg">
 									<div class="profile-edit">
 										<img src="assets/images/camera.svg" alt="Generic placeholder image"
 											class=" upload-button">
-										<input class="profile-upload" type="file" accept="image/*" />
+										<input class="profile-upload" type="file" accept="image/*"/>
 									</div>
+									<style>
+										#MyProFilSrcimg{
+											width: 20vh !important;
+											height: 20vh !important;
+											border-radius: 100% !important;
+										}
+									</style>
 									<h5>SODINYESSI Gérard</h5>
 									<p class="mb-0">Cotnou, Bénin</p>
 								</div>
@@ -1776,7 +2075,7 @@
 												</div>
 											</div>
 										</li>
-										<li class="media">
+									<!--	<li class="media">
 											<img src="assets/images/folder-fill.svg" alt="Generic placeholder image"
 												class=" align-self-center mr-3">
 											<div class="media-body">
@@ -1823,7 +2122,7 @@
 													</div>
 												</div>
 											</div>
-										</li>
+										</li>-->
 									</ul>
 								</div>
 							</div>
@@ -2046,26 +2345,35 @@
 							<a class="nav-link active" id="pills-addchat-tab-justified" data-toggle="pill"
 								href="#pills-addchat-justified" role="tab" aria-controls="pills-addchat-justified"
 								aria-selected="true"><img src="assets/images/badgeo1.svg"
-									alt="Generic placeholder image" style="font-size: 24px; color:red; "></a>
+									alt="Generic placeholder image" style="font-size: 24px; color:red; ">
+									
+								</a>
+								Accueil
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" id="pills-chat-tab-justified" data-toggle="pill"
 								href="#pills-chat-justified" role="tab" aria-controls="pills-chat-justified"
 								aria-selected="false"><img src="assets/images/people-fill.svg"
-									alt="Generic placeholder image" style="font-size: 24px; color:red; "></a>
+									alt="Generic placeholder image" style="font-size: 24px; color:red; ">
+								
+								</a>
+								Plannings
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" id="pills-profile-tab-justified" data-toggle="pill"
 								href="#pills-profile-justified" role="tab" aria-controls="pills-profile-justified"
 								aria-selected="false"> <img src="assets/images/girla.svg"
-									alt="Generic placeholder image" style="font-size: 24px; color:red; "></a>
+									alt="Generic placeholder image" style="font-size: 24px; color:red; ">
+								
+								</a>
+								Profil
 						</li>
-						<li class="nav-item">
+						<!--<li class="nav-item">
 							<a class="nav-link" id="pills-setting-tab-justified" data-toggle="pill"
 								href="#pills-setting-justified" role="tab" aria-controls="pills-setting-justified"
 								aria-selected="false"><img src="assets/images/girlasettings.svg"
 									alt="Generic placeholder image" style="font-size: 24px; color:red;"></a>
-						</li>
+						</li>-->
 					</ul>
 				</div>
 			</div>
@@ -2082,7 +2390,7 @@
 										<img class="align-self-center rounded-circle" src="assets/images/girl.svg"
 											alt="Generic placeholder image" style="display: none;">
 										<div class="media-body">
-											<h5>Planning</h5>
+											<h5 id="AllTitlePlan#"></h5>
 										</div>
 									</li>
 								</ul>
@@ -2090,14 +2398,15 @@
 							<div class="col-7">
 								<ul class="list-inline float-right mb-0">
 									<li class="list-inline-item">
-										<a href="#" data-toggle="modal" data-target="#incomingVoiceCall"> <img
-												class="align-self-center rounded-circle" src="assets/images/phone.svg"
+									<!---	<a href="#" data-toggle="modal" data-target="#incomingVoiceCall"> <img
+												class="align-self-center rounded-circle" src="assets/images/pharmacie.svg"
 												alt="Generic placeholder image"
-												style="color: #f82249; width: 16px; height: 30px; margin-bottom: 10px;"></a>
+												style="color: #f82249; width: 20px; height: 34px; margin-bottom: 10px;"></a>-->
 									</li>
 									<li class="list-inline-item">
-										<a href="#" data-toggle="modal" data-target="#incomingVideoCall"><i
+										<a id="gotopageWithoutREfrech" href="./cycleCalendar/booking.html"><i
 												class="material-icons" style="color: #f82249; ">videocam</i></a>
+											<div class="placeholder"></div>
 									</li>
 									<li class="list-inline-item">
 										<div class="dropdown">
@@ -2113,8 +2422,8 @@
 												<a class="dropdown-item font-14" id="chat-second-tab" data-toggle="pill"
 													href="#chat-second" role="tab" aria-controls="chat-second"
 													aria-selected="false">Commenter votre Docteur</a>
-												<a class="dropdown-item font-14" href="#">Exporter le Chat</a>
-												<a class="dropdown-item font-14" href="#">Effacer Message</a>
+												<!--<a class="dropdown-item font-14" href="#">Exporter le Chat</a>
+												<a class="dropdown-item font-14" href="#">Effacer Message</a>-->
 											</div>
 										</div>
 									</li>
@@ -2129,7 +2438,7 @@
 					</div>
 					<div class="chat-body" style="padding-bottom: 200px;">
 						<div class="tab-content" id="chat-listContent">
-							<div class="tab-pane fade show active" id="chat-first" role="tabpanel"
+							<div role="tabpanel" class="tab-pane fade" id="chat-fourtinth"
 								aria-labelledby="chat-first-tab">
 								<div class="chat-day text-center mb-3">
 									<span class="badge badge-secondary-inverse" id="taday">Les méthodes contraceptives hormonales</span>
@@ -2196,6 +2505,24 @@
 										une pilule ou de se faire faire l’injection suivante à temps. Les implants sont des méthodes hormonales à longue durée d’action ; ils sont très efficaces, étant donné
 										qu’après leur pose sous la peau du bras, la femme n’a plus rien à faire durant une
 										période de 3 à 5 ans, selon le type d’implant.</p></strong>
+									</div>
+								</div>
+
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
 									</div>
 								</div>
 								
@@ -2625,6 +2952,23 @@
 										les centres de santé et auprès des prestataires à base communautaire. </p></strong>
 									</div>
 								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
 							</div>
 							<div class="tab-pane fade" id="chat-fourth" role="tabpanel"
 								aria-labelledby="chat-fourth-tab">
@@ -2700,6 +3044,23 @@
 										communautaires et les pharmaciens sont autorisés à administrer les injections. </p></strong>
 									</div>
 								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
 							</div>
 							<div class="tab-pane fade" id="chat-fifth" role="tabpanel" aria-labelledby="chat-fifth-tab">
 								<div class="chat-day text-center mb-3">
@@ -2760,6 +3121,23 @@
 										peuvent croire qu’il se passe quelque chose d’anormal ou qu’elles sont enceintes
 										et il est donc important de les prévenir de la possibilité de cet effet et de les
 										informer de son innocuité. </p></strong>
+									</div>
+								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
 									</div>
 								</div>
 							</div>
@@ -2849,6 +3227,23 @@
 										grossesse après des rapports sexuels non protégés. Elles ne provoquent pas
 										d’avortement et, en cas de prise accidentelle par une femme déjà enceinte, n’ont
 										pas d’effet nocif pour la femme, le fœtus ou le déroulement de la grossesse. </p></strong>
+									</div>
+								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
 									</div>
 								</div>
 							</div>
@@ -2948,6 +3343,23 @@
 										irrégulières. En fait, de nombreuses femmes cessent d’avoir leurs règles au
 										bout de quelques mois. La réduction du volume des règles est bénéfique pour
 										beaucoup de femmes, notamment pour celles qui souffrent d’anémie.</p></strong>
+									</div>
+								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
 									</div>
 								</div>
 							</div>
@@ -3081,6 +3493,23 @@
 										par le VIH s’ils sont utilisés plusieurs fois par jour. </p></strong>
 									</div>
 								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
 							</div>
 							<div class="tab-pane fade" id="chat-ninth" role="tabpanel" aria-labelledby="chat-ninth-tab">
 								<div class="chat-day text-center mb-3">
@@ -3177,6 +3606,23 @@
 										de la fécondité ou une autre méthode de contraception moderne.</p></strong>
 									</div>
 								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
 							</div>
 							<div class="tab-pane fade" id="chat-tenth" role="tabpanel" aria-labelledby="chat-tenth-tab">
 								<div class="chat-day text-center mb-3">
@@ -3191,7 +3637,7 @@
 														<div class="chat-message-text" style=" margin-top:20px;">
 															<div class="message-video">
 																<video width="210" controls>
-																	<source src="assets/images/video.mp4" type="video/mp4">
+																	<source src="assets/images/maternel _ Allaitement.mp4" type="video/mp4">
 																</video>
 															</div>
 														</div>
@@ -3263,7 +3709,24 @@
 										prévenir une grossesse à risques ou non désirée, commencer à utiliser alors
 										une méthode de planification familiale. </p></strong>
 									</div>
-								</div>								
+								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>							
 								<div class="chat-message chat-message-right">
 									<span id="monTextEnvoieRDV"></span>
 								</div>
@@ -3318,6 +3781,23 @@
 										compte nécessairement, et cela peut suffire à provoquer une grossesse et à
 										transmettre une IST ou le VIH.</em>
 										</p></strong>
+									</div>
+								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
 									</div>
 								</div>
 								<div class="chat-message chat-message-right">
@@ -3435,6 +3915,23 @@
 										satisfaisants qu’auparavant, mais sans que le couple ait à craindre des grossesses.</p></strong>
 									</div>
 								</div>
+								<div class="chat-message" style="display: none">
+									<div class="chat-message-text">
+									<div class="container">
+										<div class="row">
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+												elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+											</div>
+											<div class="col-lg-6">
+												des injections répétées selon un calendrier déterminé. Utilisées correctement,
+										        elles sont très efficaces. Elles le sont un peu moins si la femme oublie de
+										    <button class="btn btn-success buyYouDrugs"> Acheter</button>
+											</div>
+										</div>
+									</div>
+									</div>
+								</div>
 								
 								<div class="chat-message chat-message-right">
 									<span id="monTextEnvoieRDV"></span>
@@ -3442,89 +3939,145 @@
 							</div>
 							<div class="tab-pane fade" id="chat-thirteenth" role="tabpanel"
 								aria-labelledby="chat-thirteenth-tab">
-								<div class="chat-day text-center mb-3">
-									<span class="badge badge-secondary-inverse" id="taday">Les méthodes contraceptives hormonales</span>
+								<div class="container d-flex justify-content-center mt-100">
+									<div class="row"> 
+										<div class="col-md-4"> 
+											<div class="product-wrapper mb-45 text-center"> 
+												<div class="product-img"> 
+													<a href="#" data-abc="true"> <img src="assets/img/prostinor.jpeg" alt="" class="ImgPlanning"></a><span class="text-center">Postinor <i class="fa fa-rupee" style="color: red;"></i> Prix : 500fcf</span> 
+													<div class="product-action"> 
+														<div class="product-action-style"> 
+															<a href="#" id="productA" class="allClassIprodoctClik"> <i class="fa fa-shopping-cart"></i> </a> 
+													</div> 
+												</div> 
+											    </div> 
+										   </div> 
+									    </div> 
+									<div class="col-md-4"> 
+										<div class="product-wrapper mb-45 text-center"> 
+											<div class="product-img"> 
+												<a href="#" data-abc="true"> <img src="assets/img/pregnon.jpeg" alt="" class="ImgPlanning">  </a><span class="text-center">Pregnon <i class="fa fa-rupee" style="color: red;"></i> 1110fcfa</span> 
+												<div class="product-action"> 
+													<div class="product-action-style"> 
+														<a href="#" id="productB" class="allClassIprodoctClik"> <i class="fa fa-shopping-cart"></i> </a>
+													</div> 
+										      </div> 
+									</div> 
+								</div> 
+								</div>	
+									<div class="col-md-4"> 
+										<div class="product-wrapper mb-45 text-center"> 
+											<div class="product-img"> 
+												<a href="#" data-abc="true"> <img src="assets/img/levo.jpeg" alt="" class="ImgPlanning"> </a><span>levo bd <i class="fa fa-rupee" style="color: red;"></i> 2850 fcfa</span> 
+												<div class="product-action"> 
+													<div class="product-action-style"> 
+														<a href="#" id="productC" class="allClassIprodoctClik"> <i class="fa fa-shopping-cart"></i> </a> 
+													</div> 
+												</div> 
+											</div> 
+										</div> 
+									</div>	 
+									</div>	
 								</div>
-								<div class="chat-message">
-									<div class="chat-message-text">
-									<strong><p>Les méthodes contraceptives hormonales comprennent les pilules contraceptives
-											orales, les contraceptifs injectables et les implants. Toutes préviennent les
-											grossesses essentiellement en empêchant les ovaires de libérer les ovules. Les
-											produits utilisés contiennent une ou deux hormones sexuelles semblables aux
-											hormones produites naturellement par l’organisme féminin.</p></strong>
-									</div>
+								<div class="container d-flex justify-content-center mt-100">
+									<div class="row"> 
+										<div class="col-md-4"> 
+											<div class="product-wrapper mb-45 text-center"> 
+												<div class="product-img"> 
+													<a href="#" data-abc="true"> <img src="assets/img/levopreg.jpeg" alt="" class="ImgPlanning"> </a><span class="text-center">levopreg <i class="fa fa-rupee" style="color: red;"></i>2720 fcfa</span> 
+													<div class="product-action"> 
+														<div class="product-action-style"> 
+															<a href="#" id="productD" class="allClassIprodoctClik"> <i class="fa fa-shopping-cart"></i> </a> 
+													</div> 
+												</div> 
+											    </div> 
+										   </div> 
+									    </div> 
+									<div class="col-md-4"> 
+										<div class="product-wrapper mb-45 text-center"> 
+											<div class="product-img"> 
+												<a href="#" data-abc="true"> <img src="assets/img/norlevo.jpeg" alt="" class="ImgPlanning">  </a>	<span class="text-center">Norlevo <i class="fa fa-rupee" style="color: red;"></i> 4280 fcfa</span> 
+												<div class="product-action"> 
+													<div class="product-action-style"> 
+														<a href="#" id="productE" class="allClassIprodoctClik"> <i class="fa fa-shopping-cart"></i> </a>  
+											</div> 
+										</div> 
+									</div> 
+								</div> 
+								</div>	
+									<div class="col-md-4"> 
+										<div class="product-wrapper mb-45 text-center"> 
+											<div class="product-img"> 
+												<a href="#" data-abc="true"> <img src="assets/img/elleone.jpeg" alt="" class="ImgPlanning"> </a>	<span class="text-center">ella One <i class="fa fa-rupee" style="color: red;"></i> 5215 fcfa</span> 
+												<div class="product-action"> 
+													<div class="product-action-style"> 
+														<a href="#" id="productF" class="allClassIprodoctClik"> <i class="fa fa-shopping-cart"></i> </a>   
+													</div> 
+												</div> 
+											</div> 
+										</div> 
+									</div>	 
+									</div>	
 								</div>
-								<div class="chat-message">
-									<div class="chat-message-text">
-									<strong><p>Les méthodes hormonales sont d’une grande efficacité pour prévenir les
-										grossesses et sont utilisables par pratiquement toutes les femmes. Leur mode
-										d’action consiste à empêcher les ovaires de libérer un ovule tous les mois. En
-										l’absence d’ovule, les spermatozoïdes n’ont rien à féconder et il ne peut donc
-										pas y avoir de grossesse. Ces méthodes ont aussi pour effet d’accroître la
-										consistance de la glaire sécrétee par le col de l’utérus ce qui empêche les
-										spermatozoïdes de pénétrer dans l’utérus. </p></strong>
-									</div>
+								<div class="container d-flex justify-content-center mt-100">
+									<div class="row"> 
+										<div class="col-md-4"> 
+											<div class="product-wrapper mb-45 text-center"> 
+												<div class="product-img"> 
+													<a href="#" data-abc="true"> <img src="assets/img/preservatifF.jpeg" alt="" class="ImgPlanning"> </a> <span class="text-center">Préservatif féminin  <i class="fa fa-rupee" style="color: red;"></i> 150 fcfa</span> 
+													<div class="product-action"> 
+														<div class="product-action-style"> 
+															<a href="#" id="productG" class="allClassIprodoctClik"> <i class="fa fa-shopping-cart"></i> </a>    
+													</div> 
+												</div> 
+											    </div> 
+										   </div> 
+									    </div> 
+									<div class="col-md-4"> 
+										<div class="product-wrapper mb-45 text-center"> 
+											<div class="product-img"> 
+												<a href="#" data-abc="true"> <img src="assets/img/presertifM.jpeg" alt="" class="ImgPlanning"> </a> <span class="text-center">Préservatif masculin <i class="fa fa-rupee" style="color: red;"></i> 150 fcfa</span> 
+												<div class="product-action"> 
+													<div class="product-action-style"> 
+														<a href="#" id="productH" class="allClassIprodoctClik"> <i class="fa fa-shopping-cart"></i> </a>   
+											</div> 
+										</div> 
+									</div> 
+								</div> 
+								</div>	
+									<div class="col-md-4"> 
+										<div class="product-wrapper mb-45 text-center"> 
+											<div class="product-img"> 
+												<a href="#" data-abc="true"> <img src="assets/img/vihTest.jpg" alt="" class="ImgPlanning"> </a>	<span>Test vih <i class="fa fa-rupee" style="color: red;"></i> 1000 fcfa</span> 
+												<div class="product-action"> 
+													<div class="product-action-style"> 
+														<a href="#" id="productI" class="allClassIprodoctClik"> <i class="fa fa-shopping-cart"></i> </a>   
+													</div> 
+												</div> 
+											</div> 
+										</div> 
+									</div>	 
+									</div>	
 								</div>
-								<div class="chat-message">
-									<div class="chat-message-text">
-									<strong><p>Les méthodes de contraception hormonales comprennent les pilules
-										contraceptives, les contraceptifs injectables et les implants contraceptifs.
-										Chacune s’emploie de façon différente, a des effets secondaires un peu différents
-										et présente des avantages et des inconvénients légèrement différents eux aussi. Il
-										est bon que la femme s’assure auprès d’un prestataire
-										de soins que son état de santé ne présente pas de
-										contre-indications à l’emploi d’une méthode, qu’elle
-										s’informe en détail des méthodes envisageables et
-										qu’elle choisisse celle qui est la plus appropriée pour
-										elle. Certaines méthodes hormonales sont à courte
-										durée d’action et d’autres à longue durée d’action.
-										</p></strong>
-									</div>
-								</div>
-								<div class="chat-message">
-									<div class="chat-message-text">
-									<strong><p>Les méthodes hormonales à courte durée d’action
-										exigent soit la prise d’une pilule tous les jours, soit
-										des injections répétées selon un calendrier déterminé. Utilisées correctement,
-										elles sont très efficaces. Elles le sont un peu moins si la femme oublie de prendre
-										une pilule ou de se faire faire l’injection suivante à temps. Les implants sont des méthodes hormonales à longue durée d’action ; ils sont très efficaces, étant donné
-										qu’après leur pose sous la peau du bras, la femme n’a plus rien à faire durant une
-										période de 3 à 5 ans, selon le type d’implant.</p></strong>
-									</div>
-								</div>
-								<div class="chat-message">
-									<div class="chat-message-text">
-										<div class="message-video">
-											<video width="210" controls>
-												<source src="assets/images/video.mp4" type="video/mp4">
-											</video>
-										</div>
-										<span>Demo.mp4</span>
-									</div>
-								</div>
-								<div class="chat-message chat-message-left">
-									<div class="chat-message-text">
-										<div class="message-audio">
-											<audio controls>
-												<source src="assets/images/audio.mp3" type="audio/mpeg">
-											</audio>
-										</div>
-									</div>
-								</div>
-								
-								<div class="chat-message chat-message-right">
-									<span id="monTextEnvoieRDV"></span>
-								</div>
+								<style>
+									.ImgPlanning{
+										height: 50vh;
+										width: 60vh;
+									}
+								</style>
 							</div>
-							<div class="tab-pane fade" id="chat-fourtinth" role="tabpanel"
+							<div class="tab-pane fade show active" id="chat-first" role="tabpanel"
 								aria-labelledby="chat-fourtinth-tab">
+								
 								<div class="empty-screen">
 									<h5>Je veux améliorer ma santé sexuelle, c’est ma Priorité Santé !</h5>
-									<p>Pour améliorer votre santé sexuelle, e-doto vous propose
+									<p>Pour améliorer votre santé sexuelle, e-doto family vous propose
 										 la démarche suivante :</p>
 								<div>
-									<strong>1-Je veux comprendre avant d’agir</strong>
+								<h1><strong>1-Je veux comprendre avant d’agir</strong></h1>
 									<p></p>
+									<div class="chat-message">
+									<div class="chat-message-text">
 									<p>
 										En 2002, l’OMS définissait la santé sexuelle ainsi : « La santé 
 										sexuelle est un état de bien-être physique, mental et social dans le domaine 
@@ -3534,48 +4087,76 @@
 										Elle a de nombreux effets bénéfiques tels qu’amélioration de l’humeur, diminution des symptômes 
 										dépressifs, diminution du risque d’hypertension artérielle et de maladie cardiovasculaire.
 									</p>
+									</div>
+								    </div>
 									<h6>Comment ça marche ?</h6>
 									<p>
 										La figure ci-dessous illustre les 3 axes principaux de la santé sexuelle :
 									</p>
 									<img src="assets/images/sante_sexuelle_01_schema_LOW.jpg" alt="">
-									<h6>Sécurité – safe sex</h6>
+									<h3 style="margin-top: 12px;">Sécurité – safe sex</h3>
 									<p>Du point de vue de la sécurité, les 2 objectifs principaux sont :</p>
 									<p>-Eviter d’attraper ou transmettre une infection sexuellement transmissible (IST)</p>
 									<p>-Eviter une grossesse non désirée</p>
-									<p>Les moyens proposés par la Pharmacie Principale sont :</p>
-									<p>1-Utiliser un préservatif (de préférence lubrifié) est le meilleur moyen de réduire 
-										les risques de IST et de grossesse. Utiliser un gel hydrosoluble pour prévenir une 
-										déchirure du préservatif (risque accru si sécheresse vaginale). Les corps gras et la 
-										vaseline sont à proscrire car ils peuvent altérer le préservatif ou le rendre poreux ce qui
-										 augmente le risque de contamination ainsi que le risque de rupture.</p>
-									<p>2-Voir ci-dessous le tableau des méthodes contraceptives avec leur efficacité.</p>
-									<p>3-La sécurité c’est aussi de savoir fixer sa limite de risque acceptable… et 
-										s’y tenir. Gérer aussi sa consommation d’alcool (ou de drogues) pour éviter des 
-										décisions inadéquates. Enfin, la lecture d’un livre sur la sexualité permet de mieux 
-										en comprendre le fonctionnement et de mieux la contrôler.</p>
+									<p>Les moyens proposés par e-doto family sont :</p>
+									<ul><div class="chat-message">
+										<div class="chat-message-text">
+										<li>
+											<p>Utiliser un préservatif (de préférence lubrifié) est le meilleur moyen de réduire 
+												les risques de IST et de grossesse. Utiliser un gel hydrosoluble pour prévenir une 
+												déchirure du préservatif (risque accru si sécheresse vaginale). Les corps gras et la 
+												vaseline sont à proscrire car ils peuvent altérer le préservatif ou le rendre poreux ce qui
+												 augmente le risque de contamination ainsi que le risque de rupture.
+											</p>
+										</li>
+										</div>
+										</div>
+										<div class="chat-message">
+										<div class="chat-message-text">
+										<li><p>Consutez nos  méthodes contraceptives avec leur efficacité.</p></li>
+										</div>
+										</div>
+										<div class="chat-message">
+										<div class="chat-message-text">
+										<li>
+											<p>La sécurité c’est aussi de savoir fixer sa limite de risque acceptable… et 
+												s’y tenir. Gérer aussi sa consommation d’alcool (ou de drogues) pour éviter des 
+												décisions inadéquates. Enfin, la lecture d’un livre sur la sexualité permet de mieux 
+												en comprendre le fonctionnement et de mieux la contrôler.
+											</p>
+										</li>
+										</div>
+										</div>
+									</ul>
 								</div>
-								<h6>Les différentes méthodes contraceptives</h6>
-								<img src="" alt="">
-								<h6>Plaisir – fun sex</h6>
-								<p>Pulsion de vie, modulateur de l’organisation et du fonctionnement des sociétés, motivateur de rencontres et de relations interpersonnelles proches, la fonction sexuelle est en plus une importante source de plaisir et de récompense.
 
-									Si la sexualité est encore dans de nombreuses cultures un sujet tabou, la recherche du plaisir l’est encore bien plus. Pourtant, la recherche de plus de plaisir dans la sexualité a fait l’objet d’innombrables écrits à travers les siècles, et plus récemment, de nombreuses publications scientifiques.
-									
+								<img src="" alt="">
+								<h3>Plaisir – fun sex</h3>
+								<div class="chat-message">
+								<div class="chat-message-text">
+								<p style="text-align: center;">Pulsion de vie, modulateur de l’organisation et du fonctionnement des sociétés, motivateur de rencontres et de relations interpersonnelles proches, 
+									la fonction sexuelle est en plus une importante source de plaisir et de récompense.Si la sexualité est encore dans de nombreuses cultures un sujet tabou, la recherche du plaisir l’est encore bien plus. Pourtant, la recherche de plus de plaisir dans la sexualité a fait l’objet d’innombrables écrits à 
+									travers les siècles, et plus récemment, de nombreuses publications scientifiques.
 									On assiste actuellement à une forme de démocratisation, de réappropriation, de déculpabilisation du plaisir aujourd’hui toujours plus accessible, à travers l’utilisation de produits et d’accessoires dont l’utilité et l’efficacité ont largement été démontrées.
-									
-									Les moyens proposés par la Pharmacie Principale sont :</p>
-								<p>1-Le plaisir est lié à la connaissance de son corps et de ses réactions. Les stimulateurs pour femmes et hommes ont pour but d’aider à explorer et découvrir les différentes zones du corps susceptibles de générer de nouvelles 
+									Les moyens proposés par la Pharmacie Principale sont :
+								</p>
+								</div>
+								</div>
+								<div class="chat-message">
+								<div class="chat-message-text">
+								<p>-Le plaisir est lié à la connaissance de son corps et de ses réactions. Les stimulateurs pour femmes et hommes ont pour but d’aider à explorer et découvrir les différentes zones du corps susceptibles de générer de nouvelles 
 								sensations de plaisir et produire des orgasmes différents (clitoridien, vaginal, anal) plus intenses.</p>
-								<p>2-Les lubrifiants et arômes renforcent l’aspect érotique et le plaisir. Le choix du lubrifiant est important selon que l’on utilise ou non, un préservatif ou un sextoy. Certains lubrifiants respectent mieux la flore vaginale et anale. Sans oublier les lubrifiants naturels 
+								<p>-Les lubrifiants et arômes renforcent l’aspect érotique et le plaisir. Le choix du lubrifiant est important selon que l’on utilise ou non, un préservatif ou un sextoy. Certains lubrifiants respectent mieux la flore vaginale et anale. Sans oublier les lubrifiants naturels 
 								comme l’huile d’amande douce et de coco.</p>
-								<p>3-Les huiles de massages sont ludiques et apportent un côté agréable. Elles contribuent à déclencher le désir, 
+								<p>-Les huiles de massages sont ludiques et apportent un côté agréable. Elles contribuent à déclencher le désir, 
 								renforcent l’excitation et peuvent faciliter l’orgasme.</p>
 								<p>Certains parfums d’ambiance ont des propriétés érotiques, et les bougies parfumées créent 
 								en plus une ambiance intime favorisant la sexualité.</p>
+								</div>
+								</div>
 							</div>
 							<div>
-								<h6>Les difficultés</h6>
+								<h3>Les difficultés</h3>
 							<p>La fonction sexuelle influence et est influencée par de nombreux facteurs 
 								comme l’illustre la figure ci-dessous. Cela explique qu’environ 40% des femmes et 30% des 
 								hommes connaissent des difficultés avec leur sexualité au cours de leur vie. Dans la plupart des cas, 
@@ -3597,7 +4178,7 @@
 								Un changement de médicament ou de dosage peut suffire pour 
 								supprimer le problème. Une raison de plus pour venir nous en parler.</p>
 							</div>
-						</div>
+						 </div>
 					</div>
 					</div>
 					<div class="chat-bottom">
@@ -3607,16 +4188,14 @@
 									<div class="input-group-prepend">
 								
 									<div class="btn-group dropup">
-										<a href="#" id="button-addonmic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="material-icons"
-											style="font-size:24px;color:red">mic</i> </a>
+										<a href="#" id="button-addonmic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: none;"><i class="material-icons"
+											style="font-size:24px;color:red;">mic</i> </a>
 										<div class="dropdown-menu">
 										<!-- Dropdown menu links -->
 										<div class="chat-message chat-message-left">
 											<div class="chat-message-text">
 												<div class="message-audio">
-													<audio controls>
-														<source src="assets/images/audio.mp3" type="audio/mpeg">
-													</audio>
+													<span id="createAudioPlanning"></span>
 												</div>
 											</div>
 										</div>
@@ -3625,8 +4204,8 @@
 									</div>
 									<p type="text" class="form-control"
 										aria-label="Text" style="background-color: white;"></p>
-									<div class="input-group-append">
-										<ul class="list-inline float-right mb-0">
+									<div class="input-group-append" id="marginRigthA">
+										<!---<ul class="list-inline float-right mb-0">
 											<li class="list-inline-item">
 												<div class="dropdown">
 													<a href="#" class="mr-3" id="button-addonlink" class=""
@@ -3636,10 +4215,11 @@
 															style="padding-top: 12px;"></a>
 													<div class="dropdown-menu dropdown-menu-right"
 														aria-labelledby="chatDropdown">
+														
 														<a class="dropdown-item font-14" href="#">
 															<div class="chat-message chat-message-left">
 																<div class="chat-message-text">
-																	<ul class="list-inline message-media">
+																	<ul class="list-inline message-media" onclick="OpenModalImagePlanning()">
 																		<li class="list-inline-item">
 																			<img src="assets/images/media_01.png" class="img-fluid" alt="media">
 																		</li>
@@ -3665,9 +4245,9 @@
 													</div>
 												</div>
 											</li>
-										</ul>
-										<a href="#" id="view-user-info"><img src="assets/images/send.svg"
-												alt="Generic placeholder image"></a>
+										</ul>-->
+										<a href="#" data-toggle="modal" data-target="#incomingaliderplanning"><img src="assets/images/send.svg"
+											alt="Generic placeholder image"></a>
 									</div>
 								</div>
 							</form>
@@ -3678,7 +4258,7 @@
 
 				<!-- End Chat Detail -->
 				<!-- Start Chat User Info -->
-				<div class="chat-user-info">
+				<div class="chat-user-info" id="AllHospitalBenInfo">
 					<div class="chat-user-head">
 						<div class="row align-items-center">
 							<div class="col-9">
@@ -3736,7 +4316,7 @@
 								</ul>
 							</div>
 							<div></div>
-							<p class="user-detail-header">Les fichiers sur le planning Familial</p>
+							<!--<p class="user-detail-header">Les fichiers sur le planning Familial</p>
 							<div class="user-media">
 								<div class="user-media-slider">
 									<div class="user-media-slider-item">
@@ -3761,9 +4341,9 @@
 										<img src="assets/images/doc.svg" class="" alt="user-media">
 									</div>
 								</div>
-							</div>
+							</div>-->
 							
-							<p class="user-detail-header">Paramètres</p>
+						<!--	<p class="user-detail-header">Paramètres</p>
 							<div class="user-setting">
 								<div class="row align-items-center pb-3">
 									<div class="col-9">
@@ -3788,10 +4368,1294 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div>-->
 						</div>
 					</div>
 				</div>
+				<!--les hôpitaux-->
+				<div class="chat-user-info" id="AllHospitalBen"  style="display: none;">
+					<div class="chat-user-head">
+						<div class="row align-items-center">
+							<div class="col-9">
+								<h5>Les hôpitaux</h5>
+							</div>
+							<div class="col-3">
+								<ul class="list-inline float-right mb-0">
+									<li class="list-inline-item">
+										<a href="#" id="close-user-infoa"><img src="assets/images/X.svg"
+												alt="Generic placeholder image"></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="chat-user-body">
+							<section>
+								<!--The div element for the map -->
+								<div id="map"></div>
+								<div
+								  class="modal fade"
+								  id="modaleAceptFacturactionMOOW"
+								  tabindex="-1"
+								  role="dialog"
+								  aria-labelledby="exampleModalLabel"
+								  aria-hidden="true"
+								>
+								  <div class="modal-dialog" role="document">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h5 class="modal-title" id="modaleAceptFacturactionMOOWLabel">
+										  Vous accetez faire un transfert à la pharmacie?
+										  <img
+											src="assets/images/2.png"
+											alt=""
+											style="width: 50px; height: 50px"
+										  />
+										</h5>
+									  </div>
+									  <div class="modal-body">
+										<img
+										  src="assets/images/undraw_Payments_re_77x0.svg"
+										  alt=""
+										  style="width: 100%; height: 100%"
+										/>
+										<div>
+										  <label>Votre Numéro</label>
+										  <input
+											type="tel"
+											pattern="\d*"
+											maxlength="19"
+											class="inpMOOW"
+											value="51455930"
+										  />
+										  <label>Numéro de la pharmacie</label>
+										  <input
+											type="tel"
+											pattern="\d*"
+											maxlength="7"
+											class="inpMOOW"
+											value="96529627"
+										  />
+										  <label>votre code</label>
+										  <input
+											type="tel"
+											pattern="\d*"
+											maxlength="4"
+											placeholder="Votre code"
+											class="inpMOOW"
+										  />
+										</div>
+									  </div>
+									  <div class="modal-footer">
+										<button
+										  type="button"
+										  class="btn btn-info"
+										  data-dismiss="modal"
+										  onclick="refuseFactureMOOW()"
+										>
+										  Refuser
+										</button>
+										<button
+										  type="button"
+										  class="btn btn-danger payerVotreOrdonnanceC"
+										  data-toggle="modal"
+										  data-target="#basicModal"
+										>
+										  Payer
+										</button>
+									  </div>
+									</div>
+								  </div>
+								</div>
+						  
+								<!-- basic modal -->
+								<div
+								  class="modal fade"
+								  id="basicModal"
+								  tabindex="-1"
+								  role="dialog"
+								  aria-labelledby="basicModal"
+								  aria-hidden="true"
+								  style="padding-top: 150px"
+								>
+								  <div class="modal-dialog">
+									<div class="modal-content">
+									  <div class="modal-header">
+										<h4 class="modal-title" id="myModalLabel">
+										  Confirmation de votre achat
+										</h4>
+									  </div>
+									  <div class="modal-body">
+										<p>Votre achat est approuvé. Voulez vous avec livraison?</p>
+									  </div>
+									  <div class="modal-footer">
+										<button
+										  type="button"
+										  class="btn btn-default"
+										  data-dismiss="modal"
+										  onclick="refuseFactureMOOW()"
+										>
+										  Non
+										</button>
+										<button
+										  type="button"
+										  class="btn btn-primary"
+										  data-dismiss="modal"
+										  onclick="messageDeLivraison()"
+										>
+										  Oui
+										</button>
+									  </div>
+									</div>
+								  </div>
+								</div>
+						  
+								<div id="id01" class="w3-modal" style="padding-top: 150px">
+								  <div class="w3-modal-content" style="padding-bottom: 47px">
+									<div class="w3-container">
+									  <span
+										onclick="quitMessageDeLivraison()"
+										class="w3-button w3-display-topright"
+										>&times;</span
+									  >
+									  <img src="assets/images/undraw_deliveries_2r4y.svg" alt="" />
+									</div>
+								  </div>
+								</div>
+						  
+								<div
+								  class="modal fade"
+								  id="modaleAceptFacturactionDelivry"
+								  tabindex="-1"
+								  role="dialog"
+								  aria-labelledby="exampleModalLabel"
+								  aria-hidden="true"
+								  style="padding-top: 50px"
+								>
+								  <div class="modal-dialog" role="document">
+									<div class="modal-content">
+									  <div class="modal-body">
+										<img
+										  src="assets/images/undraw_deliveries_2r4y.svg"
+										  alt=""
+										  style="width: 100%; height: 100%"
+										/>
+										<div>
+										  <strong
+											><p style="color: black">
+											  Nous vous remercions énormément d'avoir effectué votre
+											  achat. Votre colis de médicaments vous sera livré dans
+											  quelques minutes.
+											</p></strong
+										  >
+										</div>
+									  </div>
+									  <div class="modal-footer">
+										<button
+										  type="button"
+										  class="btn btn-info"
+										  data-dismiss="modal"
+										  onclick="refuseFactureMOOW()"
+										>
+										  D'accord
+										</button>
+									  </div>
+									</div>
+								  </div>
+								</div>
+								<script>
+								  function quittermaps() {
+									history.back();
+								  }
+								  ////// fonction Mooow
+								  //MOOW function
+								  var allPharmacyIdVar = document.querySelectorAll(".allPharmacyId");
+								  allPharmacyIdVar.forEach((x) => {
+									x.addEventListener("click", function () {
+									  console.log("ok mon boss");
+									  $("#modaleAceptFacturactionMOOW").modal({
+										show: true,
+										backdrop: "static",
+										keyboard: false,
+									  });
+									});
+								  });
+						  
+								  function refuseFactureMOOW() {
+									document.getElementById("myModal").style.display = "block";
+								  }
+								  //function payer votre medicament
+								  function payervotremedic() {
+									$("#payermedicamentbody").addClass("chatpharma");
+									document.getElementById("payermedicament").style.display = "block";
+								  }
+								  function initMap() {
+									//get position user
+									if ("geolocation" in navigator) {
+									  // vérifiez si l'utilisateur à activer sa géolocalisation
+									  var positionWatcher = navigator.geolocation.watchPosition(
+										// la position va s'actualiser selon maximumAge
+										(position) => {
+										  var latitude = position.coords.latitude;
+										  var longitude = position.coords.longitude;
+						  
+										  var options = {
+											zoom: 13,
+											center: new google.maps.LatLng(latitude, longitude),
+										  };
+										  
+										  // New map
+										  var map = new google.maps.Map(
+											document.getElementById("map"),
+											options
+										  );
+						  
+										  var ok = 6.367031194359564;
+						  
+										  var allhospitalAuBenin = [
+											{
+											  coords: {
+												lat: ok,
+												lng: 2.4542892891581345,
+											  },
+											  title: "bonjours",
+											  content: `
+									 <div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+									  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+										  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+									 </div>
+									  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Data structureand algorithm</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+									   </div>
+									  </div> 
+									`,
+											},
+										  ];
+						  
+										  for (var i = 0; i < allhospitalAuBenin.length; i++) {
+											// Add marker
+											console.log(allhospitalAuBenin[i].coords);
+										  }
+						  
+										  // Array of markers
+										  var markers = [
+											{
+											  coords: {
+												lat: 6.367031194359564,
+												lng: 2.4542892891581345,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+										  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Data structureand algorithm</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.370207035827131,
+												lng: 2.4303069518319145,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie des 4 thérapies</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.385300849708517,
+												lng: 2.424747752587807,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie Aidjèdo cotonou</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.377866949458491,
+												lng: 2.4417823741900397,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie Midombo</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												at: 6.369042525685197,
+												lng: 2.420160926394599,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie Adechinan</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.367983775329272,
+												lng: 2.4019941865190404,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie Ste. PHILOMENE, Cotonou</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.364095047330313,
+												lng: 2.4178826136906473,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">UBPHAR S.A, 01BP 3629, Cotonou</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.359799805914865,
+												lng: 2.4314081404255683,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie JONQUET, Cotonou </h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.364223159561423,
+												lng: 2.4137092943779623,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie du rond point, Cotonou </h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.38193067237133,
+												lng: 2.3897280042345757,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie Akossombo, Cotonou </h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.360068830947836,
+												lng: 2.3642926510203766,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie Océane, Rue 2356, Cotonou</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.367347602730905,
+												lng: 2.476744887562856,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmaquick by ABT, 46 Rue 1153, Cotonou</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.370776955121309,
+												lng: 2.403694793400974,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">PHARMACIE SAINTE FOI, Cotonou Lot carré N0 1081 Vodjè, Cotonou</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.357584706422746,
+												lng: 2.4524318451923603,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">CAME, Cotonou </h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.374359569984654,
+												lng: 2.391679552121058,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Club billard, 06 BP1736 Abomey Calavi ZOPAH</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.362576677393703,
+												lng: 2.4363455994245196,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Pharmacie Avleketa, Cotonou</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+											{
+											  coords: {
+												lat: 6.390186706250266,
+												lng: 2.4151903313176217,
+											  },
+											  title: "bonjours",
+											  content: `
+									<div class="card" style="font-family: sans-serif;
+									  background: #b3ffe3;
+									  min-height: 50vh;
+									  display: flex;
+									  justify-content: center;
+									  align-items: center; background: #fff;
+									  width: 15rem;
+									  border-top-left-radius: 10px;
+									  border-top-right-radius: 10px;
+									  border: none;
+									  overflow: hidden;
+									  transition: all 0.2s ease-in-out;">
+								  <div class="image-box" style="height: 30vh;
+										  border-radius: inherit;
+										  border: none;
+										  background: #70bee6; ">
+									  <img src="assets/images/LLogoP.png" alt=""
+									  style="width: 100%;
+										  height: 100%;"
+									  >
+								  </div>
+								  <div class="card-content" style="padding: 1.3rem;">
+									  <h2 class="card-title" style="margin-top: 1rem;
+										  font-size: 1.1rem;">Bs-Immo, Rue 670A, Cotonou</h2>
+									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
+									  <div class="rating" style="margin-top: 0.5rem;">
+										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star checked" style="color: gold;"></span>
+										  <span class="fa fa-star" style="color: gold;"></span>
+										  <span class="fa fa-star"></span>
+									  </div>
+									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
+										  padding: 0.7rem 1rem;
+										  width: 100%;
+										  border-radius: 5px;
+										  text-transform: capitalize;
+										  background: none;
+										  border: 2px solid #70bee6;
+										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
+								  </div>
+								  </div>
+									
+									`,
+											},
+										  ];
+						  
+										  // Loop through markers
+										  for (var i = 0; i < markers.length; i++) {
+											// Add marker
+											addMarker(markers[i]);
+										  }
+						  
+										  // Add Marker Function
+										  function addMarker(props) {
+											var marker = new google.maps.Marker({
+											  position: props.coords,
+											  map: map,
+											  //icon:props.iconImage
+											});
+						  
+											// Check for customicon
+											if (props.iconImage) {
+											  // Set icon image
+											  marker.setIcon(props.iconImage);
+											}
+						  
+											// Check content
+											if (props.content) {
+											  var infoWindow = new google.maps.InfoWindow({
+												content: props.content,
+											  });
+						  
+											  marker.addListener("click", function () {
+												infoWindow.open(map, marker);
+											  });
+											}
+										  }
+										},
+										(error) => {
+										  alert(
+											"On n'a pas reussi à récupérer votre localisation ! Réactualiser la page puis autoriser votre position. Merci."
+										  );
+										},
+										{
+										  enableHighAccuracy: true, // demande de précision ( consomme la battérie sur mobile )
+										  maximumAge: 0, // durée d'expiration d'une requête de position
+										  timeout: 10000, // durée d'attente d'une requête de position
+										}
+									  );
+						  
+									  positionWatcher.geolocation.clearWatch(); // pour stopper le watcher
+									}
+									// Map options
+						  
+									// Listen for click on map
+									//google.maps.event.addListener(map, 'click', function(event){
+									// Add marker
+									//  addMarker({coords:event.latLng});
+									// });
+						  
+									/*
+									  // Add marker
+									  var marker = new google.maps.Marker({
+										position:{lat:42.4668,lng:-70.9495},
+										map:map,
+										icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+									  });
+						  
+									  var infoWindow = new google.maps.InfoWindow({
+										content:'<h1>Lynn MA</h1>'
+									  });
+						  
+									  marker.addListener('click', function(){
+										infoWindow.open(map, marker);
+									  });
+									  */
+								  }
+								</script>
+								<!-- End js -->
+							  </section>
+					
+						
+					</div>
+				</div>
+				<!--les hôpitaux-->
 				<!-- End Chat User Info -->
 			</div>
 			<!-- End Chat Rightbar -->
@@ -3910,10 +5774,32 @@
 			</div>
 		</div>
 	</div>
+    </section>
+	<style>@import url(https://fonts.googleapis.com/css?family=Calibri:400,300,700); 
+	.product-img{overflow: hidden;position: relative}.mb-45{margin-bottom: 45px}
+	.product-action{bottom: 0px;left: 0;opacity: 0;position: absolute;right: 0;text-align: center;transition: all 0.6s ease 0s}
+	.product-wrapper{border-radius: 10px}.product-img >span{background-color: #fff;
+	box-shadow: 0 0 8px 1.7px rgba(0, 0, 0, 0.06);
+	color: #333;display: inline-block;font-size: 12px;
+	font-weight: 500;left: 20px;letter-spacing: 1px;padding: 3px 12px;
+	position: absolute;text-align: center;text-transform: uppercase;top: 20px}
+	.product-action-style{background-color: #fff;box-shadow: 0 0 8px 1.7px rgba(0, 0, 0, 0.06);
+	display: inline-block;padding: 16px 2px 12px}.product-action-style >a{color: #979797;
+	line-height: 1;padding: 0 21px;position: relative}.product-action-style >a.action-plus{font-size: 18px}
+	.product-wrapper:hover .product-action{bottom: 20px;opacity: 1};
+	</style>
+
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlmyEJiu5U7g2kQ0pHvTouPVr-EMurtKU&callback=initMap&libraries=&v=weekly"
+async
+></script>
 	<!----voice call end--->
 	<!-- Button trigger modal -->
 	<!-------------- modal------------>
+	<script src="serveurs/serveur.jS"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
 	<script src="patient.js"></script>
+	<script src="patientSendData.js"></script>
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/js/bootstrap.min.js"></script>
@@ -3929,7 +5815,11 @@
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script src="jquery.counterup.min.js"></script>
-	<!-- MDB -->
+	<!-- MDB 
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	-->
 	<script>
 		AOS.init();
 	</script>
