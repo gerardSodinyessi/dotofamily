@@ -16,11 +16,25 @@ $(document).ready(function () {
     navigator.userAgent.match(/Windows Phone/i)
   ) {
     $(".chat-user-info").addClass("hide");
+    document
+      .getElementById("view-user-infoa")
+      .addEventListener("click", function () {
+        document.getElementById("AllHospitalBenInfo").style.display = "none";
+        document.getElementById("AllHospitalBen").style.display = "block";
+        $(".chat-user-info").addClass("show");
+      });
   } else {
     console.log("je faire");
     $(".chat-user-info").addClass("show");
     $(".chat-bottom").addClass("small");
+    document
+      .getElementById("view-user-infoa")
+      .addEventListener("click", function () {
+        document.getElementById("AllHospitalBen").style.display = "block";
+        document.getElementById("AllHospitalBenInfo").style.display = "none";
+      });
   }
+
   //function close modal Allhospital
   document
     .getElementById("close-user-infoa")
