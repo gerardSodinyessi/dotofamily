@@ -23,25 +23,43 @@ $(document).ready(function () {
         document.getElementById("AllHospitalBen").style.display = "block";
         $(".chat-user-info").addClass("show");
       });
+    $("#view-user-info").on("click", function (e) {
+      e.preventDefault();
+      $(".chat-user-info").addClass("show");
+      $(".chat-bottom").addClass("small");
+      $("#myModalIdAcueiApp1").modal("hide");
+      $(".chat-bottom").addClass("small");
+    });
   } else {
     console.log("je faire");
     $(".chat-user-info").addClass("show");
     $(".chat-bottom").addClass("small");
+    $(".whatsapp_chat_support").addClass("margiNleftClassWhat");
     document
-      .getElementById("view-user-infoa")
+      .getElementById("view-user-info")
       .addEventListener("click", function () {
+        $(".whatsapp_chat_support").addClass("margiNleftClassWhat");
+        $(".margiNleftClass").removeClass("margiNleftClassP");
         document.getElementById("AllHospitalBen").style.display = "block";
         document.getElementById("AllHospitalBenInfo").style.display = "none";
       });
+
+    $("#close-user-info").on("click", function (e) {
+      $(".margiNleftClass").addClass("margiNleftClassP");
+      $(".whatsapp_chat_support").removeClass("margiNleftClassWhat");
+      e.preventDefault();
+      $(".chat-user-info").removeClass("show");
+      $(".chat-bottom").removeClass("small");
+    });
   }
 
   //function close modal Allhospital
-  document
-    .getElementById("close-user-infoa")
-    .addEventListener("click", function () {
-      document.getElementById("AllHospitalBen").style.display = "none";
-      $(".chat-bottom").removeClass("small");
-    });
+  //document
+  //  .getElementById("close-user-info")
+  // .addEventListener("click", function () {
+  //   document.getElementById("AllHospitalBen").style.display = "none";
+  //   $(".chat-bottom").removeClass("small");
+  // });
   /* -- Show User Info -- */
   $("#view-user-info").on("click", function (e) {
     e.preventDefault();

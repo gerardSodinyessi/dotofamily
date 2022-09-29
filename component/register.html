@@ -29,15 +29,20 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="cssControlForm.css" />
     <!-- End css -->
-    <style>
-
-      #vertical-layout{
-        background-color: #9b59b6 !important;
-      }
-    </style>
   </head>
-  <body class="vertical-layout" id="vertical-layout">
-    
+  <body class="vertical-layout area" id="vertical-layout">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+   </ul>
     <!-- Start Containerbar -->
     <div id="containerbar" class="containerbar authenticate-bg">
       <button id="exampleAnimated" class="btn btn-success" style="display: none;"> Votre compte est crée avec succès.</button>
@@ -89,6 +94,17 @@
                       </div>
                       <div class="form-group">
                         <input
+                          type="tel"
+                          class="form-control controle"
+                          id="tel"
+                          name="tel"
+                          placeholder="Entrer votre numéro"
+                          required
+                        />
+                        <span class="resultat resultat1X"></span>
+                      </div>
+                      <div class="form-group">
+                        <input
                           type="password"
                           class="form-control controle"
                           id="password"
@@ -126,12 +142,17 @@
                           class="btn btn-success btn-lg btn-block font-18"
                           id="log"
                         />
+                        <a
+                        href="loginPatient.html"  
+                      >
+                        <p class="mb-0 mt-3">
+                          Vous avez déjà un compte ?
+                          <!--<a href="register.html">-->Connectez-vous
+                          <!--</a>-->
+                        </p>
+                      </a>
                       </div>
                     </form>
-                    <p class="mb-0 mt-3">
-                      Êtes vous un hôpital ?
-                      <a href="loginHospital.html">Connecter</a>
-                    </p>
                   </div>
                 </div>
               </div>

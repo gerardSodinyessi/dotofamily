@@ -2,12 +2,14 @@ function postDataHospital() {
   var username = document.getElementById("usernameHospital").value;
   var email = document.getElementById("emailHospital").value;
   var password = document.getElementById("passwordHospital").value;
+  var telHostel = document.getElementById("telHospital").value;
 
-  fetch("http://15.236.38.193:8000/api/auth/medecin/", {
+  fetch("http://13.39.67.197:8000/api/auth/medecin/registration/", {
     method: "POST",
     body: JSON.stringify({
       username: username,
       email: email,
+      tel: telHostel,
       password: password,
     }),
     headers: {
@@ -21,6 +23,7 @@ function postDataHospital() {
         document.getElementById("usernameHospital").value = "";
         document.getElementById("emailHospital").value = "";
         document.getElementById("passwordHospital").value = "";
+        document.getElementById("telHospital").value = "";
         setTimeout(() => {
           document.getElementById("ChargementIdHospital").style.display =
             "none";
@@ -34,7 +37,7 @@ function postDataHospital() {
         document.getElementById("usernameHospital").value = "";
         document.getElementById("emailHospital").value = "";
         document.getElementById("passwordHospital").value = "";
-        document.getElementById("ChargementIdHospital").style.display = "none";
+        document.getElementById("telHospital").value = "";
         document.getElementById(
           "exampleAnimatedsuccessHospital"
         ).style.display = "block";
@@ -66,4 +69,23 @@ function postDataHospital() {
         }
       });*/
   }
+}
+
+{
+  /**fetch("http://15.236.38.193:8000/api/auth/medecin/", {
+  method: "GET",
+  headers: {
+    Accept: "application/json",
+    "Content-type": "application/json",
+  },
+})
+  .then((resp) => resp.json())
+  .then(function (data) {
+    let authors = data.results;
+    console.log(authors);
+    authors.map((k) => {
+      console.log("voici nos mailop " + k.email);
+    });
+  });
+*/
 }

@@ -26,6 +26,12 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
   referrerpolicy="no-referrer" />
 	<!-- Font Awesome -->
+	<!-- Whatsapp Api intégrate-->
+	<link rel="stylesheet" href="./example/plugin/whatsapp-chat-support.css" />
+	<link
+	rel="stylesheet"
+	href="./example/plugin/components/Font Awesome/css/font-awesome.min.css"
+  />
 
 	<!-- Start css -->
 	<!-- Slick css -->
@@ -37,6 +43,7 @@
 	<link href="assets/css/flag-icon.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="scanner.css">
+	<link rel="stylesheet" href="cssControlForm.css">
 	<style>
 		#map {
         height: 600px;
@@ -430,9 +437,9 @@
 					<strong style="padding-bottom: 10px;">Acceptez-vous être contacté par l'un de nos médecins ou centres ?</strong>
 				</p>
 				   
-				   <a href="#" id="view-user-infoa">
+				  <!-- <a href="#" id="view-user-info">
 				   <button type="button" class="btn btn-success mr-3" data-dismiss="modal"><i
-						   class="fa fa-check mr-2"></i>Accepter</button></a>
+						   class="fa fa-check mr-2"></i>Accepter</button></a>-->
 				   <button type="button" class="btn btn-danger" data-dismiss="modal"><i
 						   class="fa fa-close mr-2"></i>Rejecter</button>
 			   </div>
@@ -487,14 +494,27 @@
 					<div class="modal-body">
 						<img src="assets/images/men.svg" alt="avatar" class="rounded-circle">
 						<h5 style="margin-bottom: 25px;">Quel est le type de votre cycle ?</h5>
-					<a href="./cycleCalendar/indexCalendar.html"><button type="button" class="btn btn-danger mr-3"><i
+					<a href="#"><button type="button" id="MyIdregulier" class="btn btn-danger mr-3 MyIdregulierclass"><i
 								class="fa fa-check mr-2"></i>régulier</button></a>
-					<a href="./cycleCalendar/indexa.html">	<button type="button" class="btn btn-danger"><i
+					<a href="#">	<button type="button" class="btn btn-danger MyIdregulierclass" id="MyIdIrregulier"><i
 								class="fa fa-check mr-2"></i>irrégulier</button></a>
 					</div>
 				</div>
 			</div>
 		</div>
+		<!-- notification Modal -->
+	<div class="modal incoming-voice-modal fade" id="getNotificationmsgM" tabindex="-1" role="dialog"
+		aria-labelledby="incomingVoiceCallTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				
+				<div class="modal-body" id="getVisionlinkMsg" style="padding: 15px; overflow-y: auto; height: 300px">
+				
+				</div>
+				
+			</div>
+		</div>
+	</div>
 		<!-- Start Incoming Voice Planning Modal -->
 
 		<!-- Start SeeImagePlannig  Modal -->
@@ -505,7 +525,7 @@
 					<div class="modal-body">
 						<img src="assets/images/men.svg" alt="avatar" class="rounded-circle">
 						<h5 style="margin-bottom: 25px;">Quel est le type de votre cycle ?</h5>
-					<a href="./cycleCalendar/indexCalendar.html"><button type="button" class="btn btn-danger mr-3"><i
+					<a href="./cycleCalendar/indexCalendar.html"><button type="button"  class="btn btn-danger mr-3"><i
 								class="fa fa-check mr-2"></i>régulier</button></a>
 					<a href="./cycleCalendar/indexa.html">	<button type="button" class="btn btn-danger"><i
 								class="fa fa-check mr-2"></i>irrégulier</button></a>
@@ -536,6 +556,44 @@
 				</div>
 			</div>
 		</div>
+		<!--modal confirm message send--->
+		<div class="modal incoming-voice-modal fade" id="modalConfirmMessageSend" tabindex="-1" role="dialog"
+		aria-labelledby="incomingVoiceCallTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="incomingVoiceCallTitle">Mise en contact </h5>
+				</div>
+				<div class="modal-body">
+					<div class="chat-message" style="margin-bottom: 7vh;">
+						<div class="chat-message-text">
+							<strong>Confirmation de mise en contact</strong>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-danger" id="displayBlackVidConfirmez" data-dismiss="modal">Confirmez</button>
+					<button type="button" class="btn btn-danger" id="displayBlackVidRefusez" data-dismiss="modal">Refusez</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal incoming-voice-modal fade" id="modalConfirmMessageSendConfirm" tabindex="-1" role="dialog"
+	aria-labelledby="incomingVoiceCallTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header" style="display: none;">
+				<h5 class="modal-title" id="incomingVoiceCallTitle"></h5>
+			</div>
+			<div class="modal-body"> 
+				<div class="chat-message" style="margin-bottom: 4vh;">
+					<div class="chat-message-text">
+						<strong>Votre demande est approuvée, Vous serez mis en relation en moins de 48h maximum. 
+							e-doto family vous remercie de votre confiance !</strong>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 		<div
 		class="modal fade"
 		id="modaleAceptFacturactionMOOW"
@@ -560,33 +618,28 @@
 			  <img
 				src="assets/images/undraw_Payments_re_77x0.svg"
 				alt=""
-				style="width: 100%; height: 50%"
+				style="width: 100%; height: 30%"
 			  />
+			  <hr>
+			  <div></div>
+			  <span><strong>Nom</strong>  : </span>&nbsp; &nbsp;<span>jflfkndopl^pf;mlf</span><br>
+			  <div></div>
+			  <span><strong>Prix</strong> : </span> &nbsp; &nbsp; <span>jflfkndopl^pf;mlf</span><br>
+			  <div></div>
+			  <span> <strong>Total</strong> : </span>&nbsp; &nbsp; <span>jflfkndopl^pf;mlf</span>
+			  <div></div>
+			  <hr>
 			  <div>
-				<label>Votre Numéro</label>
+				<label>Quantité</label>
 				<input
-				  type="tel"
-				  pattern="\d*"
-				  maxlength="19"
+				  type="number"
+				  max="19"
 				  class="inpMOOW"
-				  value="51455930"
+				  value=""
+				  min="1"
+				  placeholder="choisir la votre quantité"
 				/>
-				<label>Numéro de la pharmacie</label>
-				<input
-				  type="tel"
-				  pattern="\d*"
-				  maxlength="7"
-				  class="inpMOOW"
-				  value="96529627"
-				/>
-				<label>votre code</label>
-				<input
-				  type="tel"
-				  pattern="\d*"
-				  maxlength="4"
-				  placeholder="Votre code"
-				  class="inpMOOW"
-				/>
+				
 			  </div>
 			</div>
 			<div class="modal-footer">
@@ -662,7 +715,16 @@
 									<div class="col-8">
 										<ul class="list-unstyled mb-0">
 											<li class="media">
-												Accueil
+												<a style="display: inline-flex; width: 23px; cursor: pointer;" id="dropdownMenuButton" >
+													<span class="badge badge-primary " style="position:relative; 
+											  left: 13px;   font-size: 9px; border-radius: 100%; width: 15px; height: 15px;"
+														id="numberNotification">2</span>
+													<img src="assets/images/notifica.svg"
+														alt="Generic placeholder image"
+														style="position: absolute; top: 5px;">
+												</a>
+
+												
 												<!---<img class="align-self-center mr-2" src="assets/images/men1.png"
 													alt="Generic placeholder image"
 													style="width: 44px; height: 44px; border-radius: 100%;">
@@ -676,10 +738,13 @@
 										</ul>
 									</div>
 									<div class="col-4">
-										<a href="#" data-toggle="modal" data-target="#createGroup"><img
+										<a href="#" id="view-user-info" >
+											<img src="assets/images/pharmacie.svg" alt="" style=" height:25px; width:22vh;">
+											</a>
+										<!---<a href="#" data-toggle="modal" data-target="#createGroup"><img
 												src="assets/images/folder-plus.svg" alt="Generic placeholder image"
 												style="margin-right: 12px;"></a>
-										<!---<div class="dropdown">
+										<div class="dropdown">
 											<a href="#" id="settingDropdown" data-toggle="dropdown" aria-haspopup="true"
 												aria-expanded="false"> <img src="assets/images/more-scanner-qr-code.svg"
 													alt="Generic placeholder image" style="margin-right: 20px;">
@@ -753,15 +818,14 @@
 													<span class="progress-bar"></span>
 												</span>
 												<div
-													style="width: 150px; height: 150px; border: blanchedalmond 3px solid; background-color: rgb(42, 40, 40); border-radius: 100%;">
+													style="width: 150px; height: 150px; border: blanchedalmond 3px solid; background-color: rgb(91, 86, 86); border-radius: 100%;">
 													<div>
 														<p style="margin-top: 10px; margin-left: 6px; color: white">
-															<em>Améliorer</em></p>
+															<em>e-doto family</em></p>
 														<h6 style="margin-top: 13px; margin-left: 12px; color: white;">
 															votre Santé à</h6>
-														<h1 style=" margin-left: 10px; color: white;">95%
+														<h1 style=" margin-left: 10px; color: white;">100%
 														</h1>
-
 														</h6>
 													</div>
 												</div>
@@ -778,8 +842,11 @@
 											</div>
 											
 
-											<button class="btn-pink btn-primary" data-toggle="modal"
+											<button class="btn-pink btn-primary" id="CalendrierMIdenstruel"
 												 onclick="AskTypeCycle()">Calendrier menstruel
+											</button>
+											<button class="btn-pink btn-primary" id="CalendrierMIdenstruel1"
+											onclick="AskTypeCycle1()"style="display: none;">Calendrier menstruelA
 											</button>
 
 											<a href="../../Serenity/ExamentDedail.html"><button class="btn-pink"
@@ -958,10 +1025,6 @@
 										<a href="loginPatient.html" data-toggle="tooltip" data-placement="right"
 											title="Logout"><i class="fa fa-sign-out" style="color: #f82249;"></i></a>
 									<!--	<div class="dropdown">
-											<a href="#" id="settingDropdown" data-toggle="dropdown" aria-haspopup="true"
-												aria-expanded="false"><img src="assets/images/more-scanner-qr-code.svg"
-													alt="Generic placeholder image"
-													style="margin-right: 30px; margin-left: 30px;">
 												<a style="display: inline-flex; width: 23px; cursor: pointer;">
 													<span class="badge badge-primary " style="position:relative; 
 											  left: 13px;   font-size: 9px; border-radius: 100%; width: 15px; height: 15px;"
@@ -970,24 +1033,12 @@
 														alt="Generic placeholder image" onclick="openNav()"
 														style="position: absolute; top: 5px;">
 												</a>
-												<div class="dropdown-menu dropdown-menu-right"
-													aria-labelledby="settingDropdown">
-													<a class="dropdown-item font-14" data-toggle="modal"
-														data-target="#scanner-qr-code" href="#">Scanner DIMU</a>
-
-													<a class="dropdown-item font-14" href="saisirImu.html">Saisir le
-														code
-														DIMU</a>
-												</div>
-										</div>-->
+										    </div>-->
 									</div>
 								</div>
 							</div>
-							</head>
 
-							<body>
-
-								<div id="mySidenav" class="sidenav" style="margin-top: 75px; padding-bottom: 145px;">
+								<div id="mySidenav" class="sidenav" style="margin-top: 75px; padding-bottom: 145px; background-color: rgb(122, 137, 235) !important;" >
 									<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
 									<div class="chat-left-body" style="height: 100vh; ">
@@ -1001,7 +1052,7 @@
 													<div class="media-body" style="padding-bottom: 10px;">
 														<div style="display: inline-flex;">
 															<div class="col-6">
-																<h5 style="width: 100px;">BONO paul</h5>
+																<h5 style="width: 100px; color: white;">BONO paul</h5>
 															</div>
 															<div class="col-4"></div>
 															<div class="col-2">
@@ -1010,299 +1061,12 @@
 																		aria-haspopup="true" aria-expanded="false"><img
 																			src="assets/images/three-dots.svg" alt=""
 																			style="width: 18px; height: 18px;"></span>
-																	<div class="dropdown-menu">
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="orderuna()">Suprimer cette
-																			notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="orderunb()">Ne plus recevoir cette
-																			notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="orderunc()">Valider cette
-																			notification</a>
-																	</div>
 																</div>
 															</div>
 														</div>
 														<p style="color: white;" id="popop"> cout bgt de la donneTout
 															drtey
 															bon mon sera donc mjdk je </p>
-													</div>
-												</div>
-												<p style="font-size: 10px; margin-left: 265px;">02:30 pm</p>
-											</div>
-											<div style="background-color: rgb(9, 12, 31);" id="orderdeux">
-												<div class="media active">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image"
-														style="margin-right: 10px;  padding-left: 7px;">
-													<div class="media-body" style="padding-bottom: 10px;">
-														<div style="display: inline-flex;">
-															<div class="col-6">
-																<h5 style="width: 100px;">SODINYESSI paul</h5>
-															</div>
-															<div class="col-4"></div>
-															<div class="col-2">
-																<div class="btn-group" style="margin-left: 25px;">
-																	<span class="chat-timing" data-toggle="dropdown"
-																		aria-haspopup="true" aria-expanded="false"><img
-																			src="assets/images/three-dots.svg" alt=""
-																			style="width: 18px; height: 18px;"></span>
-																	<div class="dropdown-menu">
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtesta()">Suprimer cette
-																			notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestb()">Ne plus recevoir
-																			cette notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestc()">Valider cette
-																			notification</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<p style="color: white;" id="popop">le benin sera donc mjdk je
-															drtey
-															bon mon cout bgt de la donne </p>
-													</div>
-												</div>
-												<p style="font-size: 10px; margin-left: 265px;">02:30 pm</p>
-											</div>
-											<div style="background-color: rgb(9, 12, 31);" id="ordertrois">
-												<div class="media active">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image"
-														style="margin-right: 10px;  padding-left: 7px;">
-													<div class="media-body" style="padding-bottom: 10px;">
-														<div style="display: inline-flex;">
-															<div class="col-6">
-																<h5 style="width: 100px;">AGOUA inès</h5>
-															</div>
-															<div class="col-4"></div>
-															<div class="col-2">
-																<div class="btn-group" style="margin-left: 25px;">
-																	<span class="chat-timing" data-toggle="dropdown"
-																		aria-haspopup="true" aria-expanded="false"><img
-																			src="assets/images/three-dots.svg" alt=""
-																			style="width: 18px; height: 18px;"></span>
-																	<div class="dropdown-menu">
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtesttroisa()">Suprimer
-																			cette
-																			notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtesttroisb()">Ne plus
-																			recevoir cette notification</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<p style="color: white;" id="popop">touloiu mjdk je drtey bon
-															mon
-															cout bgt de la donne </p>
-													</div>
-												</div>
-												<p style="font-size: 10px; margin-left: 265px;">02:30 pm</p>
-											</div>
-											<div style="background-color: rgb(9, 12, 31);" id="orderquatre">
-												<div class="media active">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image"
-														style="margin-right: 10px;  padding-left: 7px;">
-													<div class="media-body" style="padding-bottom: 10px;">
-														<div style="display: inline-flex;">
-															<div class="col-6">
-																<h5 style="width: 100px;">VIVI fifa</h5>
-															</div>
-															<div class="col-4"></div>
-															<div class="col-2">
-																<div class="btn-group" style="margin-left: 25px;">
-																	<span class="chat-timing" data-toggle="dropdown"
-																		aria-haspopup="true" aria-expanded="false"><img
-																			src="assets/images/three-dots.svg" alt=""
-																			style="width: 18px; height: 18px;"></span>
-																	<div class="dropdown-menu">
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestquatrea()">Suprimer
-																			cette
-																			notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestquatreb()">Ne plus
-																			recevoir cette notification</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<p style="color: white;" id="popop">Tout sera donc mjdk je drtey
-															bon
-															mon cout bgt de la donne </p>
-													</div>
-												</div>
-												<p style="font-size: 10px; margin-left: 265px;">02:30 pm</p>
-											</div>
-											<div style="background-color: rgb(9, 12, 31);" id="ordercinq">
-												<div class="media active">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image"
-														style="margin-right: 10px;  padding-left: 7px;">
-													<div class="media-body" style="padding-bottom: 10px;">
-														<div style="display: inline-flex;">
-															<div class="col-6">
-																<h5 style="width: 100px;">HODO charles</h5>
-															</div>
-															<div class="col-4"></div>
-															<div class="col-2">
-																<div class="btn-group" style="margin-left: 25px;">
-																	<span class="chat-timing" data-toggle="dropdown"
-																		aria-haspopup="true" aria-expanded="false"><img
-																			src="assets/images/three-dots.svg" alt=""
-																			style="width: 18px; height: 18px;"></span>
-																	<div class="dropdown-menu">
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestcinqa()">Suprimer
-																			cette
-																			notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestcinqb()">Ne plus
-																			recevoir
-																			cette notification</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<p style="color: white;" id="popop">Tout sera donc mjdk je drtey
-															bon
-															mon cout bgt de la donne </p>
-													</div>
-												</div>
-												<p style="font-size: 10px; margin-left: 265px;">02:30 pm</p>
-											</div>
-											<div style="background-color: rgb(9, 12, 31);" id="ordersix">
-												<div class="media active">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image"
-														style="margin-right: 10px;  padding-left: 7px;">
-													<div class="media-body" style="padding-bottom: 10px;">
-														<div style="display: inline-flex;">
-															<div class="col-6">
-																<h5 style="width: 100px;">AFAFA laurent</h5>
-															</div>
-															<div class="col-4"></div>
-															<div class="col-2">
-																<div class="btn-group" style="margin-left: 25px;">
-																	<span class="chat-timing" data-toggle="dropdown"
-																		aria-haspopup="true" aria-expanded="false"><img
-																			src="assets/images/three-dots.svg" alt=""
-																			style="width: 18px; height: 18px;"></span>
-																	<div class="dropdown-menu">
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestsixa()">Suprimer
-																			cette
-																			notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestsixb()">Ne plus
-																			recevoir
-																			cette notification</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<p style="color: white;" id="popop"> bon mon cout bgt de la
-															donne
-														</p>
-													</div>
-												</div>
-												<p style="font-size: 10px; margin-left: 265px;">02:30 pm</p>
-											</div>
-											<div style="background-color: rgb(9, 12, 31);" id="ordersept">
-												<div class="media active">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image"
-														style="margin-right: 10px;  padding-left: 7px;">
-													<div class="media-body" style="padding-bottom: 10px;">
-														<div style="display: inline-flex;">
-															<div class="col-6">
-																<h5 style="width: 100px;">KAKPO antoine</h5>
-															</div>
-															<div class="col-4"></div>
-															<div class="col-2">
-																<div class="btn-group" style="margin-left: 25px;">
-																	<span class="chat-timing" data-toggle="dropdown"
-																		aria-haspopup="true" aria-expanded="false"><img
-																			src="assets/images/three-dots.svg" alt=""
-																			style="width: 18px; height: 18px;"></span>
-																	<div class="dropdown-menu">
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestsepta()">Suprimer
-																			cette
-																			notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtestseptb()">Ne plus
-																			recevoir
-																			cette notification</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<p style="color: white;" id="popop">Tout sera donc mjdk je drtey
-															bon
-															mon cout bgt de la donne </p>
-													</div>
-												</div>
-												<p style="font-size: 10px; margin-left: 265px;">02:30 pm</p>
-											</div>
-											<div style="background-color: rgb(9, 12, 31);" id="orderhuit">
-												<div class="media active">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image"
-														style="margin-right: 10px;  padding-left: 7px;">
-													<div class="media-body" style="padding-bottom: 10px;">
-														<div style="display: inline-flex;">
-															<div class="col-6">
-																<h5 style="width: 100px;">SODINYESSI paul</h5>
-															</div>
-															<div class="col-4"></div>
-															<div class="col-2">
-																<div class="btn-group" style="margin-left: 25px;">
-																	<span class="chat-timing" data-toggle="dropdown"
-																		aria-haspopup="true" aria-expanded="false"><img
-																			src="assets/images/three-dots.svg" alt=""
-																			style="width: 18px; height: 18px;"></span>
-																	<div class="dropdown-menu">
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtesthuita()">Suprimer
-																			cette
-																			notification</a>
-																		<a class="dropdown-item"
-																			style="font-size: 13px;"
-																			onclick="validationtesthuitb()">Ne plus
-																			recevoir
-																			cette notification</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<p style="color: white;" id="popop">drtey bon mon cout bgt sera
-															donc
-															mjdk je de la donne </p>
 													</div>
 												</div>
 												<p style="font-size: 10px; margin-left: 265px;">02:30 pm</p>
@@ -1477,7 +1241,7 @@
 								<div class="chat-left-body" style="padding-bottom: 110px;">
 									<div class="nav flex-column nav-pills chat-userlist" id="chat-list-tab"
 										role="tablist" aria-orientation="vertical">
-										<a class="active showAudioPlanning" id="chat-first-tab" data-toggle="pill"
+										<!---<a class=" showAudioPlanning" id="chat-first-tab" data-toggle="pill"
 											href="#chat-first" role="tab" aria-controls="chat-first"
 											aria-selected="false" style="background-color: #f1f3f5;">
 											<div class="media active">
@@ -1489,9 +1253,9 @@
 												<p>Améliorer votre santé</p>
 											</div>
 										</div>
-									    </a>
+									    </a>-->
 										<div><p></p></div>
-										<a  class=" showAudioPlanning"  id="chat-fourtinth-tab" data-toggle="pill"
+										<a  class="active showAudioPlanning"  id="chat-fourtinth-tab" data-toggle="pill"
 										href="#chat-fourtinth" role="tab" aria-controls="chat-fourtinth"
 										aria-selected="true" style="background-color: #f1f3f5;">
 										<div class="media">
@@ -1644,7 +1408,7 @@
 										<div><p></p></div>
 										<a class="showAudioPlanning" id="chat-thirteenth-tab" data-toggle="pill"
 											href="#chat-thirteenth" role="tab" aria-controls="chat-thirteenth"
-											aria-selected="false" style="background-color: #f1f3f5;">
+											aria-selected="false" style="background-color: #f1f3f5;" onclick="onBlockIF()">
 											<div class="media">
 												<img class="align-self-center rounded-circle openVideoPlanningDemo"
 													src="assets/images/pharmacie.svg" alt="User Image" style="margin-left: 5px;">
@@ -1953,174 +1717,62 @@
 							<div class="chat-left-body">
 								<div class="profilebar">
 									<img class="profile-pic img-fluid" src="assets/images/men.svg" alt="profile-pic" id="MyProFilSrcimg">
+									<img src="assets/images/pencil-square.svg" alt="" id="CreateYouProfile" data-toggle="modal" data-target="#exampleModalCreate">
 									<div class="profile-edit">
 										<img src="assets/images/camera.svg" alt="Generic placeholder image"
 											class=" upload-button">
 										<input class="profile-upload" type="file" accept="image/*"/>
 									</div>
-									<style>
-										#MyProFilSrcimg{
-											width: 20vh !important;
-											height: 20vh !important;
-											border-radius: 100% !important;
-										}
-									</style>
-									<h5>SODINYESSI Gérard</h5>
-									<p class="mb-0">Cotnou, Bénin</p>
 								</div>
-								<div class="profile-detail" style="padding-bottom: 60px;">
-									<ul class="list-unstyled mb-0">
-										<li class="media">
-											<img src="assets/images/user.svg" alt="Generic placeholder image"
-												class=" align-self-center mr-3">
-											<div class="media-body">
-												<p>Nom</p>
-												<div class="input-group">
-													<input type="text" class="form-control" value="SODINYESSI"
-														aria-label="SODINYESSI"
-														aria-describedby="button-addon-group-username">
-													<div class="input-group-append">
-														<button class="btn btn-link" type="button"
-															id="button-addon-group-username">Update</button>
-														<!------>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="media">
-											<img src="assets/images/user.svg" alt="Generic placeholder image"
-												class=" align-self-center mr-3">
-											<div class="media-body">
-												<p>Prénoms</p>
-												<div class="input-group">
-													<input type="text" class="form-control" value="Sènou Gérard"
-														aria-label="Sènou-Gérard"
-														aria-describedby="button-addon-group-username">
-													<div class="input-group-append">
-														<button class="btn btn-link" type="button"
-															id="button-addon-group-username">Update</button>
-														<!------>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="media">
-											<img src="assets/images/map.svg" alt="Generic placeholder image"
-												class=" align-self-center mr-3">
-											<div class="media-body">
-												<p>Location</p>
-												<div class="input-group">
-													<input type="text" class="form-control" value="Cotnou, Bénin"
-														aria-label="Cotnou, Bénin"
-														aria-describedby="button-addon-group-location">
-													<div class="input-group-append">
-														<button class="btn btn-link" type="button"
-															id="button-addon-group-location">Update</button>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="media">
-											<img src="assets/images/message-square.svg" alt="Generic placeholder image"
-												class=" align-self-center mr-3">
-											<div class="media-body">
-												<p>Status</p>
-												<div class="input-group">
-													<input type="text" class="form-control" value="Je suis developpeur"
-														aria-label="Je suis developpeur"
-														aria-describedby="button-addon-group-status">
-													<div class="input-group-append">
-														<button class="btn btn-link" type="button"
-															id="button-addon-group-status">Update</button>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="media">
-											<img src="assets/images/email.svg" alt="Generic placeholder image"
-												class=" align-self-center mr-3">
-											<div class="media-body">
-												<p>Email ID</p>
-												<div class="input-group">
-													<input type="email" class="form-control"
-														value="sodinyessigerard@gmail.com"
-														aria-label="sodinyessigerard@gmail.com"
-														aria-describedby="button-addon-group-emailid">
-													<div class="input-group-append">
-														<button class="btn btn-link" type="button"
-															id="button-addon-group-emailid">Update</button>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="media">
-											<img src="assets/images/lock.svg" alt="Generic placeholder image"
-												class=" align-self-center mr-3">
-											<div class="media-body">
-												<p>Password</p>
-												<div class="input-group">
-													<input type="password" class="form-control" value="********"
-														aria-label="********"
-														aria-describedby="button-addon-group-password">
-													<div class="input-group-append">
-														<button class="btn btn-link" type="button"
-															id="button-addon-group-password">Update</button>
-													</div>
-												</div>
-											</div>
-										</li>
-									<!--	<li class="media">
-											<img src="assets/images/folder-fill.svg" alt="Generic placeholder image"
-												class=" align-self-center mr-3">
-											<div class="media-body">
-
-												<div class="input-group">
-													<div class="input-group-append">
-														<a
-															href="../../../e-hospital/../e-hospital/examenDetail/detailTest/index.html">
-															<p>Dossiers</p>
-														</a>
-														<button class="btn btn-link" type="button"
-															id="button-addon-group-password"
-															style="margin-left: 160px;"><a href="#" data-toggle="modal"
-																data-target="#createGroup">Update</a></button>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="media">
-											<img src="assets/images/hospital-1_icon-icons.com_66068.svg" alt=""
-												style="width: 24px; height: 24px;">
-											<div class="media-body">
-												<div class="input-group">
-													<div class="input-group-append">
-														<a href="ticker1.html"><button class="btn btn-link"
-																type="button" id="button-addon-group-password">
-																<h6 style="margin-left: 7px;">Les Pharmacies</h6>
-															</button></a>
-													</div>
-												</div>
-											</div>
-										</li>
-										<li class="media">
-											<img src="assets/images/folder-fill.svg" alt="Generic placeholder image"
-												class=" align-self-center mr-3">
-											<div class="media-body">
-												<div class="input-group">
-													<div class="input-group-append">
-														<button class="btn btn-link" type="button"
-															id="button-addon-group-password"><a
-																href="../../../e-hospital/../e-hospital/index.html">
-																<h6> Visiter la communauté e-hospital</h6>
-															</a></button>
-													</div>
-												</div>
-											</div>
-										</li>-->
-									</ul>
-								</div>
-							</div>
+							<span id="getUserProfilIdForme"></span>
+						   </div>
 						</div>
+					</div>
+
+					<!---Create Patient profile--->
+					<div class="modal fade" id="exampleModalCreate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  <div class="modal-dialog" role="document">
+						<div class="modal-content">
+						  <div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Profil</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							  <span aria-hidden="true">&times;</span>
+							</button>
+						  </div>
+						  <div class="modal-body">
+							<form id="formProfil" action="javascript:postDataProfil()">
+								<!--<div class="form-group">
+									<label for="recipient-name" class="col-form-label">Nom d'utilisateur:</label>
+									<input type="text" class="form-control" name="username" id="recipient-username">
+								  </div>-->
+							  <div class="form-group">
+								<label for="recipient-name" class="col-form-label">Nom:</label>
+								<input type="text" class="form-control" name="last_name" id="recipient-last_name">
+							  </div>
+							  <div class="form-group">
+								<label for="recipient-name" class="col-form-label">Prénoms:</label>
+								<input type="text" class="form-control" name="first_name" id="recipient-first_name">
+							  </div>
+							 <!-- <div class="form-group">
+								<label for="recipient-name" class="col-form-label">Email:</label>
+								<input type="email" class="form-control" name="email" id="recipient-email">
+							  </div>-->
+							  <div class="form-group">
+								<label for="recipient-name" class="col-form-label">Photo:</label>
+								<input class="profile-upload" type="file" accept="image/*" id="recipient-file"/>
+							  </div>
+						  </div>
+						  <div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+							<input
+							type="submit"
+							value="Enregistrer"
+							id="logPO"
+							/>
+						  </div>
+						</form>
+						</div>
+					  </div>
 					</div>
 					<!-- End Chat Profilebar -->
 					<!-- Start Chat Settingbar -->
@@ -2129,19 +1781,16 @@
 						<div class="chat-settingbar">
 							<div class="chat-left-headbar">
 								<div class="row align-items-center">
-									<div class="col-8">
+									<div class="col-12">
 										<ul class="list-unstyled mb-0">
 											<li class="media">
-												<img class="align-self-center mr-2" src="assets/images/men1.png"
-													alt="Generic placeholder image"
-													style="width: 44px; height: 44px; border-radius: 100%;">
 												<div class="media-body">
-													<h5 class="mb-0 mt-2">Paramètres</h5>
+													<h5 class="mb-0 mt-2">Nos formations sur la sexualité </h5>
 												</div>
 											</li>
 										</ul>
-									</div>
-									<div class="col-4">
+									</div> 
+									<!--<div class="col-4">
 										<div class="dropdown">
 											<a href="#" id="settingDropdown" data-toggle="dropdown" aria-haspopup="true"
 												aria-expanded="false"> <img src="assets/images/more-verticale.svg"
@@ -2165,131 +1814,90 @@
 														IMC</a>
 												</div>
 										</div>
-									</div>
+									</div>-->
 								</div>
 							</div>
 							<div class="chat-left-body" style="padding-bottom: 60px;">
-								<p class="setting-header">Paramètres généraux</p>
+								<img src="assets/images/undraw_information_tab.svg" alt="">
+								<h6 class="setting-header" >A- Concepts de base en santé sexuelle et 
+									approfondissement 
+									des connaissances</h6>
 								<div class="general-setting">
 									<div class="row align-items-center pb-3">
-										<div class="col-9">
-											<h6 class="mb-0">Sons de notification</h6>
-										</div>
-										<div class="col-3 text-right">
-											<div class="custom-control custom-checkbox">
-												<input type="checkbox" class="custom-control-input"
-													id="notificationSound" checked>
-												<label class="custom-control-label" for="notificationSound"></label>
-											</div>
-										</div>
-									</div>
-									<div class="row align-items-center pb-3">
-										<div class="col-9">
-											<h6 class="mb-0">Alertes de nouveaux messages</h6>
-										</div>
-										<div class="col-3 text-right">
-											<div class="custom-control custom-checkbox">
-												<input type="checkbox" class="custom-control-input"
-													id="newMessageAlerts">
-												<label class="custom-control-label" for="newMessageAlerts"></label>
-											</div>
-										</div>
-									</div>
-									<div class="row align-items-center pb-3">
-										<div class="col-9">
-											<h6 class="mb-0">Afficher les mini-messages dans la barre latérale</h6>
-										</div>
-										<div class="col-3 text-right">
-											<div class="custom-control custom-checkbox">
-												<input type="checkbox" class="custom-control-input"
-													id="showMiniMessages">
-												<label class="custom-control-label" for="showMiniMessages"></label>
+										<div class="chat-message">
+											<div class="chat-message-text" style="box-shadow: 4px 4px 4px 4px #f5eded; padding: 12px;">
+												<strong style="color: red;">Descriptif : </strong>
+												<p>
+													ceci permettra à tous les 
+													participants filles comme garçon, adolescents 
+													comme adultes d'avoir de plus amples informations 
+													sur la santé sexuelle. Ils pourront poser tout type 
+													de question. Des questions dont ils n'avaient pas les reponses... 
+													Une formation sans tabou.
+												</p>
+												<div class="container">
+													<div class="row">
+														<div class="col-7">
+															<button class="btn btn-danger" >Prix : 2000 fcfa </button>
+														</div>
+														<div class="col-5">
+															<button class="btn btn-success" >Patrciper</button>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<p class="setting-header">Paramètres de confidentialité</p>
+								<h6 class="setting-header" >B- Approche en terme de savoir-être dans la communication sur la sexualité. </h6>
 								<div class="privacy-setting">
-									<div class="row align-items-center pb-3">
-										<div class="col-9">
-											<h6 class="mb-0">Lire les reçus</h6>
-										</div>
-										<div class="col-3 text-right">
-											<div class="custom-control custom-switch">
-												<input type="checkbox" class="custom-control-input" id="readReceipts"
-													checked>
-												<label class="custom-control-label" for="readReceipts"></label>
-											</div>
-										</div>
-									</div>
-									<div class="row align-items-center pb-3">
-										<div class="col-9">
-											<h6 class="mb-0">Afficher la photo de profil</h6>
-										</div>
-										<div class="col-3 text-right">
-											<div class="custom-control custom-switch">
-												<input type="checkbox" class="custom-control-input"
-													id="showProfilePicture">
-												<label class="custom-control-label" for="showProfilePicture"></label>
-											</div>
-										</div>
-									</div>
-									<div class="row align-items-center pb-3">
-										<div class="col-9">
-											<h6 class="mb-0">Autoriser les messages des inconnus</h6>
-										</div>
-										<div class="col-3 text-right">
-											<div class="custom-control custom-switch">
-												<input type="checkbox" class="custom-control-input"
-													id="allowMessageToStrangers">
-												<label class="custom-control-label"
-													for="allowMessageToStrangers"></label>
+									<div class="general-setting">
+										<div class="row align-items-center pb-3">
+											<div class="chat-message">
+												<div class="chat-message-text" style="box-shadow: 4px 4px 4px 4px #f5eded; padding: 12px;">
+													<strong style="color: red;">Descriptif : </strong>
+													<p>
+														cette formation parlera de l'hygiène en matière 
+														de sexualité. De quoi éviter les infections et autres...
+													</p>
+													<div class="row">
+														<div class="col-7">
+															<button class="btn btn-danger" >Prix : 2000 fcfa </button>
+														</div>
+														<div class="col-5">
+															<button class="btn btn-success" >Patrciper</button>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<p class="setting-header">DIMU Paramètre</p>
+								
+								<h6 class="setting-header" >C- SANTÉ SEXUELLE POUR TOUS•TES</h6>
 								<div class="privacy-setting">
-									<div class="row align-items-center pb-3">
-										<div class="col-9">
-											<h6 class="mb-0">Autoriser à votre Docteur</h6>
-										</div>
-										<div class="col-3 text-right">
-											<div class="custom-control custom-switch">
-												<input type="checkbox" class="custom-control-input"
-													id="readReceiptsDocteur" checked>
-												<label class="custom-control-label" for="readReceiptsDocteur"></label>
-											</div>
-										</div>
-									</div>
-									<div class="row align-items-center pb-3">
-										<div class="col-9">
-											<h6 class="mb-0">Autoriser à votre famille</h6>
-										</div>
-										<div class="col-3 text-right">
-											<div class="custom-control custom-switch">
-												<input type="checkbox" class="custom-control-input"
-													id="showProfilePicturefamille">
-												<label class="custom-control-label"
-													for="showProfilePicturefamille"></label>
-											</div>
-										</div>
-									</div>
-									<div class="row align-items-center pb-3">
-										<div class="col-9">
-											<h6 class="mb-0">Autoriser vos données à votre famille</h6>
-										</div>
-										<div class="col-3 text-right">
-											<div class="custom-control custom-switch">
-												<input type="checkbox" class="custom-control-input"
-													id="allowMessageToStrangersdonnées">
-												<label class="custom-control-label"
-													for="allowMessageToStrangersdonnées"></label>
+									<div class="general-setting">
+										<div class="row align-items-center pb-3">
+											<div class="chat-message">
+												<div class="chat-message-text" style="box-shadow: 4px 4px 4px 4px #f5eded; padding: 12px;">
+													<strong style="color: red;">Descriptif : </strong>
+													<p>
+														regroupement de médecins et des adolescents pour un débat explicatif
+													</p>
+													<div class="row">
+														<div class="col-7">
+															<button class="btn btn-danger" >Prix : 2000 fcfa </button>
+														</div>
+														<div class="col-5">
+															<button class="btn btn-success" >Patrciper</button>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<p class="setting-header">Paramètres du bracelet</p>
+								<!--<p class="setting-header">Paramètres du bracelet</p>
 								<div class="privacy-setting">
 									<div class="row align-items-center pb-3">
 										<div class="col-9">
@@ -2327,7 +1935,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
+								</div>-->
 							</div>
 						</div>
 					</div>
@@ -2354,6 +1962,13 @@
 								Plannings
 						</li>
 						<li class="nav-item">
+							<a class="nav-link" id="pills-setting-tab-justified" data-toggle="pill"
+								href="#pills-setting-justified" role="tab" aria-controls="pills-setting-justified"
+								aria-selected="false"><img src="assets/images/education-svgrepo-com.svg"
+									alt="Generic placeholder image" style="font-size: 24px; color:red;"></a>
+									Formations
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" id="pills-profile-tab-justified" data-toggle="pill"
 								href="#pills-profile-justified" role="tab" aria-controls="pills-profile-justified"
 								aria-selected="false"> <img src="assets/images/girla.svg"
@@ -2362,12 +1977,6 @@
 								</a>
 								Profil
 						</li>
-						<!--<li class="nav-item">
-							<a class="nav-link" id="pills-setting-tab-justified" data-toggle="pill"
-								href="#pills-setting-justified" role="tab" aria-controls="pills-setting-justified"
-								aria-selected="false"><img src="assets/images/girlasettings.svg"
-									alt="Generic placeholder image" style="font-size: 24px; color:red;"></a>
-						</li>-->
 					</ul>
 				</div>
 			</div>
@@ -2392,6 +2001,12 @@
 							<div class="col-7">
 								<ul class="list-inline float-right mb-0">
 									<li class="list-inline-item">
+										<a class="showAudioPlanning" id="chat-thirteenth-tab" data-toggle="pill"
+											href="#chat-thirteenth" role="tab" aria-controls="chat-thirteenth"
+											aria-selected="false" onclick="onBlockIF()">
+											<img class="align-self-center rounded-circle"
+													src="assets/images/pharmacie.svg" alt="User Image" style="margin-left: 5px; width: 30px; height: 20px;">
+										</a>	
 									<!---	<a href="#" data-toggle="modal" data-target="#incomingVoiceCall"> <img
 												class="align-self-center rounded-circle" src="assets/images/pharmacie.svg"
 												alt="Generic placeholder image"
@@ -2432,7 +2047,7 @@
 					</div>
 					<div class="chat-body" style="padding-bottom: 200px;">
 						<div class="tab-content" id="chat-listContent">
-							<div role="tabpanel" class="tab-pane fade" id="chat-fourtinth"
+							<div role="tabpanel" class="tab-pane fade show active" id="chat-fourtinth"
 								aria-labelledby="chat-first-tab">
 								<div class="chat-day text-center mb-3">
 									<span class="badge badge-secondary-inverse" id="taday">Les méthodes contraceptives hormonales</span>
@@ -3569,7 +3184,7 @@
 									</div>
 								</div>
 								<div class="chat-message">
-									<div class="chat-message-text">
+									<div class="chat-message-text"> 
 									<strong><p><em style="color: red;"> Méthode des jours fixes. </em>Dans cette méthode, le couple s’abstient de rapports
 										sexuels non protégés depuis le 8e jour jusqu’à la fin du 19e jour du cycle
 										menstruel, le jour de la survenue des règles étant compté comme le jour 1.
@@ -3934,7 +3549,8 @@
 							<div class="tab-pane fade" id="chat-thirteenth" role="tabpanel"
 								aria-labelledby="chat-thirteenth-tab">
 								<div class="container d-flex justify-content-center mt-100">
-									<div class="row"> 
+									<div class="row" id="autorsIdProduct"></div>
+									<!--<div class="row" style="display: none;"> 
 										<div class="col-md-4"> 
 											<div class="product-wrapper mb-45 text-center"> 
 												<div class="product-img"> 
@@ -3971,9 +3587,9 @@
 											</div> 
 										</div> 
 									</div>	 
-									</div>	
+									</div>-->
 								</div>
-								<div class="container d-flex justify-content-center mt-100">
+								<!--<div class="container d-flex justify-content-center mt-100">
 									<div class="row"> 
 										<div class="col-md-4"> 
 											<div class="product-wrapper mb-45 text-center"> 
@@ -4052,127 +3668,27 @@
 										</div> 
 									</div>	 
 									</div>	
-								</div>
+								</div>-->
 								<style>
 									.ImgPlanning{
 										height: 50vh;
-										width: 60vh;
+										width: 100vh;
+										border-radius: 3vh;
 									}
 								</style>
 							</div>
-							<div class="tab-pane fade show active" id="chat-first" role="tabpanel"
-								aria-labelledby="chat-fourtinth-tab">
-								
-								<div class="empty-screen">
-									<h5>Je veux améliorer ma santé sexuelle, c’est ma Priorité Santé !</h5>
-									<p>Pour améliorer votre santé sexuelle, e-doto family vous propose
-										 la démarche suivante :</p>
-								<div>
-								<h1><strong>1-Je veux comprendre avant d’agir</strong></h1>
-									<p></p>
-									<div class="chat-message">
-									<div class="chat-message-text">
-									<p>
-										En 2002, l’OMS définissait la santé sexuelle ainsi : « La santé 
-										sexuelle est un état de bien-être physique, mental et social dans le domaine 
-										de la sexualité. La santé sexuelle fait partie intégrante de la santé, du bien-être et de la qualité de vie dans leur ensemble. »
-
-										Une bonne santé sexuelle contribue largement à la santé physique, psychique, et à la qualité de vie. 
-										Elle a de nombreux effets bénéfiques tels qu’amélioration de l’humeur, diminution des symptômes 
-										dépressifs, diminution du risque d’hypertension artérielle et de maladie cardiovasculaire.
-									</p>
+							<div class="tab-pane fade " id="chat-first" role="tabpanel"
+								aria-labelledby="chat-first-tab" style="margin:10vh;">
+								<div class="container">
+									<div class="row">
+										<div class="col-12">
+											<img src="assets/images/undraw_play_time.svg" alt=""
+											style="width: 100%; height: 50vh;"
+											>
+										</div>
 									</div>
-								    </div>
-									<h6>Comment ça marche ?</h6>
-									<p>
-										La figure ci-dessous illustre les 3 axes principaux de la santé sexuelle :
-									</p>
-									<img src="assets/images/sante_sexuelle_01_schema_LOW.jpg" alt="">
-									<h3 style="margin-top: 12px;">Sécurité – safe sex</h3>
-									<p>Du point de vue de la sécurité, les 2 objectifs principaux sont :</p>
-									<p>-Eviter d’attraper ou transmettre une infection sexuellement transmissible (IST)</p>
-									<p>-Eviter une grossesse non désirée</p>
-									<p>Les moyens proposés par e-doto family sont :</p>
-									<ul><div class="chat-message">
-										<div class="chat-message-text">
-										<li>
-											<p>Utiliser un préservatif (de préférence lubrifié) est le meilleur moyen de réduire 
-												les risques de IST et de grossesse. Utiliser un gel hydrosoluble pour prévenir une 
-												déchirure du préservatif (risque accru si sécheresse vaginale). Les corps gras et la 
-												vaseline sont à proscrire car ils peuvent altérer le préservatif ou le rendre poreux ce qui
-												 augmente le risque de contamination ainsi que le risque de rupture.
-											</p>
-										</li>
-										</div>
-										</div>
-										<div class="chat-message">
-										<div class="chat-message-text">
-										<li><p>Consutez nos  méthodes contraceptives avec leur efficacité.</p></li>
-										</div>
-										</div>
-										<div class="chat-message">
-										<div class="chat-message-text">
-										<li>
-											<p>La sécurité c’est aussi de savoir fixer sa limite de risque acceptable… et 
-												s’y tenir. Gérer aussi sa consommation d’alcool (ou de drogues) pour éviter des 
-												décisions inadéquates. Enfin, la lecture d’un livre sur la sexualité permet de mieux 
-												en comprendre le fonctionnement et de mieux la contrôler.
-											</p>
-										</li>
-										</div>
-										</div>
-									</ul>
 								</div>
-
-								<img src="" alt="">
-								<h3>Plaisir – fun sex</h3>
-								<div class="chat-message">
-								<div class="chat-message-text">
-								<p style="text-align: center;">Pulsion de vie, modulateur de l’organisation et du fonctionnement des sociétés, motivateur de rencontres et de relations interpersonnelles proches, 
-									la fonction sexuelle est en plus une importante source de plaisir et de récompense.Si la sexualité est encore dans de nombreuses cultures un sujet tabou, la recherche du plaisir l’est encore bien plus. Pourtant, la recherche de plus de plaisir dans la sexualité a fait l’objet d’innombrables écrits à 
-									travers les siècles, et plus récemment, de nombreuses publications scientifiques.
-									On assiste actuellement à une forme de démocratisation, de réappropriation, de déculpabilisation du plaisir aujourd’hui toujours plus accessible, à travers l’utilisation de produits et d’accessoires dont l’utilité et l’efficacité ont largement été démontrées.
-									Les moyens proposés par la Pharmacie Principale sont :
-								</p>
-								</div>
-								</div>
-								<div class="chat-message">
-								<div class="chat-message-text">
-								<p>-Le plaisir est lié à la connaissance de son corps et de ses réactions. Les stimulateurs pour femmes et hommes ont pour but d’aider à explorer et découvrir les différentes zones du corps susceptibles de générer de nouvelles 
-								sensations de plaisir et produire des orgasmes différents (clitoridien, vaginal, anal) plus intenses.</p>
-								<p>-Les lubrifiants et arômes renforcent l’aspect érotique et le plaisir. Le choix du lubrifiant est important selon que l’on utilise ou non, un préservatif ou un sextoy. Certains lubrifiants respectent mieux la flore vaginale et anale. Sans oublier les lubrifiants naturels 
-								comme l’huile d’amande douce et de coco.</p>
-								<p>-Les huiles de massages sont ludiques et apportent un côté agréable. Elles contribuent à déclencher le désir, 
-								renforcent l’excitation et peuvent faciliter l’orgasme.</p>
-								<p>Certains parfums d’ambiance ont des propriétés érotiques, et les bougies parfumées créent 
-								en plus une ambiance intime favorisant la sexualité.</p>
-								</div>
-								</div>
-							</div>
-							<div>
-								<h3>Les difficultés</h3>
-							<p>La fonction sexuelle influence et est influencée par de nombreux facteurs 
-								comme l’illustre la figure ci-dessous. Cela explique qu’environ 40% des femmes et 30% des 
-								hommes connaissent des difficultés avec leur sexualité au cours de leur vie. Dans la plupart des cas, 
-								les solutions existent et sont très efficaces. Le principal problème est le fait que les personnes en difficulté 
-								attendent jusqu’à 7 ans avant d’en parler à leur médecin ou un sexologue.</p>
-							<img src="assets/images/schema_fonction_sexuelle.jpg" alt="">
-							<p>En cas de difficulté, le plus important est d’en parler. Avec votre partenaire, votre médecin, ou encore avec nos pharmaciens. En particulier si les symptômes durent depuis plus de 6 mois et que vous en souffrez.
-
-								Nos équipes ont été formées par des sexologues expérimentés, et nous sommes à votre disposition
-								 6 jours sur 7, et même 7 jours sur 7 à notre officine de l’aéroport. Notre formation s’est focalisée 
-								 sur les principales difficultés (femme – homme) illustrées ci-dessous, 
-								et sur les solutions possibles dans le cadre de notre rôle de pharmacien.</p>
-								<img src="assets/images/solutions.png" alt="">
-							<p>Dans la mesure où la difficulté est récente, nous pouvons proposer un produit ou un 
-								accessoire pour apporter une amélioration. S’il s’agit d’un problème plus ancien, 
-								accompagné de souffrances, il est important de consulter votre médecin ou un sexologue. 
-								Une modification de votre sexualité est un signe important pour votre santé. Il faut donc en 
-								chercher la cause. Un simple traitement médicamenteux peut causer des difficultés sexuelles. 
-								Un changement de médicament ou de dosage peut suffire pour 
-								supprimer le problème. Une raison de plus pour venir nous en parler.</p>
-							</div>
-						 </div>
+						    </div>
 					</div>
 					</div>
 					<div class="chat-bottom">
@@ -4240,8 +3756,33 @@
 												</div>
 											</li>
 										</ul>-->
-										<a href="#" data-toggle="modal" data-target="#incomingaliderplanning"><img src="assets/images/send.svg"
-											alt="Generic placeholder image"></a>
+										<div class="whatsapp_chat_support wcs_fixed_right" id="example_3" >
+											<div class="wcs_button_label">Contacter les médecins</div>
+											<div class="wcs_button wcs_button_circle">
+												<img src="./assets/images/lesLogosCentre.png" alt="" />
+											</div>
+									  
+											<div class="wcs_popup">
+											  <div class="wcs_popup_close">
+												<span class="fa fa-close"></span>
+											  </div>
+											  <div class="wcs_popup_header">
+												<strong>Besoin de mise en contact avec un médecin ? </strong>
+												<br />
+												<div class="wcs_popup_header_description">
+												  Cliquez sur l'un des centres ci-dessous !
+												</div>
+											  </div>
+											  <div
+												class="wcs_popup_person_container"
+												style="padding: 15px; overflow-y: auto; height: 300px"
+											  >
+											<span id="myDropdownIdWhatyY"></span>
+											  </div>
+											</div>
+										  </div>
+									<!--<a href="#" data-toggle="modal" data-target="#incomingaliderplanning"><img src="assets/images/send.svg"
+											alt="Generic placeholder image"></a>-->
 									</div>
 								</div>
 							</form>
@@ -4252,11 +3793,11 @@
 
 				<!-- End Chat Detail -->
 				<!-- Start Chat User Info -->
-				<div class="chat-user-info" id="AllHospitalBenInfo">
+				<div class="chat-user-info">
 					<div class="chat-user-head">
 						<div class="row align-items-center">
 							<div class="col-9">
-								<h5>Hôpital Info</h5>
+								<h5>les centres cliniques</h5>
 							</div>
 							<div class="col-3">
 								<ul class="list-inline float-right mb-0">
@@ -4268,106 +3809,58 @@
 							</div>
 						</div>
 					</div>
-					<div class="chat-user-body">
-						<div class="userbar">
-							<img class=" img-fluid" src="assets/images/hospitalImage.svg" alt="user-pic">
-							<h5>Planning Familial</h5>
-							<p class="mb-0">Les femmes, les hommes ou les couples peuvent choisir parmi de multiples 
-								méthodes contraceptives celle qui leur 
-								convient le mieux pour planifier leur famille et éviter une grossesse non désirée.</p>
-						</div>
-						<div class="user-detail">
-							<div class="container">
-								<article class="card">
-									<div class="card-body">
-										<div class="track">
-											<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Cycle validé</span> </div>
-											<div class="step active"> <span class="icon" id="spanI"><i class="fa fa-check"></i> </span> <span class="text">Planning validé</span> </div>
-											<div class="step"> <span class="icon"> <i class="fa fa-user"></i></i> </span> <span class="text">Suivi planning</span> </div>
-											<div class="step"> <span class="icon"><i class="fa fa-truck"></i> <i class="fa fa-box"></i> </span> <span class="text">Objectif atteint</span> </div>
-										</div>
-									</div>
-
-								</article>
+					<section id="AllHospitalBenInfo">
+						<div class="chat-user-body">
+							<div class="userbar">
+								<img class=" img-fluid" src="assets/images/hospitalImage.svg" alt="user-pic">
+								<h5>Planning Familial</h5>
+								<p class="mb-0">Les femmes, les hommes ou les couples peuvent choisir parmi de multiples 
+									méthodes contraceptives celle qui leur 
+									convient le mieux pour planifier leur famille et éviter une grossesse non désirée.</p>
 							</div>
-							<style>
-								@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');body{background-color: #eeeeee;font-family: 'Open Sans',serif}.card{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 0.10rem}.card-header:first-child{border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0}.card-header{padding: 0.75rem 1.25rem;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.1)}.track{position: relative;background-color: #ddd;height: 7px;display: -webkit-box;display: -ms-flexbox;display: flex;margin-bottom: 60px;margin-top: 50px}.track .step{-webkit-box-flex: 1;-ms-flex-positive: 1;flex-grow: 1;width: 25%;margin-top: -18px;text-align: center;position: relative}.track .step.active:before{background: #FF5722}.track .step::before{height: 7px;position: absolute;content: "";width: 100%;left: 0;top: 18px}.track .step.active .icon{background: #ee5435;color: #fff}.track .icon{display: inline-block;width: 40px;height: 40px;line-height: 40px;position: relative;border-radius: 100%;background: #ddd}.track .step.active .text{font-weight: 400;color: #000}.track .text{display: block;margin-top: 7px}.itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}.itemside .aside{position: relative;-ms-flex-negative: 0;flex-shrink: 0}.img-sm{width: 80px;height: 80px;padding: 7px}ul.row, ul.row-sm{list-style: none;padding: 0}.itemside .info{padding-left: 15px;padding-right: 7px}.itemside .title{display: block;margin-bottom: 5px;color: #212529}p{margin-top: 0;margin-bottom: 1rem}.btn-warning{color: #ffffff;background-color: #ee5435;border-color: #ee5435;border-radius: 1px}.btn-warning:hover{color: #ffffff;background-color: #ff2b00;border-color: #ff2b00;border-radius: 1px}
-							</style>
-							<div class="user-social" style="display: none;">
-								<ul class="list-inline mb-0">
-									<li class="list-inline-item">
-										<a href="#" class="facebook"><img src="assets/images/facebook.svg"
-												alt="user-pic"></a>
-									</li>
-									<li class="list-inline-item">
-										<a href="#" class="twitter"><img src="assets/images/twitter.svg"
-												alt="user-pic"></a>
-									</li>
-									<li class="list-inline-item">
-										<a href="#" class="instagram"><img src="assets/images/instagrame.svg"
-												alt="user-pic"></i></a>
-									</li>
-								</ul>
+							<div class="user-detail">
+								<div class="container">
+									<article class="card">
+										<div class="card-body">
+											<div class="track">
+												<div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span class="text">Cycle validé</span> </div>
+												<div class="step active"> <span class="icon" id="spanI"><i class="fa fa-check"></i> </span> <span class="text">Planning validé</span> </div>
+												<div class="step"> <span class="icon"> <i class="fa fa-user"></i></i> </span> <span class="text">Suivi planning</span> </div>
+												<div class="step"> <span class="icon"><i class="fa fa-truck"></i> <i class="fa fa-box"></i> </span> <span class="text">Objectif atteint</span> </div>
+											</div>
+										</div>
+	
+									</article>
+								</div>
+								<style>
+									@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');body{background-color: #eeeeee;font-family: 'Open Sans',serif}.card{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;flex-direction: column;min-width: 0;word-wrap: break-word;background-color: #fff;background-clip: border-box;border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 0.10rem}.card-header:first-child{border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0}.card-header{padding: 0.75rem 1.25rem;margin-bottom: 0;background-color: #fff;border-bottom: 1px solid rgba(0, 0, 0, 0.1)}.track{position: relative;background-color: #ddd;height: 7px;display: -webkit-box;display: -ms-flexbox;display: flex;margin-bottom: 60px;margin-top: 50px}.track .step{-webkit-box-flex: 1;-ms-flex-positive: 1;flex-grow: 1;width: 25%;margin-top: -18px;text-align: center;position: relative}.track .step.active:before{background: #FF5722}.track .step::before{height: 7px;position: absolute;content: "";width: 100%;left: 0;top: 18px}.track .step.active .icon{background: #ee5435;color: #fff}.track .icon{display: inline-block;width: 40px;height: 40px;line-height: 40px;position: relative;border-radius: 100%;background: #ddd}.track .step.active .text{font-weight: 400;color: #000}.track .text{display: block;margin-top: 7px}.itemside{position: relative;display: -webkit-box;display: -ms-flexbox;display: flex;width: 100%}.itemside .aside{position: relative;-ms-flex-negative: 0;flex-shrink: 0}.img-sm{width: 80px;height: 80px;padding: 7px}ul.row, ul.row-sm{list-style: none;padding: 0}.itemside .info{padding-left: 15px;padding-right: 7px}.itemside .title{display: block;margin-bottom: 5px;color: #212529}p{margin-top: 0;margin-bottom: 1rem}.btn-warning{color: #ffffff;background-color: #ee5435;border-color: #ee5435;border-radius: 1px}.btn-warning:hover{color: #ffffff;background-color: #ff2b00;border-color: #ff2b00;border-radius: 1px}
+								</style>
+								<div class="user-social" style="display: none;">
+									<ul class="list-inline mb-0">
+										<li class="list-inline-item">
+											<a href="#" class="facebook"><img src="assets/images/facebook.svg"
+													alt="user-pic"></a>
+										</li>
+										<li class="list-inline-item">
+											<a href="#" class="twitter"><img src="assets/images/twitter.svg"
+													alt="user-pic"></a>
+										</li>
+										<li class="list-inline-item">
+											<a href="#" class="instagram"><img src="assets/images/instagrame.svg"
+													alt="user-pic"></i></a>
+										</li>
+									</ul>
+								</div>
+								<div></div>
 							</div>
-							<div></div>
-							<!--<p class="user-detail-header">Les fichiers sur le planning Familial</p>
-							<div class="user-media">
-								<div class="user-media-slider">
-									<div class="user-media-slider-item">
-										<img src="assets/images/media_01.png" class="" alt="user-media">
-									</div>
-									<div class="user-media-slider-item">
-										<img src="assets/images/media_02.png" class="" alt="user-media">
-									</div>
-									<div class="user-media-slider-item">
-										<img src="assets/images/media_03.png" class="" alt="user-media">
-									</div>
-									<div class="user-media-slider-item">
-										<img src="assets/images/media_04.png" class="" alt="user-media">
-									</div>
-									<div class="user-media-slider-item">
-										<img src="assets/images/pdf.svg" class="" alt="user-media">
-									</div>
-									<div class="user-media-slider-item">
-										<img src="assets/images/xls.svg" class="" alt="user-media">
-									</div>
-									<div class="user-media-slider-item">
-										<img src="assets/images/doc.svg" class="" alt="user-media">
-									</div>
-								</div>
-							</div>-->
-							
-						<!--	<p class="user-detail-header">Paramètres</p>
-							<div class="user-setting">
-								<div class="row align-items-center pb-3">
-									<div class="col-9">
-										<h6 class="mb-0">Désactiver les notifications</h6>
-									</div>
-									<div class="col-3 text-right">
-										<div class="custom-control custom-switch">
-											<input type="checkbox" class="custom-control-input" id="muteNotification"
-												checked>
-											<label class="custom-control-label" for="muteNotification"></label>
-										</div>
-									</div>
-								</div>
-								<div class="row align-items-center pb-3">
-									<div class="col-9">
-										<h6 class="mb-0">Bloquer le contact</h6>
-									</div>
-									<div class="col-3 text-right">
-										<div class="custom-control custom-switch">
-											<input type="checkbox" class="custom-control-input" id="blockContact">
-											<label class="custom-control-label" for="blockContact"></label>
-										</div>
-									</div>
-								</div>
-							</div>-->
 						</div>
-					</div>
+					</section>
+					<section id="AllHospitalBen"  style="display: none;">
+						<span id="autorsId"></span>
+					</section>
 				</div>
-				<!--les hôpitaux-->
-				<div class="chat-user-info" id="AllHospitalBen"  style="display: none;">
+				<!--les hôpitaux
+				<div class="chat-user-info">
 					<div class="chat-user-head">
 						<div class="row align-items-center">
 							<div class="col-9">
@@ -4384,1274 +3877,16 @@
 						</div>
 					</div>
 					<div class="chat-user-body">
-							<section>
-								<!--The div element for the map -->
-								<div id="map"></div>
-								<div
-								  class="modal fade"
-								  id="modaleAceptFacturactionMOOW"
-								  tabindex="-1"
-								  role="dialog"
-								  aria-labelledby="exampleModalLabel"
-								  aria-hidden="true"
-								>
-								  <div class="modal-dialog" role="document">
-									<div class="modal-content">
-									  <div class="modal-header">
-										<h5 class="modal-title" id="modaleAceptFacturactionMOOWLabel">
-										  Vous accetez faire un transfert à la pharmacie?
-										  <img
-											src="assets/images/2.png"
-											alt=""
-											style="width: 50px; height: 50px"
-										  />
-										</h5>
-									  </div>
-									  <div class="modal-body">
-										<img
-										  src="assets/images/undraw_Payments_re_77x0.svg"
-										  alt=""
-										  style="width: 100%; height: 100%"
-										/>
-										<div>
-										  <label>Votre Numéro</label>
-										  <input
-											type="tel"
-											pattern="\d*"
-											maxlength="19"
-											class="inpMOOW"
-											value="51455930"
-										  />
-										  <label>Numéro de la pharmacie</label>
-										  <input
-											type="tel"
-											pattern="\d*"
-											maxlength="7"
-											class="inpMOOW"
-											value="96529627"
-										  />
-										  <label>votre code</label>
-										  <input
-											type="tel"
-											pattern="\d*"
-											maxlength="4"
-											placeholder="Votre code"
-											class="inpMOOW"
-										  />
-										</div>
-									  </div>
-									  <div class="modal-footer">
-										<button
-										  type="button"
-										  class="btn btn-info"
-										  data-dismiss="modal"
-										  onclick="refuseFactureMOOW()"
-										>
-										  Refuser
-										</button>
-										<button
-										  type="button"
-										  class="btn btn-danger payerVotreOrdonnanceC"
-										  data-toggle="modal"
-										  data-target="#basicModal"
-										>
-										  Payer
-										</button>
-									  </div>
-									</div>
-								  </div>
-								</div>
-						  
-								<!-- basic modal -->
-								<div
-								  class="modal fade"
-								  id="basicModal"
-								  tabindex="-1"
-								  role="dialog"
-								  aria-labelledby="basicModal"
-								  aria-hidden="true"
-								  style="padding-top: 150px"
-								>
-								  <div class="modal-dialog">
-									<div class="modal-content">
-									  <div class="modal-header">
-										<h4 class="modal-title" id="myModalLabel">
-										  Confirmation de votre achat
-										</h4>
-									  </div>
-									  <div class="modal-body">
-										<p>Votre achat est approuvé. Voulez vous avec livraison?</p>
-									  </div>
-									  <div class="modal-footer">
-										<button
-										  type="button"
-										  class="btn btn-default"
-										  data-dismiss="modal"
-										  onclick="refuseFactureMOOW()"
-										>
-										  Non
-										</button>
-										<button
-										  type="button"
-										  class="btn btn-primary"
-										  data-dismiss="modal"
-										  onclick="messageDeLivraison()"
-										>
-										  Oui
-										</button>
-									  </div>
-									</div>
-								  </div>
-								</div>
-						  
-								<div id="id01" class="w3-modal" style="padding-top: 150px">
-								  <div class="w3-modal-content" style="padding-bottom: 47px">
-									<div class="w3-container">
-									  <span
-										onclick="quitMessageDeLivraison()"
-										class="w3-button w3-display-topright"
-										>&times;</span
-									  >
-									  <img src="assets/images/undraw_deliveries_2r4y.svg" alt="" />
-									</div>
-								  </div>
-								</div>
-						  
-								<div
-								  class="modal fade"
-								  id="modaleAceptFacturactionDelivry"
-								  tabindex="-1"
-								  role="dialog"
-								  aria-labelledby="exampleModalLabel"
-								  aria-hidden="true"
-								  style="padding-top: 50px"
-								>
-								  <div class="modal-dialog" role="document">
-									<div class="modal-content">
-									  <div class="modal-body">
-										<img
-										  src="assets/images/undraw_deliveries_2r4y.svg"
-										  alt=""
-										  style="width: 100%; height: 100%"
-										/>
-										<div>
-										  <strong
-											><p style="color: black">
-											  Nous vous remercions énormément d'avoir effectué votre
-											  achat. Votre colis de médicaments vous sera livré dans
-											  quelques minutes.
-											</p></strong
-										  >
-										</div>
-									  </div>
-									  <div class="modal-footer">
-										<button
-										  type="button"
-										  class="btn btn-info"
-										  data-dismiss="modal"
-										  onclick="refuseFactureMOOW()"
-										>
-										  D'accord
-										</button>
-									  </div>
-									</div>
-								  </div>
-								</div>
-								<script>
-								  function quittermaps() {
-									history.back();
-								  }
-								  ////// fonction Mooow
-								  //MOOW function
-								  var allPharmacyIdVar = document.querySelectorAll(".allPharmacyId");
-								  allPharmacyIdVar.forEach((x) => {
-									x.addEventListener("click", function () {
-									  console.log("ok mon boss");
-									  $("#modaleAceptFacturactionMOOW").modal({
-										show: true,
-										backdrop: "static",
-										keyboard: false,
-									  });
-									});
-								  });
-						  
-								  function refuseFactureMOOW() {
-									document.getElementById("myModal").style.display = "block";
-								  }
-								  //function payer votre medicament
-								  function payervotremedic() {
-									$("#payermedicamentbody").addClass("chatpharma");
-									document.getElementById("payermedicament").style.display = "block";
-								  }
-								  function initMap() {
-									//get position user
-									if ("geolocation" in navigator) {
-									  // vérifiez si l'utilisateur à activer sa géolocalisation
-									  var positionWatcher = navigator.geolocation.watchPosition(
-										// la position va s'actualiser selon maximumAge
-										(position) => {
-										  var latitude = position.coords.latitude;
-										  var longitude = position.coords.longitude;
-						  
-										  var options = {
-											zoom: 13,
-											center: new google.maps.LatLng(latitude, longitude),
-										  };
-										  
-										  // New map
-										  var map = new google.maps.Map(
-											document.getElementById("map"),
-											options
-										  );
-						  
-										  var ok = 6.367031194359564;
-						  
-										  var allhospitalAuBenin = [
-											{
-											  coords: {
-												lat: ok,
-												lng: 2.4542892891581345,
-											  },
-											  title: "bonjours",
-											  content: `
-									 <div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-									  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-										  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-									 </div>
-									  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Data structureand algorithm</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-									   </div>
-									  </div> 
-									`,
-											},
-										  ];
-						  
-										  for (var i = 0; i < allhospitalAuBenin.length; i++) {
-											// Add marker
-											console.log(allhospitalAuBenin[i].coords);
-										  }
-						  
-										  // Array of markers
-										  var markers = [
-											{
-											  coords: {
-												lat: 6.367031194359564,
-												lng: 2.4542892891581345,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-										  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Data structureand algorithm</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.370207035827131,
-												lng: 2.4303069518319145,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie des 4 thérapies</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.385300849708517,
-												lng: 2.424747752587807,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie Aidjèdo cotonou</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.377866949458491,
-												lng: 2.4417823741900397,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie Midombo</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												at: 6.369042525685197,
-												lng: 2.420160926394599,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie Adechinan</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.367983775329272,
-												lng: 2.4019941865190404,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie Ste. PHILOMENE, Cotonou</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.364095047330313,
-												lng: 2.4178826136906473,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">UBPHAR S.A, 01BP 3629, Cotonou</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.359799805914865,
-												lng: 2.4314081404255683,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie JONQUET, Cotonou </h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.364223159561423,
-												lng: 2.4137092943779623,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie du rond point, Cotonou </h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.38193067237133,
-												lng: 2.3897280042345757,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie Akossombo, Cotonou </h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.360068830947836,
-												lng: 2.3642926510203766,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie Océane, Rue 2356, Cotonou</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.367347602730905,
-												lng: 2.476744887562856,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmaquick by ABT, 46 Rue 1153, Cotonou</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.370776955121309,
-												lng: 2.403694793400974,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">PHARMACIE SAINTE FOI, Cotonou Lot carré N0 1081 Vodjè, Cotonou</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.357584706422746,
-												lng: 2.4524318451923603,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">CAME, Cotonou </h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.374359569984654,
-												lng: 2.391679552121058,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Club billard, 06 BP1736 Abomey Calavi ZOPAH</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.362576677393703,
-												lng: 2.4363455994245196,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Pharmacie Avleketa, Cotonou</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-											{
-											  coords: {
-												lat: 6.390186706250266,
-												lng: 2.4151903313176217,
-											  },
-											  title: "bonjours",
-											  content: `
-									<div class="card" style="font-family: sans-serif;
-									  background: #b3ffe3;
-									  min-height: 50vh;
-									  display: flex;
-									  justify-content: center;
-									  align-items: center; background: #fff;
-									  width: 15rem;
-									  border-top-left-radius: 10px;
-									  border-top-right-radius: 10px;
-									  border: none;
-									  overflow: hidden;
-									  transition: all 0.2s ease-in-out;">
-								  <div class="image-box" style="height: 30vh;
-										  border-radius: inherit;
-										  border: none;
-										  background: #70bee6; ">
-									  <img src="assets/images/LLogoP.png" alt=""
-									  style="width: 100%;
-										  height: 100%;"
-									  >
-								  </div>
-								  <div class="card-content" style="padding: 1.3rem;">
-									  <h2 class="card-title" style="margin-top: 1rem;
-										  font-size: 1.1rem;">Bs-Immo, Rue 670A, Cotonou</h2>
-									  <small class="sub-title" style="color: gray;">voici les avis de nos clients</small>
-									  <div class="rating" style="margin-top: 0.5rem;">
-										  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star checked" style="color: gold;"></span>
-										  <span class="fa fa-star" style="color: gold;"></span>
-										  <span class="fa fa-star"></span>
-									  </div>
-									  <a class="allPharmacyId"><button class="btn" style="margin-top: 1rem;
-										  padding: 0.7rem 1rem;
-										  width: 100%;
-										  border-radius: 5px;
-										  text-transform: capitalize;
-										  background: none;
-										  border: 2px solid #70bee6;
-										  transition: 0.3s ease;" id='nousalons'>Acheter chez nous</button></a>
-								  </div>
-								  </div>
-									
-									`,
-											},
-										  ];
-						  
-										  // Loop through markers
-										  for (var i = 0; i < markers.length; i++) {
-											// Add marker
-											addMarker(markers[i]);
-										  }
-						  
-										  // Add Marker Function
-										  function addMarker(props) {
-											var marker = new google.maps.Marker({
-											  position: props.coords,
-											  map: map,
-											  //icon:props.iconImage
-											});
-						  
-											// Check for customicon
-											if (props.iconImage) {
-											  // Set icon image
-											  marker.setIcon(props.iconImage);
-											}
-						  
-											// Check content
-											if (props.content) {
-											  var infoWindow = new google.maps.InfoWindow({
-												content: props.content,
-											  });
-						  
-											  marker.addListener("click", function () {
-												infoWindow.open(map, marker);
-											  });
-											}
-										  }
-										},
-										(error) => {
-										  alert(
-											"On n'a pas reussi à récupérer votre localisation ! Réactualiser la page puis autoriser votre position. Merci."
-										  );
-										},
-										{
-										  enableHighAccuracy: true, // demande de précision ( consomme la battérie sur mobile )
-										  maximumAge: 0, // durée d'expiration d'une requête de position
-										  timeout: 10000, // durée d'attente d'une requête de position
-										}
-									  );
-						  
-									  positionWatcher.geolocation.clearWatch(); // pour stopper le watcher
-									}
-									// Map options
-						  
-									// Listen for click on map
-									//google.maps.event.addListener(map, 'click', function(event){
-									// Add marker
-									//  addMarker({coords:event.latLng});
-									// });
-						  
-									/*
-									  // Add marker
-									  var marker = new google.maps.Marker({
-										position:{lat:42.4668,lng:-70.9495},
-										map:map,
-										icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-									  });
-						  
-									  var infoWindow = new google.maps.InfoWindow({
-										content:'<h1>Lynn MA</h1>'
-									  });
-						  
-									  marker.addListener('click', function(){
-										infoWindow.open(map, marker);
-									  });
-									  */
-								  }
-								</script>
-								<!-- End js -->
-							  </section>
-					
+						
+						<style>
+							
+						</style>
 						
 					</div>
-				</div>
+				</div>-->
 				<!--les hôpitaux-->
 				<!-- End Chat User Info -->
-			</div>
+			</div> 
 			<!-- End Chat Rightbar -->
 		</div>
 		<!-- End Chat Layout -->
@@ -5783,14 +4018,26 @@
 	.product-wrapper:hover .product-action{bottom: 20px;opacity: 1};
 	</style>
 
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlmyEJiu5U7g2kQ0pHvTouPVr-EMurtKU&callback=initMap&libraries=&v=weekly"
-async
-></script>
 	<!----voice call end--->
 	<!-- Button trigger modal -->
+	    <!-- jQuery 1.8+ Api chat Whatsapp plugin/components/jQuery/jquery-1.11.3.min.js-->
+		<script src="./example/plugin/components/jQuery/jquery-1.11.3.min.js"></script>
+
+		<!-- Plugin JS file -->
+		<script src="./example/plugin/components/moment/moment.min.js"></script>
+		<script src="./example/plugin/components/moment/moment-timezone-with-data.min.js"></script>
+		<script src="./example/plugin/whatsapp-chat-support.js"></script>
+	
+		<script>
+		  $("#example_3").whatsappChatSupport();
+		</script>
+		 <!-- end jQuery 1.8+ Api chat Whatsapp-->
 	<!-------------- modal------------>
+	<script src="maps.js"></script>
+	<script src="getUpdateProfil.js"></script>
+	<script src="getVisionlink.js"></script>
 	<script src="serveurs/serveur.jS"></script>
+	<script src="loginPatient.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
 	<script src="patient.js"></script>
 	<script src="patientSendData.js"></script>

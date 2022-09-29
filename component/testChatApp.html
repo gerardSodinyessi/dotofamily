@@ -1,288 +1,123 @@
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>Chat App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    />
+    <title>Document</title>
   </head>
-
   <body>
-    <div class="container">
-      <div class="container-fluid bg-light" id="chat">
-        <div class="content d-flex flex-column" id="chat-content"></div>
+    <div class="Qraffer">
+      <div class="cardolId text-centerA">
+        <div class="image">
+          <img src="https://i.imgur.com/Jk44eEl.png" width="300" />
+        </div>
 
-        <form class="tools form-row">
-          <input
-            id="newMessage"
-            class="form-control col mr-2"
-            type="text"
-            name=""
-            placeholder="Message"
-          />
-          <input
-            id="from"
-            class="form-control col-2 mr-2"
-            type="text"
-            name=""
-            placeholder="From"
-            style="display: none;"
-          />
-          <div class="emoji-list" id="emoji-list"></div>
-          <button
-            id="emoji"
-            class="form-control col-1 mr-2"
-            type="button"
-            name=""
-            placeholder="From"
-          >
-            <i class="far fa-grin-alt"></i>
-          </button>
-          <button
-            
-            class="btn btn-primary"
-            type="button"
-          >
-            <i class="far fa-paper-plane"></i>
-          </button>
-        </form>
+        <div class="about-product text-centerA">
+          <h3>COX Headphone</h3>
+
+          <h4>$99.<small>99</small></h4>
+
+          <button class="buy-now">Buy Now</button>
+        </div>
       </div>
     </div>
-  </body>
-</html>
     <style>
-      #chat {
-        height: 500px;
-        overflow: auto;
-        font-size: 16px;
-      }
-
-      .container > .jumbotron {
-        height: 120px;
-        padding: 1.5% 1% 5% 1%;
-      }
-
-      .content {
-        box-sizing: border-box;
-        overflow: auto;
-        height: 85%;
-        margin: 1% 0;
-      }
-
-      /* msg */
-
-      .msg {
-        padding: 1%;
-        margin: 1%;
-        border: 1px solid var(--blue);
-        border-radius: 3px;
-        color: var(--dark);
-        width: fit-content;
-        max-width: 80%;
-      }
-
-      .msg .head {
+      .Qraffer {
         width: 100%;
-        color: var(--indigo);
-        font-weight: 350;
-        font-style: italic;
-        font-size: 12px;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-      .msg .body {
-        margin: 1% 0;
-        font-size: 16px;
-      }
-
-      .msg .footer {
-        color: gray;
-        font-size: 12px;
-      }
-
-      /* tools */
-
-      .tools {
+      .cardolId {
+        height: 420px;
+        width: 320px;
+        background-color: #c62828;
+        border-radius: 10px;
         position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        text-align: center !important;
       }
 
-      .tools .emoji-list {
-        display: none;
-        flex-wrap: wrap;
+      .cardolId::before {
         position: absolute;
-        right: 2%;
-        bottom: 110%;
-        border-radius: 5px;
-        border: 1px solid gray;
-        width: 270px;
-        height: 150px;
-        overflow: auto;
+        width: 100%;
+        height: 100%;
+        content: "";
+        top: -50%;
+        background-color: #ef5350;
+        transform: skewY(345deg);
+        transition: 1s ease-in;
       }
 
-      .tools .emoji-list .emoji {
-        margin: 1%;
+      .cardolId:hover::before {
+        top: -70%;
+        transform: skewY(390deg);
+      }
+
+      .cardolId .image {
+        position: absolute;
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cardolId .image img {
+        max-width: 100%;
+        transition: 1s ease-in;
+      }
+
+      .cardolId:hover .image img {
+        width: 80%;
+      }
+
+      .about-product {
+        position: absolute;
+        color: #fff;
+        bottom: -50px !important;
+        text-align: center;
+        left: 20%;
+        transition: 1s ease-in;
+      }
+
+      .cardolId:hover .about-product {
+        bottom: 20px !important;
+      }
+
+      .buy-now {
+        color: #fff;
+        background-color: #ef5350 !important;
+        border-color: #ef5350 !important;
+        width: 160px;
+        margin-top: 20px;
+      }
+
+      .buy-now:focus {
+        box-shadow: none;
+      }
+
+      .buy-now:hover {
+        color: #fff;
+        background-color: #e84040 !important;
+        border-color: #e84040 !important;
       }
     </style>
-    <script src="indexChatPharmacie.js"></script>
-  </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="result"></div>
-    <div class="input_box">
-      <input
-        type="text"
-        name="input_tx"
-        placeholder="Message"
-        class="tittle input_tx"
-      />
-      <button class="tittle cta send">send</button>
-    </div>
-    <script src="script.js"></script> 
-    <script>
-      //создаем переменную урла
-      const url = "wss://echo-ws-service.herokuapp.com";
-      //поиск кнопок
-      const ctaSend = document.querySelector(".send");
-      const ctaGeo = document.querySelector(".geo");
-      //поиск дива для вставки реззультата запроса
-      let result = document.querySelector(".result");
-
-      //создаем функцию для вывода сообщения в чат
-      function myMessage(message) {
-        let myMessageBox = document.createElement("p");
-        myMessageBox.innerHTML = `you:<br>${message}`;
-        result.appendChild(myMessageBox);
-      }
-
-      //создаем функцию запроса и обработки сообщения
-      ctaSend.addEventListener("click", () => {
-        const inputTx = document.querySelector(".input_tx").value;
-
-        let websocket = new WebSocket(url);
-
-        myMessage(inputTx);
-
-        websocket.onopen = function () {
-          console.log("hello");
-          websocket.send(inputTx);
-        };
-
-        websocket.onmessage = function (inputTx) {
-          responseMessage(inputTx);
-        };
-      });
-
-      window.open("http://www.example.com?ReportID=1", "_blank");
-    </script>
-
-    <img id="output_image" />
-
-    <script>
-      function preview_image(event) {
-        var reader = new FileReader();
-        reader.onload = function () {
-          var output = document.getElementById("output_image");
-          output.src = reader.result;
-        };
-        reader.readAsDataURL(event.target.files[0]);
-      }
-    </script>
-  </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <button id="userA" class="user" name="benin">click moi 1</button>
-    <button id="userB" class="user">click moi 2</button>
-    <button id="userC" class="user">click moi 3</button>
-    <button id="userD" class="user">click moi 4</button>
-    <div style="margin-top: 100px">
-      <div id="iduser"></div>
-    </div>
-    <script>
-      var user = document.querySelectorAll(".user");
-      console.log(user);
-      user.forEach((Q) => {
-        Q.addEventListener("click", function () {
-          console.log(Q.id);
-          const objeta = [
-            {
-              id: "userA",
-              balise: '<p class="userid">Je suis le 1 id</p>',
-            },
-            {
-              id: "userB",
-              balise: '<p class="userid">Je suis le 2 id</p>',
-            },
-            {
-              id: "userC",
-              balise: '<p class="userid">Je suis le 3 id</p>',
-            },
-            {
-              id: "userD",
-              balise: '<p class="userid">Je suis le 4 id</p>',
-            },
-          ];
-
-          const index = objeta.findIndex((element, index) => {
-            if (element.id === Q.id) {
-              var createUnNouveauP = document.getElementById("iduser");
-              createUnNouveauP.innerHTML = element.balise;
-            }
-          });
-        });
-      });
-    </script>
-  </body>
-</html>-->
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Test</title>
-    <meta charset="UTF-8" />
-  </head>
-
-  <body>
-    <a id="gotopageWithoutREfrech" href="patate.html"> adasdasd </a>
-    <div class="placeholder"></div>
-    <script>
-      $("#gotopageWithoutREfrech").click(function () {
-        loadContent($(this).attr("href"));
-        return false;
-      });
-
-      function loadContent(page) {
-        $.ajax({
-          url: page,
-          success: function (data) {
-            $(".placeholder").html(data);
-          },
-        });
-      }
-    </script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
   </body>
 </html>

@@ -28,13 +28,48 @@
       });
     </script>
   </head>
-  <body>
+  <body style="margin: 5vh" class="areaIDm">
+    <button type="button" class="btn btn-danger" id="deletMyCalendarCall">
+      Retour
+    </button>
+
+    <!--<marquee behaviour="alternative" direction="right" id="MyCalendarMar"
+      >Bonjour</marquee
+    >-->
+
+    <button type="button" class="btn btn-danger" id="deletMyCalendar">
+      Supprimer
+    </button>
+    <style>
+      #deletMyCalendar {
+        position: absolute;
+        top: 3px;
+        right: 0px;
+      }
+      #deletMyCalendarCall {
+        position: absolute;
+        top: 3px;
+        left: 0px;
+      }
+      #MyCalendarMar {
+        position: absolute;
+        top: 3px;
+      }
+      .areaIDm {
+        background: #4e54c8 !important;
+        background: -webkit-linear-gradient(
+          to left,
+          #8f94fb,
+          #4e54c8
+        ) !important;
+      }
+    </style>
     <div class="hero">
       <div
         id="calendar"
-        style="margin-top: 100px"
         data-aos="zoom-in"
         data-aos-duration="1000"
+        style="margin-top: 7vh"
       ></div>
       <div class="bs-example">
         <div

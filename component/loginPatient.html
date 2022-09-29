@@ -29,15 +29,21 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="cssControlForm.css">
     <!-- End css -->
-    <style>
-
-      #vertical-layout{
-        background-color: #9b59b6;
-      }
-    </style>
   </head>
 
-  <body class="vertical-layout" id="vertical-layout">
+  <body class="vertical-layout area" id="vertical-layout">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+   </ul>
     <!-- Start Containerbar -->
     <div id="containerbar" class="containerbar authenticate-bg">
       <button id="exampleAnimatedlogin" class="btn btn-danger" style="display: none;"> Mot de passe ou nom d'utisateur invalide</button>
@@ -64,6 +70,7 @@
                         /></a>
                       </div>
                       <h4 class="text-primary my-4">Connecter!</h4>
+                      <span id="JeVeuxVérifier"></span>
                       <div class="form-group">
                         <input
                         type="text"
@@ -125,7 +132,7 @@
                     />
                       <div style="padding-bottom: 12px;"></div>
                     </form>
-                    <div class="dropdown" style="margin-bottom: 15px">
+                    <div class="dropdown" style="margin-bottom: 9px">
                       <a
                         href="register.html"
                         
@@ -136,16 +143,6 @@
                           <!--</a>-->
                         </p>
                       </a>
-                      <a
-                      href="loginHospital.html"
-                      
-                    >
-                      <p class="mb-0 mt-3">
-                        Êtes vous un hôpital ?
-                        <!--<a href="register.html">-->connectez vous
-                        <!--</a>-->
-                      </p>
-                    </a>
                       <div
                         class="dropdown-menu dropdown-menu-right"
                         aria-labelledby="chatDropdown"
@@ -161,7 +158,7 @@
                       </div>
                     </div>
                   </div>
-                </div>-->
+                </div>
               </div>
               <!-- End Auth Box -->
             </div>
