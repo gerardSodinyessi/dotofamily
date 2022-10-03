@@ -6,6 +6,9 @@
  */
 "use strict";
 $(document).ready(function () {
+  if (abonnementBasicA != 0) {
+    document.getElementById("example_3").style.display = "none";
+  }
   if (
     navigator.userAgent.match(/iPhone/i) ||
     navigator.userAgent.match(/webOS/i) ||
@@ -16,20 +19,13 @@ $(document).ready(function () {
     navigator.userAgent.match(/Windows Phone/i)
   ) {
     $(".chat-user-info").addClass("hide");
-    document
-      .getElementById("view-user-infoa")
-      .addEventListener("click", function () {
-        document.getElementById("AllHospitalBenInfo").style.display = "none";
-        document.getElementById("AllHospitalBen").style.display = "block";
-        $(".chat-user-info").addClass("show");
-      });
-    $("#view-user-info").on("click", function (e) {
-      e.preventDefault();
-      $(".chat-user-info").addClass("show");
-      $(".chat-bottom").addClass("small");
-      $("#myModalIdAcueiApp1").modal("hide");
-      $(".chat-bottom").addClass("small");
-    });
+    //document
+    //  .getElementById("view-user-infoa")
+    //  .addEventListener("click", function () {
+    //    document.getElementById("AllHospitalBenInfo").style.display = "none";
+    //    document.getElementById("AllHospitalBen").style.display = "block";
+    //$(".chat-user-info").addClass("show");
+    // });
   } else {
     console.log("je faire");
     $(".chat-user-info").addClass("show");

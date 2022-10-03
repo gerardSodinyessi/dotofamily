@@ -8,15 +8,15 @@ function append(parent, el) {
 
 const div = document.getElementById("autorsId");
 const diva = document.getElementById("myDropdownIdWhatyY");
-const url = "http://13.39.67.197:8000/api/auth/medecin/";
+const url = "https://edotofamilyapi.com/api/auth/medecin/";
 
 fetch(url)
   .then((resp) => resp.json())
   .then(function (data) {
     let authors = data.results;
-    console.log('MON CORIS BAS ' + authors);
+    //console.log('MON CORIS BAS ' + authors);
     return authors.map(function (author) {
-      console.log('MON CORIS BAS ' + author.tel);
+      console.log("MON CORIS BAS " + author);
       let p = createNode("p");
       let a = createNode("a");
       a.innerHTML = `
@@ -78,7 +78,7 @@ function postDataProfil() {
 
   //Create new formData object then append file
 
-  fetch(`http://13.39.67.197:8000/patient/${UserConnectId}/`, {
+  fetch(`https://edotofamilyapi.com/patient/${UserConnectId}/`, {
     method: "PATCH",
     body: JSON.stringify({
       first_name: first_name,
@@ -123,7 +123,7 @@ function consultingIdClass(clicked) {
   );
   displayBlackVidConfirmez.addEventListener("click", function () {
     var now = new Date();
-    fetch("http://13.39.67.197:8000/api/messages/", {
+    fetch("https://edotofamilyapi.com/api/messages/", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -156,7 +156,7 @@ function consultingIdClass(clicked) {
 
 // function hospital data
 
-fetch(`http://13.39.67.197:8000/patient/${UserConnectId}/`, {
+fetch(`https://edotofamilyapi.com/patient/${UserConnectId}/`, {
   method: "GET",
   headers: {
     Accept: "application/json",

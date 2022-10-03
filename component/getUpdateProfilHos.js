@@ -7,7 +7,7 @@ function postDataProfilHospi() {
 
   //Create new formData object then append file
 
-  fetch(`http://13.39.67.197:8000/medecin/${storageNameIdH}`, {
+  fetch(`https://edotofamilyapi.com/medecin/${storageNameIdH}`, {
     method: "PATCH",
     body: JSON.stringify({
       first_name: first_nameH,
@@ -46,7 +46,7 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 const divuUp = document.getElementById("getUserProfilIdFormeH");
-const urlyx = `http://13.39.67.197:8000/api/auth/medecin/${storageNameIdH}/`;
+const urlyx = `https://edotofamilyapi.com/api/auth/medecin/${storageNameIdH}/`;
 
 fetch(urlyx)
   .then((resp) => resp.json())

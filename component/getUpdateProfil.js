@@ -7,7 +7,7 @@ function append(parent, el) {
 }
 const UserConnectIdi = localStorage.getItem("storageName");
 const divi = document.getElementById("getUserProfilIdForme");
-const urly = `http://13.39.67.197:8000/patient/${UserConnectIdi}/`;
+const urly = `https://edotofamilyapi.com/patient/${UserConnectIdi}/`;
 
 fetch(urly)
   .then((resp) => resp.json())

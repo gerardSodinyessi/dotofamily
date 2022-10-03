@@ -19,7 +19,7 @@ function append(parent, el) {
 }
 
 const divlink = document.getElementById("getVisionlinkMsg");
-const urlx = `http://13.39.67.197:8000/api/auth/patient/${UserConnectlink}`;
+const urlx = `https://edotofamilyapi.com/api/auth/patient/${UserConnectlink}`;
 
 fetch(urlx)
   .then((resp) => resp.json())
@@ -61,26 +61,10 @@ fetch(urlx)
     console.log(error);
   });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  function getDatahopital() {
+function getDatahopital() {
   var username = document.getElementById("usernameloginH").value;
   var password = document.getElementById("passwordloginH").value;
-  fetch("http://13.39.67.197:8000/api/auth/login/", {
+  fetch("https://edotofamilyapi.com/api/auth/login/", {
     method: "POST",
     body: JSON.stringify({
       username: username,

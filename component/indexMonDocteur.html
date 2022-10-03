@@ -27,7 +27,13 @@
 	<link href="assets/css/flag-icon.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="cssControlForm.css">
-	<!-- End css -->
+	
+	<!--<script>
+		setTimeout(function(event){
+			event.prevent
+   window.location.reload(1);
+}, 5000);
+	</script>-->
 </head>
 
 <body class="dark-layout" id="dark-layout">
@@ -228,18 +234,18 @@
 										<div class="col-8">
 											<ul class="list-unstyled mb-0">
 												<li class="media">
-													<img class="align-self-center mr-2" src="assets/images/men1.png"
+													<!-- <img class="align-self-center mr-2" src="assets/images/men1.png"
 														alt="Generic placeholder image"
-														style="width: 44px; height: 44px; border-radius: 100%;">
+														style="width: 44px; height: 44px; border-radius: 100%;">-->
 													<div class="media-body">
-														<h5 class="mb-0 mt-2">Mes patients</h5>
+														<h5 class="mb-0 mt-2">Mes commandes</h5>
 													</div>
 												</li>
 											</ul>
 										</div>
 									</div>
 								</div>
-								<div class="chat-left-search">
+								<!--<div class="chat-left-search">
 									<form>
 										<div class="input-group">
 											<input type="search" id="myInput" class="form-control" placeholder="Search"
@@ -252,11 +258,12 @@
 											</div>
 										</div>
 									</form>
-								</div>
+								</div>-->
 								<div class="chat-left-body" style="padding-bottom: 110px;">
 									<div class="nav flex-column nav-pills chat-userlist" id="new-chat-tab" role="tablist"
 										aria-orientation="vertical">
-										<ul id="myUL" style=" list-style-type: none; padding: 0;margin: 0;"></ul>
+										<span id="getUserMessageAllcommands"></span>
+										<!--<ul id="myUL" style=" list-style-type: none; padding: 0;margin: 0;">
 										<li><a class="nav-link active" id="new-chat-first-tab" data-toggle="pill" href="#"
 												role="tab" aria-selected="true">
 												<div class="media">
@@ -268,150 +275,7 @@
 													</div>
 												</div>
 										</a></li>
-										<li><a class="nav-link" id="new-chat-second-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/women.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Ema Star</h5>
-														<p>Work mode ON !!</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-third-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/boy.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Roger Day</h5>
-														<p>Let's go hiking.</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-fourth-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/men.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Paul Taylor</h5>
-														<p>Why so serious ?</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-fifth-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Cary Peck</h5>
-														<p> ** No Status **</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-sixth-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/women.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Meghan Murphy</h5>
-														<p>Feeling happy...</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-seventh-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/boy.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Sansa Smith</h5>
-														<p>World is Selfish.</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-eighth-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Jelly Witherspoon</h5>
-														<p>Best day of my life.</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-ninth-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/men.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Loy Diesel</h5>
-														<p>Hoping for better tomorrow.</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-tenth-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/boy.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Sham Chaterjee</h5>
-														<p>No Status</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-eleventh-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/girl.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Krishna Nayar</h5>
-														<p>Looking for Graphics Designer.</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-twelth-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/men.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Arjun Lohia</h5>
-														<p>Mood Off</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-thirteenth-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/boy.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Mike Spencer</h5>
-														<p>It's School time</p>
-													</div>
-												</div>
-											</a></li>
-										<li><a class="nav-link" id="new-chat-fourthinth-tab" data-toggle="pill" href="#"
-												role="tab" aria-selected="false">
-												<div class="media">
-													<img class="align-self-center rounded-circle"
-														src="assets/images/men.svg" alt="User Image">
-													<div class="media-body">
-														<h5>Tom Cruz</h5>
-														<p>New Job. New Asporations.</p>
-													</div>
-												</div>
-											</a></li>
-										</ul>
+									</ul>-->
 									</div>
 								</div>
 							</div>
@@ -856,6 +720,7 @@
 	<script src="getUpdateProfilHos.js"></script>
 	<script src="https://meet.jit.si/external_api.js"></script>
 	<script src="messageGet.js"></script>
+	<script src="commandsGet.js"></script>
 	<script src="getUpdateProfil.js"></script>
 	<script src="serveurs/serveur.jS"></script>
 	<script src="indexMonDocteur.js"></script>

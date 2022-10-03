@@ -601,18 +601,19 @@
 		role="dialog"
 		aria-labelledby="exampleModalLabel"
 		aria-hidden="true"
+		style="background-color: blue;"
 	  >
 		<div class="modal-dialog" role="document">
 		  <div class="modal-content">
 			<div class="modal-header">
-			  <h5 class="modal-title" id="modaleAceptFacturactionMOOWLabel">
+				<!---<h5 class="modal-title" id="modaleAceptFacturactionMOOWLabel">
 				Vous accetez faire un transfert à la pharmacie?
 				<img
 				  src="assets/images/2.png"
 				  alt=""
 				  style="width: 50px; height: 50px"
 				/>
-			  </h5>
+			  </h5>-->
 			</div>
 			<div class="modal-body">
 			  <img
@@ -622,24 +623,30 @@
 			  />
 			  <hr>
 			  <div></div>
-			  <span><strong>Nom</strong>  : </span>&nbsp; &nbsp;<span>jflfkndopl^pf;mlf</span><br>
+			  <span><strong>Prix</strong>  : </span>&nbsp; &nbsp;<span id="NameProductId"></span><span>FCFA</span><br>
 			  <div></div>
-			  <span><strong>Prix</strong> : </span> &nbsp; &nbsp; <span>jflfkndopl^pf;mlf</span><br>
-			  <div></div>
-			  <span> <strong>Total</strong> : </span>&nbsp; &nbsp; <span>jflfkndopl^pf;mlf</span>
+			  <span> <strong>Total</strong> : </span>&nbsp; &nbsp; <span id="TotalProductId"></span><span>FCFA</span>
 			  <div></div>
 			  <hr>
 			  <div>
 				<label>Quantité</label>
-				<input
-				  type="number"
-				  max="19"
-				  class="inpMOOW"
-				  value=""
-				  min="1"
-				  placeholder="choisir la votre quantité"
-				/>
-				
+				<div class="input-group">
+					<select class="custom-select" id="inputGroupSelect04vali">
+					  <option value="1">1</option>
+					  <option value="2">2</option>
+					  <option value="3">3</option>
+					  <option value="4">4</option>
+					  <option value="6">6</option>
+					  <option value="7">7</option>
+					  <option value="8">8</option>
+					  <option value="9">9</option>
+					  <option value="10">10</option>
+					</select>
+					<div class="input-group-append">
+					  <button class="btn btn-outline-secondary" type="button" id="validateNumber">Valider</button>
+					</div>
+				  </div>
+				  <hr>
 			  </div>
 			</div>
 			<div class="modal-footer">
@@ -656,8 +663,9 @@
 				class="btn btn-danger payerVotreOrdonnanceC"
 				data-toggle="modal"
 				data-target="#basicModal"
+				id="uivantVotreOrdonnanceC"
 			  >
-				Payer
+				Suivant
 			  </button>
 			</div>
 		  </div>

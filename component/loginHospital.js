@@ -2,7 +2,7 @@ const userTableDataH = [];
 function getDatahopital() {
   var username = document.getElementById("usernameloginH").value;
   var password = document.getElementById("passwordloginH").value;
-  fetch("http://13.39.67.197:8000/api/auth/login/", {
+  fetch("https://edotofamilyapi.com/api/auth/login/", {
     method: "POST",
     body: JSON.stringify({
       username: username,

@@ -8,7 +8,7 @@ function append(parent, el) {
 }
 
 const div = document.getElementById("getUserMessageAll");
-const url = `http://13.39.67.197:8000/api/auth/medecin/${UserConnectIdH}`;
+const url = `https://edotofamilyapi.com/api/auth/medecin/${UserConnectIdH}`;
 
 fetch(url)
   .then((resp) => resp.json())
@@ -105,7 +105,7 @@ function tackesenderIdClass(checked) {
         "inlineFormInputGroupUsername3"
       ).value;
       var now = new Date();
-      fetch("http://13.39.67.197:8000/api/messages/", {
+      fetch("https://edotofamilyapi.com/api/messages/", {
         method: "POST",
         headers: {
           Accept: "application/json",

@@ -3,7 +3,7 @@ function getData() {
   var username = document.getElementById("usernamelogin").value;
   var password = document.getElementById("passwordlogin").value;
 
-  fetch("http://13.39.67.197:8000/api/auth/login/", {
+  fetch("https://edotofamilyapi.com/api/auth/login/", {
     method: "POST",
     body: JSON.stringify({
       username: username,

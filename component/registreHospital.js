@@ -4,7 +4,7 @@ function postDataHospital() {
   var password = document.getElementById("passwordHospital").value;
   var telHostel = document.getElementById("telHospital").value;
 
-  fetch("http://13.39.67.197:8000/api/auth/medecin/registration/", {
+  fetch("https://edotofamilyapi.com/api/auth/medecin/registration/", {
     method: "POST",
     body: JSON.stringify({
       username: username,
