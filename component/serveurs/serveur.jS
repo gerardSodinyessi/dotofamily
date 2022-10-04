@@ -166,7 +166,7 @@ fetch(`https://edotofamilyapi.com/patient/${UserConnectId}/`, {
   .then((resp) => resp.json())
   .then(function (data) {
     let msgGet = data.messages_received;
-    console.log("nos msgGet " + msgGet);
+    //console.log("nos msgGet " + msgGet);
     return authors.map(function (msgGet) {
       console.log("nos msgGet " + msgGet.content);
       let p = createNode("p");

@@ -6,9 +6,6 @@
  */
 "use strict";
 $(document).ready(function () {
-  if (abonnementBasicA != 0) {
-    document.getElementById("example_3").style.display = "none";
-  }
   if (
     navigator.userAgent.match(/iPhone/i) ||
     navigator.userAgent.match(/webOS/i) ||

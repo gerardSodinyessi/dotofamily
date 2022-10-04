@@ -18,7 +18,7 @@ function append(parent, el) {
 var bigTableTake = [];
 function onBlockIF() {
   const div = document.getElementById("autorsIdProduct");
-  fetch("http://13.39.67.197:8000/api/products")
+  fetch("https://edotofamilyapi.com/api/products")
     .then((resp) => resp.json())
     .then(function (data) {
       let authors = data.results;
@@ -110,7 +110,7 @@ function onBlockIF() {
             const [sommeproduct] = sommeproductW.slice(-1);
             const [sellero] = seller.slice(-1);
             const [productWk] = productW.slice(-1);
-            fetch("http://13.39.67.197:8000/api/order/", {
+            fetch("https://edotofamilyapi.com/api/order/", {
               method: "POST",
               headers: {
                 Accept: "application/json",

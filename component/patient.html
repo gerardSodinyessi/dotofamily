@@ -25,6 +25,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous"
   referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.js"></script>
 	<!-- Font Awesome -->
 	<!-- Whatsapp Api intégrate-->
 	<link rel="stylesheet" href="./example/plugin/whatsapp-chat-support.css" />
@@ -32,7 +33,6 @@
 	rel="stylesheet"
 	href="./example/plugin/components/Font Awesome/css/font-awesome.min.css"
   />
-
 	<!-- Start css -->
 	<!-- Slick css -->
 	<link rel="stylesheet" href="patient.css">
@@ -725,8 +725,8 @@
 											<li class="media">
 												<a style="display: inline-flex; width: 23px; cursor: pointer;" id="dropdownMenuButton" >
 													<span class="badge badge-primary " style="position:relative; 
-											  left: 13px;   font-size: 9px; border-radius: 100%; width: 15px; height: 15px;"
-														id="numberNotification">2</span>
+											  left: 13px;   font-size: 5px; border-radius: 100%; width: 15px; height: 15px;"
+														id="numberNotification">.</span>
 													<img src="assets/images/notifica.svg"
 														alt="Generic placeholder image"
 														style="position: absolute; top: 5px;">
@@ -747,7 +747,7 @@
 									</div>
 									<div class="col-4">
 										<a href="#" id="view-user-info" >
-											<img src="assets/images/pharmacie.svg" alt="" style=" height:25px; width:22vh;">
+											<img src="assets/images/pharmacie.svg" alt="" style=" height:20px; width:20vh;">
 											</a>
 										<!---<a href="#" data-toggle="modal" data-target="#createGroup"><img
 												src="assets/images/folder-plus.svg" alt="Generic placeholder image"
@@ -838,14 +838,14 @@
 													</div>
 												</div>
 											</div>
-
-
+											<span id="demoTimer###"></span>									
+											<h6 style="color: #f82249; margin-top: 5px;" id="demoTimer"></h6>
 											<h2 style="color: #f82249; margin-top: 5px;">Planning familial</h2>
 											<div class="chat-message">
 												<div class="chat-message-text">
-												<strong><p>Les femmes, les hommes ou les couples peuvent choisir parmi de multiples
-													méthodes contraceptives celle qui leur convient le mieux pour planifier leur
-													famille et éviter une grossesse non désirée.</p></strong>
+												<strong><p>Parmis les multiples
+													méthodes contraceptives, choisissez celle qui vous convient le mieux pour planifier votre
+													vie et éviter une grossesse non désirée.</p></strong>
 												</div>
 											</div>
 											
@@ -996,7 +996,7 @@
 								<div class="modal-header">
 									<h5 class="modal-title" id="exampleModalLabel"><img src="assets/images/alarme.svg"
 											alt="">
-										<p id="demoTimer"></p>
+										
 									</h5>
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
@@ -2012,26 +2012,27 @@
 										<a class="showAudioPlanning" id="chat-thirteenth-tab" data-toggle="pill"
 											href="#chat-thirteenth" role="tab" aria-controls="chat-thirteenth"
 											aria-selected="false" onclick="onBlockIF()">
-											<img class="align-self-center rounded-circle"
-													src="assets/images/pharmacie.svg" alt="User Image" style="margin-left: 5px; width: 30px; height: 20px;">
+											La pharmacie 
+											<img class="align-self-center rounded-circle "
+													src="assets/images/pharmacie.svg" alt="User Image" style="margin-left: 5px; width: 20px; height: 20px;">
 										</a>	
 									<!---	<a href="#" data-toggle="modal" data-target="#incomingVoiceCall"> <img
 												class="align-self-center rounded-circle" src="assets/images/pharmacie.svg"
 												alt="Generic placeholder image"
 												style="color: #f82249; width: 20px; height: 34px; margin-bottom: 10px;"></a>-->
 									</li>
-									<li class="list-inline-item">
+									<!---<li class="list-inline-item">
 										<a id="gotopageWithoutREfrech" href="./cycleCalendar/booking.html"><i
 												class="material-icons" style="color: #f82249; ">videocam</i></a>
 											<div class="placeholder"></div>
-									</li>
+									</li>-->
 									<li class="list-inline-item">
 										<div class="dropdown">
-											<a href="#" class="" id="chatDropdown" data-toggle="dropdown"
+											<!---<a href="#" class="" id="chatDropdown" data-toggle="dropdown"
 												aria-haspopup="true" aria-expanded="false"> <img
 													class="align-self-center rounded-circle"
 													src="assets/images/more-hori.svg" alt="Generic placeholder image"
-													style="color: #f82249; width: 20px; margin-bottom: 13px;"></a>
+													style="color: #f82249; width: 20px; margin-bottom: 13px;"></a>-->
 											<div class="dropdown-menu dropdown-menu-right"
 												aria-labelledby="chatDropdown">
 												<a class="dropdown-item font-14" href="#">Hôpital
@@ -4025,7 +4026,6 @@
 	line-height: 1;padding: 0 21px;position: relative}.product-action-style >a.action-plus{font-size: 18px}
 	.product-wrapper:hover .product-action{bottom: 20px;opacity: 1};
 	</style>
-
 	<!----voice call end--->
 	<!-- Button trigger modal -->
 	    <!-- jQuery 1.8+ Api chat Whatsapp plugin/components/jQuery/jquery-1.11.3.min.js-->
@@ -4035,13 +4035,15 @@
 		<script src="./example/plugin/components/moment/moment.min.js"></script>
 		<script src="./example/plugin/components/moment/moment-timezone-with-data.min.js"></script>
 		<script src="./example/plugin/whatsapp-chat-support.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.js"></script>
 	
-		<script>
+		<script> 
 		  $("#example_3").whatsappChatSupport();
 		</script>
 		 <!-- end jQuery 1.8+ Api chat Whatsapp-->
 	<!-------------- modal------------>
 	<script src="maps.js"></script>
+	<script src="../abonnements.js"></script>
 	<script src="getUpdateProfil.js"></script>
 	<script src="getVisionlink.js"></script>
 	<script src="serveurs/serveur.jS"></script>
@@ -4059,18 +4061,65 @@
 	<!-- Slick js -->
 	<script src="assets/plugins/slick/slick.min.js"></script>
 	<!-- Core js -->
-	<script src="assets/js/core.js"></script>
+	<script src="assets/js/core.js"></script> 
 	<script src="todo.js"></script>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script src="jquery.counterup.min.js"></script>
-	<!-- MDB 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	-->
+	<!-- MDB -->
+	
 	<script>
 		AOS.init();
+
+ window.onload = function () {
+  var now = new Date();
+  var momm = moment(new Date(now)).add(30, "days").calendar();
+  console.log(momm);
+
+  // Set the date we're counting down to
+  var countDownDate = new Date(momm).getTime();
+
+  // Update the count down every 1 second
+  var x = setInterval(function () {
+    // Get today's date and time
+    var now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Output the result in an element with id="demo"
+    document.getElementById("demoTimer").innerHTML = 
+	`
+	<span id="demoTimer###">
+	<h6 style="color: green; margin-top: 5px;">votre période d'éssai s'expire dans</h6>
+	<button type="button" class="btn btn-danger">${days} &nbsp; j</button>
+	<button type="button" class="btn btn-danger">${hours} &nbsp; h</button>
+	<button type="button" class="btn btn-danger">${minutes} &nbsp; m</button>
+	<button type="button" class="btn btn-danger">${seconds} &nbsp; s</button>
+    </span>
+	`
+
+    // If the count down is over, write some text
+    if (distance < 0) {
+      clearInterval(x);
+	  document.getElementById("demoTimer###")
+      document.getElementById("demoTimer").innerHTML =
+	 `
+	 <button type="button" class="btn btn-danger">Abonnement : &nbsp; ${days} </button>
+	 ` 
+	  ;
+    }
+  }, 1000);
+};
+
 	</script>
 
 	<!-- End js -->
